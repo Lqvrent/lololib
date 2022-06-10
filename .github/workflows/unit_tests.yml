@@ -23,6 +23,7 @@ jobs:
           make
       - name: "run tests"
         run: |
+          cd build
           ./unit_tests
       - name: "generate coverage report"
         run: |
