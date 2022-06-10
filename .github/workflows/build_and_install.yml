@@ -1,0 +1,26 @@
+name: "Build and install"
+on:
+  push
+
+jobs:
+  build:
+      runs-on: "ubuntu-latest"
+      steps:
+      - uses: "actions/checkout@v2"
+      - name: "install build-essential"
+        run: |
+          apt-get update
+          apt-get install -y build-essential
+      - name: "install cmake"
+        run: |
+          apt-get update
+          apt-get install -y cmake
+      - name: "build"
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+      - name: "install"
+        run: |
+          make install

@@ -1,0 +1,42 @@
+name: "Unit tests"
+on:
+  push
+
+jobs:
+  build:
+      runs-on: "ubuntu-latest"
+      steps:
+      - uses: "actions/checkout@v2"
+      - name: "install build-essential"
+        run: |
+          apt-get update
+          apt-get install -y build-essential
+      - name: "install cmake, criterion & coverage tools"
+        run: |
+          apt-get update
+          apt-get install -y cmake gcov gcovr criterion-dev libcriterion-dev
+      - name: "build"
+        run: |
+          cd tests
+          mkdir build
+          cd build
+          cmake ..
+          make
+      - name: "run tests"
+        run: |
+          ./unit_tests
+      - name: "generate coverage report"
+        run: |
+          gcovr -f '' -r . --exclude=/mnt/tests/ --xml -o coverage.xml
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@v1.2.0
+        with:
+          filename: coverage.xml
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: true
+          indicators: true
+          output: both
+          thresholds: '60 80'
