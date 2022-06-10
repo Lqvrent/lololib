@@ -10,10 +10,15 @@ jobs:
       runs-on: ${{ matrix.os }}
       steps:
       - uses: "actions/checkout@v2"
-      - name: "install build-essential & cmake"
+      - if: matrix.os == 'ubuntu-latest'
+        name: "install build-essential & cmake on ubuntu"
         run: |
           sudo apt update
           sudo apt install -y build-essential
+      - if: matrix.os == 'macos-latest'
+        name: "install gcc, make & cmake on macos"
+        run: |
+          brew install gcc make cmake
       - name: "build"
         run: |
           mkdir build
