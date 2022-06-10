@@ -23,8 +23,7 @@ jobs:
           make
       - name: "run tests"
         run: |
-          cd build
-          ./unit_tests
+          ./tests/build/unit_tests
       - name: "generate coverage report"
         run: |
           gcovr -f '' -r . --exclude=/mnt/tests/ --xml -o coverage.xml
