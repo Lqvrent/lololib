@@ -11,10 +11,13 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y build-essential
-      - name: "install cmake, criterion & coverage tools"
+      - name: "install cmake & coverage tools"
         run: |
           sudo apt update
           sudo apt install -y cmake gcovr libghc-criterion-dev
+      - name: "install criterion (unit testing library)"
+        run: ${GITHUB_WORKSPACE}/.github/tests.sh
+        shell: bash
       - name: "build"
         run: |
           cd tests
