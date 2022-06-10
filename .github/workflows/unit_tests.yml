@@ -7,16 +7,12 @@ jobs:
       runs-on: "ubuntu-latest"
       steps:
       - uses: "actions/checkout@v2"
-      - name: "install build-essential"
-        run: |
-          sudo apt update
-          sudo apt install -y build-essential
-      - name: "install cmake & coverage tools"
+      - name: "install build-essential, cmake and coverage tools"
         run: |
           sudo apt update
           sudo apt install -y cmake gcovr libghc-criterion-dev
       - name: "install criterion (unit testing library)"
-        run: ${GITHUB_WORKSPACE}/.github/tests.sh
+        run: ${GITHUB_WORKSPACE}/.github/install_criterion.sh
         shell: bash
       - name: "build"
         run: |

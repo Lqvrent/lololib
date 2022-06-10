@@ -7,14 +7,10 @@ jobs:
       runs-on: "ubuntu-latest"
       steps:
       - uses: "actions/checkout@v2"
-      - name: "install build-essential"
+      - name: "install build-essential & cmake"
         run: |
           sudo apt update
           sudo apt install -y build-essential
-      - name: "install cmake"
-        run: |
-          sudo apt update
-          sudo apt install -y cmake
       - name: "build"
         run: |
           mkdir build
