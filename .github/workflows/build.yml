@@ -1,4 +1,4 @@
-name: "Build and install"
+name: "Build"
 on:
   push
 
@@ -21,6 +21,3 @@ jobs:
           cd build
           cmake ..
           make
-      - name: "install"
-        run: |
-          make install

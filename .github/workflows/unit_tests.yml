@@ -14,7 +14,7 @@ jobs:
       - name: "install cmake, criterion & coverage tools"
         run: |
           sudo apt update
-          sudo apt install -y cmake gcov gcovr criterion-dev libcriterion-dev
+          sudo apt install -y cmake gcov-dev gcovr libghc-criterion-dev
       - name: "build"
         run: |
           cd tests
