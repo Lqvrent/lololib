@@ -66,7 +66,7 @@ void string_to_upper(string_t str)
     int i = 0;
 
     if (string_is_empty(str))
-        return ;
+        return;
     while (str[i] != 0) {
         if (str[i] >= 'a' && str[i] <= 'z')
             str[i] -= 32;
@@ -79,7 +79,7 @@ void string_to_lower(string_t str)
     int i = 0;
 
     if (string_is_empty(str))
-        return ;
+        return;
     while (str[i] != 0) {
         if (str[i] >= 'A' && str[i] <= 'Z')
             str[i] += 32;
@@ -92,7 +92,7 @@ void string_capitalize(string_t str)
     int i = 0;
 
     if (string_is_empty(str))
-        return ;
+        return;
     while (str[i] != 0) {
         if ((i == 0 || str[i - 1] == ' ') && str[i] >= 'a' && str[i] <= 'z')
             str[i] += 32;
@@ -119,7 +119,7 @@ void string_reverse(string_t str)
     char tmp;
 
     if (string_is_empty(str))
-        return ;
+        return;
     while (i < j) {
         tmp = str[i];
         str[i] = str[j];
