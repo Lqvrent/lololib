@@ -70,3 +70,73 @@ Test(string, string_is_numeric_w_badnum)
 {
     cr_assert_eq(string_is_numeric("123456789O"), 0);
 }
+
+Test(string, string_is_alphanum_w_null)
+{
+    cr_assert_eq(string_is_alphanum(NULL), 0);
+}
+
+Test(string, string_is_alphanum_w_empty)
+{
+    cr_assert_eq(string_is_alphanum(""), 0);
+}
+
+Test(string, string_is_alphanum_w_alpha)
+{
+    cr_assert_eq(string_is_alphanum("abc"), 1);
+}
+
+Test(string, string_is_alphanum_w_num)
+{
+    cr_assert_eq(string_is_alphanum("123"), 1);
+}
+
+Test(string, string_is_alphanum_w_alphanum)
+{
+    cr_assert_eq(string_is_alphanum("123456789O"), 1);
+}
+
+Test(string, string_is_alphanum_w_alphanumspaces)
+{
+    cr_assert_eq(string_is_alphanum("123 456789O"), 0);
+}
+
+Test(string, string_is_alphanum_w_invalid)
+{
+    cr_assert_eq(string_is_alphanum("123456789O!"), 0);
+}
+
+Test(string, string_is_printable_w_null)
+{
+    cr_assert_eq(string_is_printable(NULL), 0);
+}
+
+Test(string, string_is_printable_w_empty)
+{
+    cr_assert_eq(string_is_printable(""), 0);
+}
+
+Test(string, string_is_printable_w_alpha)
+{
+    cr_assert_eq(string_is_printable("abc"), 1);
+}
+
+Test(string, string_is_printable_w_num)
+{
+    cr_assert_eq(string_is_printable("123"), 1);
+}
+
+Test(string, string_is_printable_w_alphanum)
+{
+    cr_assert_eq(string_is_printable("123456789O"), 1);
+}
+
+Test(string, string_is_printable_w_alphanumspaces)
+{
+    cr_assert_eq(string_is_printable("123 456789O"), 1);
+}
+
+Test(string, string_is_printable_w_invalid)
+{
+    cr_assert_eq(string_is_printable("123456789O!"), 0);
+}
