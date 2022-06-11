@@ -276,20 +276,36 @@ Test(string, string_count_with_valid2)
 
 Test(string, string_repeat_empty)
 {
-    cr_assert_str_eq(string_repeat("", 42), "");
+    string_t str = string_repeat("", 42);
+
+    cr_assert_str_eq(str, "");
+    if (str != NULL)
+        free(str);
 }
 
 Test(string, string_repeat_zero)
 {
-    cr_assert_null(string_repeat("abc", 0));
+    string_t str = string_repeat("abc", 0);
+
+    cr_assert_null(str);
+    if (str != NULL)
+        free(str);
 }
 
 Test(string, string_repeat_valid)
 {
-    cr_assert_str_eq(string_repeat("abc", 3), "abcabcabc");
+    string_t str = string_repeat("abc", 3);
+
+    cr_assert_str_eq(str, "abcabcabc");
+    if (str != NULL)
+        free(str);
 }
 
 Test(string, string_repeat_valid1)
 {
-    cr_assert_str_eq(string_repeat("abc", 1), "abc");
+    string_t str = string_repeat("abc", 1);
+
+    cr_assert_str_eq(str, "abc");
+    if (str != NULL)
+        free(str);
 }
