@@ -223,3 +223,33 @@ Test(string, string_reverse_w_valid6)
     string_reverse(str);
     cr_assert_str_eq(str, "fedcba");
 }
+
+Test(string, string_includes_w_invalid)
+{
+    cr_assert_eq(string_includes("Hello world !", "It's me ! Mario!!"), 0);
+}
+
+Test(string, string_includes_w_valid)
+{
+    cr_assert_eq(string_includes("Hello world !", "world"), 1);
+}
+
+Test(string, string_starts_with_w_invalid)
+{
+    cr_assert_eq(string_starts_with("Hello world !", "world !"), 0);
+}
+
+Test(string, string_starts_with_w_valid)
+{
+    cr_assert_eq(string_starts_with("Hello world !", "Hello"), 1);
+}
+
+Test(string, string_ends_with_w_invalid)
+{
+    cr_assert_eq(string_ends_with("Hello world", "Hello"), 0);
+}
+
+Test(string, string_ends_with_w_valid)
+{
+    cr_assert_eq(string_ends_with("Hello world", "world"), 1);
+}
