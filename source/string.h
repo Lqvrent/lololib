@@ -130,4 +130,27 @@ int string_starts_with(const string_t str, const string_t substr);
  */
 int string_ends_with(const string_t str, const string_t substr);
 
+/**
+ * @brief Count the number of occurrences of a substring in a string.
+ *
+ * @param str The string to check.
+ * @param substr The substring.
+ * @return int The number of occurrences of the substring in the string.
+ * @warning If the string or substring is NULL, you'll get a segfault.
+ */
+int string_count(const string_t str, const string_t substr);
+
+/**
+ * @brief Create a stringwhich is a repetition (n timesà of a given string.
+ *
+ * @param str The string to repeat.
+ * @param n The number of times to repeat the string.
+ * @return char* The newly allocated string.
+ * @warning If the string is NULL, you'll get a segfault.
+ * @warning If malloc() fails (which is unlikely), you'll get a segfault.
+ * @warning If the number of times is 0 or less, the function will return NULL.
+ * @warning You should free() the string after use.
+ */
+string_t string_repeat(const string_t str, int n);
+
 #endif /* !__STRING_H__ */

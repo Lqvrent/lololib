@@ -258,3 +258,38 @@ Test(string, string_ends_with_w_valid)
 {
     cr_assert_eq(string_ends_with("Hello world", "world"), 1);
 }
+
+Test(string, string_count_with_nooccurence)
+{
+    cr_assert_eq(string_count("Hello world is just a simple sentence I think.", "Lqvrent"), 0);
+}
+
+Test(string, string_count_with_valid1)
+{
+    cr_assert_eq(string_count("Hello world is just a simple sentence I think.", "world"), 1);
+}
+
+Test(string, string_count_with_valid2)
+{
+    cr_assert_eq(string_count("Hello world is just a simple world I think.", "world"), 2);
+}
+
+Test(string, string_repeat_empty)
+{
+    cr_assert_str_eq(string_repeat("", 42), "");
+}
+
+Test(string, string_repeat_zero)
+{
+    cr_assert_null(string_repeat("abc", 0));
+}
+
+Test(string, string_repeat_valid)
+{
+    cr_assert_str_eq(string_repeat("abc", 3), "abcabcabc");
+}
+
+Test(string, string_repeat_valid1)
+{
+    cr_assert_str_eq(string_repeat("abc", 1), "abc");
+}

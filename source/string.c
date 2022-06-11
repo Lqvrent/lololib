@@ -1,4 +1,5 @@
 #include "string.h"
+#include <stdlib.h>
 
 int string_is_empty(const string_t str)
 {
@@ -160,4 +161,42 @@ int string_ends_with(const string_t str, const string_t substr)
         i++;
     }
     return (0);
+}
+
+int string_count(const string_t str, const string_t substr)
+{
+    int i = 0;
+    int j = 0;
+    int count = 0;
+
+    while (str[i] != 0) {
+        if (str[i] == substr[j]) {
+            j++;
+            if (substr[j] == 0)
+                count++;
+        } else
+            j = 0;
+        i++;
+    }
+    return (count);
+}
+
+string_t string_repeat(const string_t str, int n)
+{
+    int i = 0;
+    int j = 0;
+    string_t new = NULL;
+
+    if (n <= 0)
+        return (NULL);
+    new = malloc(sizeof(char) * ((string_length(str) * n) + 1));
+    while (j < (string_length(str) * n)) {
+        new[j] = str[i];
+        j++;
+        i++;
+        if (i == string_length(str))
+            i = 0;
+    }
+    new[j] = 0;
+    return (new);
 }
