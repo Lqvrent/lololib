@@ -140,3 +140,115 @@ Test(string, string_is_printable_w_invalid)
 {
     cr_assert_eq(string_is_printable("123456789O!"), 0);
 }
+
+Test(string, string_to_upper_w_null)
+{
+    char *str = NULL;
+
+    string_to_upper(str);
+    cr_assert_null(str);
+}
+
+Test(string, string_to_upper_w_empty)
+{
+    char str[] = "";
+
+    string_to_upper(str);
+    cr_assert_str_eq(str, "");
+}
+
+Test(string, string_to_upper_w_lower)
+{
+    char str[] = "lqvrent";
+
+    string_to_upper(str);
+    cr_assert_str_eq(str, "LQVRENT");
+}
+
+Test(string, string_to_upper_w_mixed)
+{
+    char str[] = "lQvReNt";
+
+    string_to_upper(str);
+    cr_assert_str_eq(str, "LQVRENT");
+}
+
+Test(string, string_to_lower_w_null)
+{
+    char *str = NULL;
+
+    string_to_lower(str);
+    cr_assert_null(str);
+}
+
+Test(string, string_to_lower_w_empty)
+{
+    char str[] = "";
+
+    string_to_lower(str);
+    cr_assert_str_eq(str, "");
+}
+
+Test(string, string_to_lower_w_upper)
+{
+    char str[] = "LQVRENT";
+
+    string_to_lower(str);
+    cr_assert_str_eq(str, "lqvrent");
+}
+
+Test(string, string_to_lower_w_mixed)
+{
+    char str[] = "lQvReNt";
+
+    string_to_lower(str);
+    cr_assert_str_eq(str, "lqvrent");
+}
+
+Test(string, string_capitalize_w_null)
+{
+    char *str = NULL;
+
+    string_capitalize(str);
+    cr_assert_null(str);
+}
+
+Test(string, string_capitalize_w_empty)
+{
+    char str[] = "";
+
+    string_capitalize(str);
+    cr_assert_str_eq(str, "");
+}
+
+Test(string, string_capitalize_w_oneword)
+{
+    char str[] = "hello";
+
+    string_capitalize(str);
+    cr_assert_str_eq(str, "Hello");
+}
+
+Test(string, string_capitalize_w_multiplewords)
+{
+    char str[] = "hello world !";
+
+    string_capitalize(str);
+    cr_assert_str_eq(str, "Hello World !");
+}
+
+Test(string, string_capitalize_w_somuchwords)
+{
+    char str[] = "hello world,how are you doing today ?lol";
+
+    string_capitalize(str);
+    cr_assert_str_eq(str, "Hello World,How Are You Doing Today ?Lol");
+}
+
+Test(string, string_capitalize_w_wordstofix)
+{
+    char str[] = "hElLo WOrlD,hOw aRe you DoiNg tOdAy ?lOl";
+
+    string_capitalize(str);
+    cr_assert_str_eq(str, "Hello World,How Are You Doing Today ?Lol");
+}
