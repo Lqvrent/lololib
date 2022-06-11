@@ -24,7 +24,7 @@ int string_is_empty(const string_t str);
  *
  * @param str The string to check.
  * @return 1 if the string is filled with only alpha characters, 0 otherwise.
- * @warning If the string is NULL, it will return 0.
+ * @warning If the string is NULL or empty, it will return 0.
  */
 int string_is_alpha(const string_t str);
 
@@ -33,7 +33,7 @@ int string_is_alpha(const string_t str);
  *
  * @param str The string to check.
  * @return 1 if the string is filled with only numeric characters, 0 otherwise.
- * @warning If the string is NULL, it will return 0.
+ * @warning If the string is NULL or empty, it will return 0.
  */
 int string_is_numeric(const string_t str);
 
@@ -42,7 +42,7 @@ int string_is_numeric(const string_t str);
  *
  * @param str The string to check.
  * @return 1 if the string is filled with only alphanumeric characters, 0 otherwise.
- * @warning If the string is NULL, it will return 0.
+ * @warning If the string is NULL or empty, it will return 0.
  */
 int string_is_alphanum(const string_t str);
 
@@ -51,7 +51,7 @@ int string_is_alphanum(const string_t str);
  *
  * @param str The string to check.
  * @return 1 if the string is filled with only alphanumeric characters, 0 otherwise.
- * @warning If the string is NULL, it will return 0.
+ * @warning If the string is NULL or empty, it will return 0.
  */
 int string_is_printable(const string_t str);
 
@@ -81,7 +81,7 @@ void string_capitalize(string_t str);
  *
  * @param str The string to count.
  * @return The number of characters in the string.
- * @warning If the string is NULL, it will return 0.
+ * @warning If the string is NULL or empty, it will return 0.
  */
 int string_length(const string_t str);
 

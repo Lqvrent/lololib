@@ -40,9 +40,7 @@ int string_is_alphanum(const string_t str)
     if (string_is_empty(str))
         return (0);
     while (str[i] != 0) {
-        if (str[i] < '0' || str[i] > '9')
-            return (0);
-        if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+        if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
             return (0);
         i++;
     }
@@ -56,9 +54,7 @@ int string_is_printable(const string_t str)
     if (string_is_empty(str))
         return (0);
     while (str[i] != 0) {
-        if (str[i] < '0' || str[i] > '9' || str[i] == ' ')
-            return (0);
-        if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+        if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9') && str[i] != ' ')
             return (0);
         i++;
     }
