@@ -252,3 +252,37 @@ Test(string, string_capitalize_w_wordstofix)
     string_capitalize(str);
     cr_assert_str_eq(str, "Hello World,How Are You Doing Today ?Lol");
 }
+
+Test(string, string_length_w_empty)
+{
+    cr_assert_eq(string_length(""), 0);
+}
+
+Test(string, string_length_w_valid)
+{
+    cr_assert_eq(string_length("abc"), 3);
+}
+
+Test(string, string_reverse_w_empty)
+{
+    char str[] = "";
+
+    string_reverse(str);
+    cr_assert_str_eq(str, "");
+}
+
+Test(string, string_reverse_w_valid3)
+{
+    char str[] = "abc";
+
+    string_reverse(str);
+    cr_assert_str_eq(str, "cba");
+}
+
+Test(string, string_reverse_w_valid6)
+{
+    char str[] = "abcdef";
+
+    string_reverse(str);
+    cr_assert_str_eq(str, "fedcba");
+}
