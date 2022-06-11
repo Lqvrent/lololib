@@ -108,8 +108,6 @@ int string_length(const string_t str)
 {
     int i = 0;
 
-    if (string_is_empty(str))
-        return (0);
     while (str[i] != 0)
         i++;
     return (i);

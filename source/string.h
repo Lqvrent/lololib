@@ -81,7 +81,7 @@ void string_capitalize(string_t str);
  *
  * @param str The string to count.
  * @return The number of characters in the string.
- * @warning If the string is NULL or empty, it will return 0.
+ * @warning If the string is NULL, your program will crash.
  */
 int string_length(const string_t str);
 
@@ -89,6 +89,7 @@ int string_length(const string_t str);
  * @brief Reverse the string passed as parameter.
  *
  * @param str The string to reverse.
+ * @warning If the string is NULL, your program will crash.
  */
 void string_reverse(string_t str);
 
