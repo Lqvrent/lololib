@@ -26,7 +26,7 @@ jobs:
           ./tests/build/unit_tests
       - name: "generate coverage report"
         run: |
-          gcovr -f '' -r . --exclude=/mnt/tests/ --xml -o coverage.xml
+          gcovr -f '' -r . --exclude=tests/ --xml -o coverage.xml
       - name: Code Coverage Summary Report
         uses: irongut/CodeCoverageSummary@v1.2.0
         with:
@@ -35,7 +35,7 @@ jobs:
           fail_below_min: true
           format: markdown
           hide_branch_rate: false
-          hide_complexity: true
+          hide_complexity: false
           indicators: true
           output: both
           thresholds: '25 80'
