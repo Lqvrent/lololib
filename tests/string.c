@@ -234,9 +234,14 @@ Test(string, string_includes_w_valid)
     cr_assert_eq(string_includes("Hello world !", "world"), 1);
 }
 
-Test(string, string_starts_with_w_invalid)
+Test(string, string_starts_with_w_invalid1)
 {
     cr_assert_eq(string_starts_with("Hello world !", "world !"), 0);
+}
+
+Test(string, string_starts_with_w_invalid2)
+{
+    cr_assert_eq(string_starts_with("Hello", "Hello world !"), 0);
 }
 
 Test(string, string_starts_with_w_valid)
@@ -244,7 +249,7 @@ Test(string, string_starts_with_w_valid)
     cr_assert_eq(string_starts_with("Hello world !", "Hello"), 1);
 }
 
-Test(string, string_ends_with_w_invalid)
+Test(string, string_ends_with_w_invalid1)
 {
     cr_assert_eq(string_ends_with("Hello world", "Hello"), 0);
 }

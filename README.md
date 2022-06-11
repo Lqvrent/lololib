@@ -1,4 +1,4 @@
-[![Build](https://github.com/Lqvrent/lololib/actions/workflows/build.yml/badge.svg)](https://github.com/Lqvrent/lololib/actions/workflows/build.yml) [![Unit tests](https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml) [![Unit tests](https://img.shields.io/badge/Code%20Coverage-81%25-success?style=flat)](https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml)
+[![Build](https://github.com/Lqvrent/lololib/actions/workflows/build.yml/badge.svg)](https://github.com/Lqvrent/lololib/actions/workflows/build.yml) [![Unit tests](https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml) [![Unit tests](https://img.shields.io/badge/Code%20Coverage-100%25-success?style=flat)](https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml)
 # lololib - Simple utilities library for C in UNIX systems
 ## Download
 You can download the latest version in the releases section of the [Github repository](https://github.com/Lqvrent/lololib/releases).<br />
