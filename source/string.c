@@ -90,15 +90,18 @@ void string_to_lower(string_t str)
 void string_capitalize(string_t str)
 {
     int i = 0;
+    int tmp = 0;
 
     if (string_is_empty(str))
         return;
     while (str[i] != 0) {
-        if ((i == 0 || str[i - 1] == ' ') && str[i] >= 'a' && str[i] <= 'z')
+        tmp = string_is_alphanum((char[2]){str[i - 1], 0});
+        if ((i == 0 || !tmp) && str[i] >= 'a' && str[i] <= 'z')
+            str[i] -= 32;
+        if ((i > 0 && tmp) && str[i] >= 'A' && str[i] <= 'Z')
             str[i] += 32;
         i++;
     }
-    str[0] -= 32;
 }
 
 int string_length(const string_t str)
