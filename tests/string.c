@@ -16,16 +16,6 @@ Test(string, string_is_empty_w_filled)
     cr_assert_eq(string_is_empty("lololib"), 0);
 }
 
-Test(string, string_is_alpha_w_null)
-{
-    cr_assert_eq(string_is_alpha(NULL), 0);
-}
-
-Test(string, string_is_alpha_w_empty)
-{
-    cr_assert_eq(string_is_alpha(""), 0);
-}
-
 Test(string, string_is_alpha_w_lowalpha)
 {
     cr_assert_eq(string_is_alpha("abcdefghijklmnopqrstuvwxyz"), 1);
@@ -46,16 +36,6 @@ Test(string, string_is_alpha_w_numalpha)
     cr_assert_eq(string_is_alpha("AbCdEfGhIjKlMn0pQrSTuVWxYz"), 0);
 }
 
-Test(string, string_is_numeric_w_null)
-{
-    cr_assert_eq(string_is_numeric(NULL), 0);
-}
-
-Test(string, string_is_numeric_w_empty)
-{
-    cr_assert_eq(string_is_numeric(""), 0);
-}
-
 Test(string, string_is_numeric_w_alpha)
 {
     cr_assert_eq(string_is_numeric("a"), 0);
@@ -69,16 +49,6 @@ Test(string, string_is_numeric_w_num)
 Test(string, string_is_numeric_w_badnum)
 {
     cr_assert_eq(string_is_numeric("123456789O"), 0);
-}
-
-Test(string, string_is_alphanum_w_null)
-{
-    cr_assert_eq(string_is_alphanum(NULL), 0);
-}
-
-Test(string, string_is_alphanum_w_empty)
-{
-    cr_assert_eq(string_is_alphanum(""), 0);
 }
 
 Test(string, string_is_alphanum_w_alpha)
@@ -106,16 +76,6 @@ Test(string, string_is_alphanum_w_invalid)
     cr_assert_eq(string_is_alphanum("123456789O!"), 0);
 }
 
-Test(string, string_is_printable_w_null)
-{
-    cr_assert_eq(string_is_printable(NULL), 0);
-}
-
-Test(string, string_is_printable_w_empty)
-{
-    cr_assert_eq(string_is_printable(""), 0);
-}
-
 Test(string, string_is_printable_w_alpha)
 {
     cr_assert_eq(string_is_printable("abc"), 1);
@@ -139,14 +99,6 @@ Test(string, string_is_printable_w_alphanumspaces)
 Test(string, string_is_printable_w_invalid)
 {
     cr_assert_eq(string_is_printable("123456789O!"), 0);
-}
-
-Test(string, string_to_upper_w_null)
-{
-    char *str = NULL;
-
-    string_to_upper(str);
-    cr_assert_null(str);
 }
 
 Test(string, string_to_upper_w_empty)
@@ -173,13 +125,6 @@ Test(string, string_to_upper_w_mixed)
     cr_assert_str_eq(str, "LQVRENT");
 }
 
-Test(string, string_to_lower_w_null)
-{
-    char *str = NULL;
-
-    string_to_lower(str);
-    cr_assert_null(str);
-}
 
 Test(string, string_to_lower_w_empty)
 {
@@ -203,14 +148,6 @@ Test(string, string_to_lower_w_mixed)
 
     string_to_lower(str);
     cr_assert_str_eq(str, "lqvrent");
-}
-
-Test(string, string_capitalize_w_null)
-{
-    char *str = NULL;
-
-    string_capitalize(str);
-    cr_assert_null(str);
 }
 
 Test(string, string_capitalize_w_empty)

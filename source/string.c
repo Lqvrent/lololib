@@ -9,8 +9,6 @@ int string_is_alpha(const string_t str)
 {
     int i = 0;
 
-    if (string_is_empty(str))
-        return (0);
     while (str[i] != 0) {
         if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
             return (0);
@@ -23,8 +21,6 @@ int string_is_numeric(const string_t str)
 {
     int i = 0;
 
-    if (string_is_empty(str))
-        return (0);
     while (str[i] != 0) {
         if (str[i] < '0' || str[i] > '9')
             return (0);
@@ -37,8 +33,6 @@ int string_is_alphanum(const string_t str)
 {
     int i = 0;
 
-    if (string_is_empty(str))
-        return (0);
     while (str[i] != 0) {
         if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
             return (0);
@@ -51,8 +45,6 @@ int string_is_printable(const string_t str)
 {
         int i = 0;
 
-    if (string_is_empty(str))
-        return (0);
     while (str[i] != 0) {
         if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9') && str[i] != ' ')
             return (0);
@@ -65,8 +57,6 @@ void string_to_upper(string_t str)
 {
     int i = 0;
 
-    if (string_is_empty(str))
-        return;
     while (str[i] != 0) {
         if (str[i] >= 'a' && str[i] <= 'z')
             str[i] -= 32;
@@ -78,8 +68,6 @@ void string_to_lower(string_t str)
 {
     int i = 0;
 
-    if (string_is_empty(str))
-        return;
     while (str[i] != 0) {
         if (str[i] >= 'A' && str[i] <= 'Z')
             str[i] += 32;
@@ -92,8 +80,6 @@ void string_capitalize(string_t str)
     int i = 0;
     int tmp = 0;
 
-    if (string_is_empty(str))
-        return;
     while (str[i] != 0) {
         tmp = string_is_alphanum((char[2]){str[i - 1], 0});
         if ((i == 0 || !tmp) && str[i] >= 'a' && str[i] <= 'z')
@@ -119,8 +105,6 @@ void string_reverse(string_t str)
     int j = string_length(str) - 1;
     char tmp;
 
-    if (string_is_empty(str))
-        return;
     while (i < j) {
         tmp = str[i];
         str[i] = str[j];
@@ -135,8 +119,6 @@ int string_includes(const string_t str, const string_t substr)
     int i = 0;
     int j = 0;
 
-    if (string_is_empty(str) || string_is_empty(substr))
-        return (0);
     while (str[i] != 0) {
         if (str[i] == substr[j]) {
             j++;
@@ -153,8 +135,6 @@ int string_starts_with(const string_t str, const string_t substr)
 {
     int i = 0;
 
-    if (string_is_empty(str) || string_is_empty(substr))
-        return (0);
     while (substr[i] != 0) {
         if (str[i] == 0)
             return (0);
@@ -170,8 +150,6 @@ int string_ends_with(const string_t str, const string_t substr)
     int i = 0;
     int j = 0;
 
-    if (string_is_empty(str) || string_is_empty(substr))
-        return (0);
     while (str[i] != 0) {
         if (str[i] == substr[j]) {
             j++;
