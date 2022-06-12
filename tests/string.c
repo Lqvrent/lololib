@@ -309,3 +309,12 @@ Test(string, string_repeat_valid1)
     if (str != NULL)
         free(str);
 }
+
+Test(string, string_slice_valid)
+{
+    string_t str = string_slice("Hello world !", 6, 11);
+
+    cr_assert_str_eq(str, "world");
+    if (str != NULL)
+        free(str);
+}

@@ -200,3 +200,19 @@ string_t string_repeat(const string_t str, int n)
     new[j] = 0;
     return (new);
 }
+
+string_t string_slice(const string_t str, int start, int end)
+{
+    int i = start;
+    int j = 0;
+    string_t new = NULL;
+
+    new = malloc(sizeof(char) * (end - start + 1));
+    while (i < end) {
+        new[j] = str[i];
+        j++;
+        i++;
+    }
+    new[j] = 0;
+    return (new);
+}

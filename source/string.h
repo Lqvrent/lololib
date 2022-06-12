@@ -8,6 +8,7 @@
 
 /**
  * @brief Just for fun.
+ * @warning You can use both string_t and char* both in lolo and standard libraries. This is just an alias.
  */
 typedef char *string_t;
 
@@ -152,5 +153,16 @@ int string_count(const string_t str, const string_t substr);
  * @warning You should free() the string after use.
  */
 string_t string_repeat(const string_t str, int n);
+
+/**
+ * @brief Extracts a section of a string and returns a newly allocated string.
+ *
+ * @param str The string to extract from.
+ * @param start The index of the first character to extract.
+ * @param end The index of the last character to extract.
+ * @return string_t The newly allocated string.
+ * @warning If the string is NULL, or one of the indexes is invalid, you'll get a segfault.
+ */
+string_t string_slice(const string_t str, int start, int end);
 
 #endif /* !__STRING_H__ */

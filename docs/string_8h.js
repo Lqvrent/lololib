@@ -13,6 +13,7 @@ var string_8h =
     [ "string_length", "string_8h.html#aca34a1f2978a59d6c69615c236ddd947", null ],
     [ "string_repeat", "string_8h.html#ab2d4de23a62f973d035cb8cfb9af9870", null ],
     [ "string_reverse", "string_8h.html#a8656cdc5949cdbc1b9016e3cc0a08663", null ],
+    [ "string_slice", "string_8h.html#af066f35a8b0afe9f1e135723526a87ef", null ],
     [ "string_starts_with", "string_8h.html#a1c8961347443d4c0ac22256da618b2d4", null ],
     [ "string_to_lower", "string_8h.html#ad73b19c73c62cb1e14dc25421fc17be3", null ],
     [ "string_to_upper", "string_8h.html#ae072b0f377672c3c59369a19bd4ea167", null ]

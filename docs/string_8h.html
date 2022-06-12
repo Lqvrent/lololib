@@ -97,9 +97,8 @@ $(document).ready(function(){initNavTree('string_8h.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab0dcbec9b4b3c60b939b1095f93cb1b9"><td class="memItemLeft" align="right" valign="top"><a id="ab0dcbec9b4b3c60b939b1095f93cb1b9" name="ab0dcbec9b4b3c60b939b1095f93cb1b9"></a>
-typedef char *&#160;</td><td class="memItemRight" valign="bottom"><b>string_t</b></td></tr>
-<tr class="memdesc:ab0dcbec9b4b3c60b939b1095f93cb1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just for fun. <br /></td></tr>
+<tr class="memitem:ab0dcbec9b4b3c60b939b1095f93cb1b9"><td class="memItemLeft" align="right" valign="top">typedef char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a></td></tr>
+<tr class="memdesc:ab0dcbec9b4b3c60b939b1095f93cb1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just for fun.  <a href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">More...</a><br /></td></tr>
 <tr class="separator:ab0dcbec9b4b3c60b939b1095f93cb1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -149,10 +148,31 @@ Functions</h2></td></tr>
 <tr class="memitem:ab2d4de23a62f973d035cb8cfb9af9870"><td class="memItemLeft" align="right" valign="top"><a class="el" href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ab2d4de23a62f973d035cb8cfb9af9870">string_repeat</a> (const <a class="el" href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a> str, int n)</td></tr>
 <tr class="memdesc:ab2d4de23a62f973d035cb8cfb9af9870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a stringwhich is a repetition (n timesà of a given string.  <a href="string_8h.html#ab2d4de23a62f973d035cb8cfb9af9870">More...</a><br /></td></tr>
 <tr class="separator:ab2d4de23a62f973d035cb8cfb9af9870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af066f35a8b0afe9f1e135723526a87ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#af066f35a8b0afe9f1e135723526a87ef">string_slice</a> (const <a class="el" href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a> str, int start, int end)</td></tr>
+<tr class="memdesc:af066f35a8b0afe9f1e135723526a87ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a section of a string and returns a newly allocated string.  <a href="string_8h.html#af066f35a8b0afe9f1e135723526a87ef">More...</a><br /></td></tr>
+<tr class="separator:af066f35a8b0afe9f1e135723526a87ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >String manipulation functions. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ab0dcbec9b4b3c60b939b1095f93cb1b9" name="ab0dcbec9b4b3c60b939b1095f93cb1b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0dcbec9b4b3c60b939b1095f93cb1b9">&#9670;&nbsp;</a></span>string_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef char* <a class="el" href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Just for fun. </p>
+<dl class="section warning"><dt>Warning</dt><dd>You can use both string_t and char* both in lolo and standard libraries. This is just an alias. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ae4d274d6966bf7c612633bc445f8c172" name="ae4d274d6966bf7c612633bc445f8c172"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4d274d6966bf7c612633bc445f8c172">&#9670;&nbsp;</a></span>string_capitalize()</h2>
 
@@ -541,6 +561,52 @@ You should free() the string after use. </dd></dl>
   </dd>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>If the string is NULL, you'll get a segfault. </dd></dl>
+
+</div>
+</div>
+<a id="af066f35a8b0afe9f1e135723526a87ef" name="af066f35a8b0afe9f1e135723526a87ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af066f35a8b0afe9f1e135723526a87ef">&#9670;&nbsp;</a></span>string_slice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a> string_slice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="string_8h.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a>&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extracts a section of a string and returns a newly allocated string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to extract from. </td></tr>
+    <tr><td class="paramname">start</td><td>The index of the first character to extract. </td></tr>
+    <tr><td class="paramname">end</td><td>The index of the last character to extract. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string_t The newly allocated string. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If the string is NULL, or one of the indexes is invalid, you'll get a segfault. </dd></dl>
 
 </div>
 </div>
