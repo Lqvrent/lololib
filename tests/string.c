@@ -276,7 +276,7 @@ Test(string, string_count_with_valid2)
 
 Test(string, string_repeat_empty)
 {
-    string_t str = string_repeat("", 42);
+    char *str = string_repeat("", 42);
 
     cr_assert_str_eq(str, "");
     if (str != NULL)
@@ -285,7 +285,7 @@ Test(string, string_repeat_empty)
 
 Test(string, string_repeat_zero)
 {
-    string_t str = string_repeat("abc", 0);
+    char *str = string_repeat("abc", 0);
 
     cr_assert_null(str);
     if (str != NULL)
@@ -294,7 +294,7 @@ Test(string, string_repeat_zero)
 
 Test(string, string_repeat_valid)
 {
-    string_t str = string_repeat("abc", 3);
+    char *str = string_repeat("abc", 3);
 
     cr_assert_str_eq(str, "abcabcabc");
     if (str != NULL)
@@ -303,7 +303,7 @@ Test(string, string_repeat_valid)
 
 Test(string, string_repeat_valid1)
 {
-    string_t str = string_repeat("abc", 1);
+    char *str = string_repeat("abc", 1);
 
     cr_assert_str_eq(str, "abc");
     if (str != NULL)
@@ -312,7 +312,7 @@ Test(string, string_repeat_valid1)
 
 Test(string, string_slice_valid)
 {
-    string_t str = string_slice("Hello world !", 6, 11);
+    char *str = string_slice("Hello world !", 6, 11);
 
     cr_assert_str_eq(str, "world");
     if (str != NULL)

@@ -7,18 +7,12 @@
     #define __STRING_H__
 
 /**
- * @brief Just for fun.
- * @warning You can use both string_t and char* both in lolo and standard libraries. This is just an alias.
- */
-typedef char *string_t;
-
-/**
  * @brief Check if a string is empty or NULL.
  *
  * @param str The string to check.
  * @return 1 if the string is empty or NULL, 0 otherwise.
  */
-int string_is_empty(const string_t str);
+int string_is_empty(const char *str);
 
 /**
  * @brief Check if a string is filled with only alpha characters.
@@ -28,7 +22,7 @@ int string_is_empty(const string_t str);
  * @warning If the string is NULL, you'll get a segfault.
  * @warning If the string is empty, the function will return 1.
  */
-int string_is_alpha(const string_t str);
+int string_is_alpha(const char *str);
 
 /**
  * @brief Check if a string is filled with only numeric characters.
@@ -38,7 +32,7 @@ int string_is_alpha(const string_t str);
  * @warning If the string is NULL, you'll get a segfault.
  * @warning If the string is empty, the function will return 1.
  */
-int string_is_numeric(const string_t str);
+int string_is_numeric(const char *str);
 
 /**
  * @brief Check if a string is filled with only alphanumeric characters. (Spaces not included)
@@ -48,7 +42,7 @@ int string_is_numeric(const string_t str);
  * @warning If the string is NULL, you'll get a segfault.
  * @warning If the string is empty, the function will return 1.
  */
-int string_is_alphanum(const string_t str);
+int string_is_alphanum(const char *str);
 
 /**
  * @brief Check if a string is filled with only alphanumeric characters (spaces included)
@@ -58,7 +52,7 @@ int string_is_alphanum(const string_t str);
  * @warning If the string is NULL, you'll get a segfault.
  * @warning If the string is empty, the function will return 1.
  */
-int string_is_printable(const string_t str);
+int string_is_printable(const char *str);
 
 /**
  * @brief Uppercase all characters in a string.
@@ -66,7 +60,7 @@ int string_is_printable(const string_t str);
  * @param str The string to uppercase.
  * @warning If the string is NULL, you'll get a segfault.
  */
-void string_to_upper(string_t str);
+void string_to_upper(char *str);
 
 /**
  * @brief Lowercase all characters in a string.
@@ -74,7 +68,7 @@ void string_to_upper(string_t str);
  * @param str The string to lowercase.
  * @warning If the string is NULL, you'll get a segfault.
  */
-void string_to_lower(string_t str);
+void string_to_lower(char *str);
 
 /**
  * @brief Capitalize the string passed as parameter.
@@ -82,7 +76,7 @@ void string_to_lower(string_t str);
  * @param str The string to capitalize.
  * @warning If the string is NULL, you'll get a segfault.
  */
-void string_capitalize(string_t str);
+void string_capitalize(char *str);
 
 /**
  * @brief Count characters in a string.
@@ -91,7 +85,7 @@ void string_capitalize(string_t str);
  * @return The number of characters in the string.
  * @warning If the string is NULL, you'll get a segfault.
  */
-int string_length(const string_t str);
+int string_length(const char *str);
 
 /**
  * @brief Reverse the string passed as parameter.
@@ -99,7 +93,7 @@ int string_length(const string_t str);
  * @param str The string to reverse.
  * @warning If the string is NULL, you'll get a segfault.
  */
-void string_reverse(string_t str);
+void string_reverse(char *str);
 
 /**
  * @brief Check if a string contains a substring.
@@ -109,7 +103,7 @@ void string_reverse(string_t str);
  * @return 1 if the string contains the substring, 0 otherwise.
  * @warning If the string or substring is NULL, you'll get a segfault.
  */
-int string_includes(const string_t str, const string_t substr);
+int string_includes(const char *str, const char *substr);
 
 /**
  * @brief Check if a string starts with a substring.
@@ -119,7 +113,7 @@ int string_includes(const string_t str, const string_t substr);
  * @return int 1 if the string starts with the substring, 0 otherwise.
  * @warning If the string or substring is NULL, you'll get a segfault.
  */
-int string_starts_with(const string_t str, const string_t substr);
+int string_starts_with(const char *str, const char *substr);
 
 /**
  * @brief Check if a string ends with a substring.
@@ -129,7 +123,7 @@ int string_starts_with(const string_t str, const string_t substr);
  * @return int 1 if the string ends with the substring, 0 otherwise.
  * @warning If the string or substring is NULL, you'll get a segfault.
  */
-int string_ends_with(const string_t str, const string_t substr);
+int string_ends_with(const char *str, const char *substr);
 
 /**
  * @brief Count the number of occurrences of a substring in a string.
@@ -139,7 +133,7 @@ int string_ends_with(const string_t str, const string_t substr);
  * @return int The number of occurrences of the substring in the string.
  * @warning If the string or substring is NULL, you'll get a segfault.
  */
-int string_count(const string_t str, const string_t substr);
+int string_count(const char *str, const char *substr);
 
 /**
  * @brief Create a stringwhich is a repetition (n timesà of a given string.
@@ -152,7 +146,7 @@ int string_count(const string_t str, const string_t substr);
  * @warning If the number of times is 0 or less, the function will return NULL.
  * @warning You should free() the string after use.
  */
-string_t string_repeat(const string_t str, int n);
+char *string_repeat(const char *str, int n);
 
 /**
  * @brief Extracts a section of a string and returns a newly allocated string.
@@ -160,9 +154,9 @@ string_t string_repeat(const string_t str, int n);
  * @param str The string to extract from.
  * @param start The index of the first character to extract.
  * @param end The index of the last character to extract.
- * @return string_t The newly allocated string.
+ * @return char *The newly allocated string.
  * @warning If the string is NULL, or one of the indexes is invalid, you'll get a segfault.
  */
-string_t string_slice(const string_t str, int start, int end);
+char *string_slice(const char *str, int start, int end);
 
 #endif /* !__STRING_H__ */

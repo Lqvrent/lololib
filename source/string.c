@@ -1,12 +1,12 @@
 #include "string.h"
 #include <stdlib.h>
 
-int string_is_empty(const string_t str)
+int string_is_empty(const char *str)
 {
     return (!str || !*str);
 }
 
-int string_is_alpha(const string_t str)
+int string_is_alpha(const char *str)
 {
     int i = 0;
 
@@ -18,7 +18,7 @@ int string_is_alpha(const string_t str)
     return (1);
 }
 
-int string_is_numeric(const string_t str)
+int string_is_numeric(const char *str)
 {
     int i = 0;
 
@@ -30,7 +30,7 @@ int string_is_numeric(const string_t str)
     return (1);
 }
 
-int string_is_alphanum(const string_t str)
+int string_is_alphanum(const char *str)
 {
     int i = 0;
 
@@ -42,7 +42,7 @@ int string_is_alphanum(const string_t str)
     return (1);
 }
 
-int string_is_printable(const string_t str)
+int string_is_printable(const char *str)
 {
         int i = 0;
 
@@ -54,7 +54,7 @@ int string_is_printable(const string_t str)
     return (1);
 }
 
-void string_to_upper(string_t str)
+void string_to_upper(char *str)
 {
     int i = 0;
 
@@ -65,7 +65,7 @@ void string_to_upper(string_t str)
     }
 }
 
-void string_to_lower(string_t str)
+void string_to_lower(char *str)
 {
     int i = 0;
 
@@ -76,7 +76,7 @@ void string_to_lower(string_t str)
     }
 }
 
-void string_capitalize(string_t str)
+void string_capitalize(char *str)
 {
     int i = 0;
     int tmp = 0;
@@ -91,7 +91,7 @@ void string_capitalize(string_t str)
     }
 }
 
-int string_length(const string_t str)
+int string_length(const char *str)
 {
     int i = 0;
 
@@ -100,7 +100,7 @@ int string_length(const string_t str)
     return (i);
 }
 
-void string_reverse(string_t str)
+void string_reverse(char *str)
 {
     int i = 0;
     int j = string_length(str) - 1;
@@ -115,7 +115,7 @@ void string_reverse(string_t str)
     }
 }
 
-int string_includes(const string_t str, const string_t substr)
+int string_includes(const char *str, const char *substr)
 {
     int i = 0;
     int j = 0;
@@ -132,7 +132,7 @@ int string_includes(const string_t str, const string_t substr)
     return (0);
 }
 
-int string_starts_with(const string_t str, const string_t substr)
+int string_starts_with(const char *str, const char *substr)
 {
     int i = 0;
 
@@ -146,7 +146,7 @@ int string_starts_with(const string_t str, const string_t substr)
     return (1);
 }
 
-int string_ends_with(const string_t str, const string_t substr)
+int string_ends_with(const char *str, const char *substr)
 {
     int i = 0;
     int j = 0;
@@ -163,7 +163,7 @@ int string_ends_with(const string_t str, const string_t substr)
     return (0);
 }
 
-int string_count(const string_t str, const string_t substr)
+int string_count(const char *str, const char *substr)
 {
     int i = 0;
     int j = 0;
@@ -181,11 +181,11 @@ int string_count(const string_t str, const string_t substr)
     return (count);
 }
 
-string_t string_repeat(const string_t str, int n)
+char *string_repeat(const char *str, int n)
 {
     int i = 0;
     int j = 0;
-    string_t new = NULL;
+    char *new = NULL;
 
     if (n <= 0)
         return (NULL);
@@ -201,11 +201,11 @@ string_t string_repeat(const string_t str, int n)
     return (new);
 }
 
-string_t string_slice(const string_t str, int start, int end)
+char *string_slice(const char *str, int start, int end)
 {
     int i = start;
     int j = 0;
-    string_t new = NULL;
+    char *new = NULL;
 
     new = malloc(sizeof(char) * (end - start + 1));
     while (i < end) {
