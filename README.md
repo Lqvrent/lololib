@@ -20,12 +20,12 @@ make install
 Here you go !
 
 ## Documentation
-The documentation is generated with Doxygen (You need to have it installed).<br />
-After running cmake (like in the build part), run this command in your build directory :
+You can find the documentation [here](https://lqvrent.github.io/lololib/). <br />
+If you need informations about something really new (which is not online), you can build the documentation with the following command (once you have runned cmake) in your build folder :
 ```bash
 make doc
 ```
-In your build directory, you'll find a `html` folder, open the index.html file and you'll see the documentation.
+The documentation is generated with Doxygen (You need to have it installed).<br />
 
 ## Todo list
 - [ ] Add the documentation on Github pages programmatically.
