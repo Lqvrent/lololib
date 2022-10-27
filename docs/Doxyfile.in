@@ -1,0 +1,9 @@
+DOXYFILE_ENCODING      = UTF-8
+ROJECT_NAME            = "lololib"
+PROJECT_BRIEF          = " Simple utilities library for C in UNIX systems"
+INPUT                  = "@DOXYGEN_INPUT_DIR@"
+OUTPUT_DIRECTORY       = "@DOXYGEN_OUTPUT_DIR@"
+CREATE_SUBDIRS         = NO
+ALLOW_UNICODE_NAMES    = NO
+OUTPUT_LANGUAGE        = English
+OPTIMIZE_OUTPUT_FOR_C  = YES
