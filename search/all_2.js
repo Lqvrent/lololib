@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['string_2eh_4',['string.h',['../string_8h.html',1,'']]],
-  ['string_5farray_5ffree_5',['string_array_free',['../string_8h.html#a2a7c3a07540b47bebc8e81302b2321b5',1,'string.c']]],
-  ['string_5fcapitalize_6',['string_capitalize',['../string_8h.html#a1baca93a994fbe3fc198e248892adbb7',1,'string.c']]],
-  ['string_5fcount_7',['string_count',['../string_8h.html#aedc5429dc0fbe709f18c7ffcfdbed731',1,'string.c']]],
-  ['string_5fends_5fwith_8',['string_ends_with',['../string_8h.html#a1314085db98d169318720f31669c7209',1,'string.c']]],
-  ['string_5fincludes_9',['string_includes',['../string_8h.html#a6a72774eb74ce44c3e74a1de1b3e194d',1,'string.c']]],
-  ['string_5fis_5falpha_10',['string_is_alpha',['../string_8h.html#a0a659383d60c2b418cd6f063f40d0962',1,'string.c']]],
-  ['string_5fis_5falphanum_11',['string_is_alphanum',['../string_8h.html#ab7f1fd17d7ff03498741525c01a3c7e0',1,'string.c']]],
-  ['string_5fis_5fempty_12',['string_is_empty',['../string_8h.html#a87b88e11a9908b9b023ffeb1ef103936',1,'string.c']]],
-  ['string_5fis_5fnumeric_13',['string_is_numeric',['../string_8h.html#a5eb1de84a13c3d85bb8f829d90dac586',1,'string.c']]],
-  ['string_5fis_5fprintable_14',['string_is_printable',['../string_8h.html#a14cecdd06ecf3fea38608b2e7ee32bdf',1,'string.c']]],
-  ['string_5flength_15',['string_length',['../string_8h.html#a1e5d49ab95107d8d895c9020cb053d3f',1,'string.c']]],
-  ['string_5frepeat_16',['string_repeat',['../string_8h.html#a997f29046a91fdb058ff4e310ce09c03',1,'string.c']]],
-  ['string_5freverse_17',['string_reverse',['../string_8h.html#a3d11570d297ed9bdde8381e84d101b7e',1,'string.c']]],
-  ['string_5fslice_18',['string_slice',['../string_8h.html#a861adc9f308fec0b5205180da85da899',1,'string.c']]],
-  ['string_5fsplit_19',['string_split',['../string_8h.html#a85edf2e121a9de90a686d28fe87c2e7c',1,'string.c']]],
-  ['string_5fstarts_5fwith_20',['string_starts_with',['../string_8h.html#a5ea1cf2dca21d0daf2c4e11683b70274',1,'string.c']]],
-  ['string_5fto_5flower_21',['string_to_lower',['../string_8h.html#a9ad270763737fd94d93ba634312b30d3',1,'string.c']]],
-  ['string_5fto_5fupper_22',['string_to_upper',['../string_8h.html#aab7180f98c074b4d03a361a7df6acb23',1,'string.c']]]
+  ['internal_2eh_5',['internal.h',['../internal_8h.html',1,'']]]
 ];
