@@ -18,8 +18,8 @@ jobs:
           cmake -DBUILD_WITH_DOCS=ON ..
           make docs
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: "JamesIves/github-pages-deploy-action@releases/v4"
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: docs/doxygen/html
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          branch: gh-pages
+          folder: docs/doxygen/html

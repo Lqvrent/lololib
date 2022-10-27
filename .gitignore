@@ -56,3 +56,4 @@ dkms.conf
 *build/
 .vscode/
 docs/doxygen
+gh-pages*
