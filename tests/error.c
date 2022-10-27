@@ -1,5 +1,5 @@
 #include <criterion/criterion.h>
-#include "error.h"
+#include "../source/error.h"
 
 Test(error, error_str)
 {

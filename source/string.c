@@ -215,30 +215,58 @@ char *string_slice(const char *str, int start, int end)
     return (new);
 }
 
+int __string_split_count_words(const char *str, const char *sep) // util function to allocate our array while splitting
+{
+    int i = 0;
+    int j = 0;
+    int count = 0;
+    int in_a_row = 0;
+
+    while (str[i] != 0) {
+        if (string_starts_with(str + i, sep)) {
+            if (!in_a_row)
+                count++;
+            in_a_row = 1;
+            i += string_length(sep);
+        } else {
+            in_a_row = 0;
+            i++;
+        }
+    }
+    if (!in_a_row)
+        count++;
+    return (count);
+}
+
 char **string_split(const char *str, const char *sep)
 {
     int i = 0;
     int j = 0;
     int k = 0;
-    int line = 0;
-    char **array = NULL;
+    int in_a_row = string_starts_with(str, sep);
+    char **array = malloc(sizeof(char *) * (__string_split_count_words(str, sep) + 1));
 
-    array = malloc(sizeof(char *) * (string_count(str, sep) + 2));
     while (str[i] != 0) {
-        if (str[i] == sep[j]) {
-            j++;
-            if (sep[j] == 0) {
-                array[line] = string_slice(str, k, i - string_length(sep) + 1);
-                line++;
-                j = 0;
-                k = i + 1;
+        if (string_starts_with(str + i, sep)) {
+            if (!in_a_row) {
+                array[j] = malloc(sizeof(char) * (i - k + 1));
+                array[j] = string_slice(str, k, i);
+                j++;
             }
-        } else
-            j = 0;
-        i++;
+            in_a_row = 1;
+            i += string_length(sep);
+            k = i;
+        } else {
+            in_a_row = 0;
+            i++;
+        }
     }
-    array[line] = string_slice(str, k, i);
-    array[line + 1] = NULL;
+    if (!in_a_row) {
+        array[j] = malloc(sizeof(char) * (i - k + 1));
+        array[j] = string_slice(str, k, i);
+        j++;
+    }
+    array[j] = NULL;
     return (array);
 }
 
@@ -251,5 +279,5 @@ void string_array_free(char **array)
         i++;
     }
     free(array);
-    array = NULL;
+
 }

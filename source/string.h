@@ -90,7 +90,7 @@ void string_reverse(char *str);
  * @brief Check if a string contains a substring.
  *
  * @param str The string to check.
- * @param sub The substring.
+ * @param substr The substring.
  * @return 1 if the string contains the substring, 0 otherwise.
  * @warning If the string or substring is NULL, you'll get a segfault.
  */
@@ -144,7 +144,7 @@ char *string_repeat(const char *str, int n);
  * @param str The string to extract from.
  * @param start The index of the first character to extract.
  * @param end The index of the last character to extract.
- * @return char *The newly allocated string.
+ * @return char* The newly allocated string.
  * @warning If the string is NULL, or one of the indexes is invalid, you'll get a segfault.
  */
 char *string_slice(const char *str, int start, int end);

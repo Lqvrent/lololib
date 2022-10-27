@@ -1,5 +1,5 @@
 #include <criterion/criterion.h>
-#include "string.h"
+#include "../source/string.h"
 
 Test(string, string_is_empty_w_null)
 {
@@ -319,32 +319,35 @@ Test(string, string_slice_valid)
         free(str);
 }
 
-Test(string, string_split_valid1)
+Test(string, string_split_simple)
 {
-    char **arr = string_split("Hello world !", " ");
+    char **arr = string_split("Hello world", " ");
 
     cr_assert_str_eq(arr[0], "Hello");
     cr_assert_str_eq(arr[1], "world");
-    cr_assert_str_eq(arr[2], "!");
-    cr_assert_null(arr[3]);
-    for (int i = 0; arr[i] != NULL; i++)
-        free(arr[i]);
-    free(arr);
+    cr_assert_null(arr[2]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr[1]);
+        free(arr);
+    }
 }
 
-Test(string, string_split_valid2)
+Test(string, string_split_by_word)
 {
     char **arr = string_split("Hello my world !", " my ");
 
     cr_assert_str_eq(arr[0], "Hello");
     cr_assert_str_eq(arr[1], "world !");
     cr_assert_null(arr[2]);
-    for (int i = 0; arr[i] != NULL; i++)
-        free(arr[i]);
-    free(arr);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr[1]);
+        free(arr);
+    }
 }
 
-Test(string, string_split_valid_hard1)
+Test(string, string_split_valid_multiple_seps)
 {
     char **arr = string_split("   Hello world  !     ", " ");
 
@@ -352,25 +355,33 @@ Test(string, string_split_valid_hard1)
     cr_assert_str_eq(arr[1], "world");
     cr_assert_str_eq(arr[2], "!");
     cr_assert_null(arr[3]);
-    for (int i = 0; arr[i] != NULL; i++)
-        free(arr[i]);
-    free(arr);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr[1]);
+        free(arr[2]);
+        free(arr);
+    }
 }
 
-Test(string, string_split_valid_hard2)
+Test(string, string_split_valid_multiple_seps_by_word)
 {
-    char **arr = string_split("abcabcdefabcabc", "abc");
+    char **arr = string_split("abcabcabcdefabcabc", "abc");
 
     cr_assert_str_eq(arr[0], "def");
     cr_assert_null(arr[1]);
-    for (int i = 0; arr[i] != NULL; i++)
-        free(arr[i]);
-    free(arr);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr);
+    }
 }
+
 
 Test(string, string_array_free)
 {
+    // Test wrote to check if string_array_free() produces a crash
+    // This is why it doesn't contains an assert fct
     char **arr = malloc(sizeof(char *) * 2);
+
     arr[0] = malloc(string_length("Hello") + 1);
     arr[0][0] = 'H';
     arr[0][1] = 'e';
@@ -379,6 +390,5 @@ Test(string, string_array_free)
     arr[0][4] = 'o';
     arr[0][5] = '\0';
     arr[1] = NULL;
-
     string_array_free(arr);
 }
