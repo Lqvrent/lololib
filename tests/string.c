@@ -36,6 +36,16 @@ Test(string, string_is_alpha_w_numalpha)
     cr_assert_eq(string_is_alpha("AbCdEfGhIjKlMn0pQrSTuVWxYz"), 0);
 }
 
+Test(string, string_is_alpha_w_badminusascii)
+{
+    cr_assert_eq(string_is_alpha("AbCdEfGhIjKlMn+pQrSTuVWxYz"), 0);
+}
+
+Test(string, string_is_alpha_w_badplusascii)
+{
+    cr_assert_eq(string_is_alpha("AbCdEfGhIjKlMn~pQrSTuVWxYz"), 0);
+}
+
 Test(string, string_is_numeric_w_alpha)
 {
     cr_assert_eq(string_is_numeric("a"), 0);
@@ -49,6 +59,11 @@ Test(string, string_is_numeric_w_num)
 Test(string, string_is_numeric_w_badnum)
 {
     cr_assert_eq(string_is_numeric("123456789O"), 0);
+}
+
+Test(string, string_is_numeric_w_space)
+{
+    cr_assert_eq(string_is_numeric(" "), 0);
 }
 
 Test(string, string_is_alphanum_w_alpha)
@@ -73,7 +88,7 @@ Test(string, string_is_alphanum_w_alphanumspaces)
 
 Test(string, string_is_alphanum_w_invalid)
 {
-    cr_assert_eq(string_is_alphanum("123456789O!"), 0);
+    cr_assert_eq(string_is_alphanum("123456789O~"), 0);
 }
 
 Test(string, string_is_printable_w_alpha)
@@ -96,9 +111,14 @@ Test(string, string_is_printable_w_alphanumspaces)
     cr_assert_eq(string_is_printable("123 456789O"), 1);
 }
 
-Test(string, string_is_printable_w_invalid)
+Test(string, string_is_printable_w_linebreak)
 {
-    cr_assert_eq(string_is_printable("123456789O!"), 0);
+    cr_assert_eq(string_is_printable("123\n"), 0);
+}
+
+Test(string, string_is_printable_w_del)
+{
+    cr_assert_eq(string_is_printable("123\177"), 0);
 }
 
 Test(string, string_to_upper_w_empty)
@@ -111,20 +131,35 @@ Test(string, string_to_upper_w_empty)
 
 Test(string, string_to_upper_w_lower)
 {
-    char str[] = "lqvrent";
+    char str[] = "abcdefghijklmnopqrstuvwxyz";
 
     string_to_upper(str);
-    cr_assert_str_eq(str, "LQVRENT");
+    cr_assert_str_eq(str, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 }
 
 Test(string, string_to_upper_w_mixed)
 {
-    char str[] = "lQvReNt";
+    char str[] = "AbCdEfGhIjKlMnOpQrSTuVWxYz";
 
     string_to_upper(str);
-    cr_assert_str_eq(str, "LQVRENT");
+    cr_assert_str_eq(str, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 }
 
+Test(string, string_to_upper_w_spaces)
+{
+    char str[] = "AbCd EfGh IjKl MnOp QrST uVWx Yz";
+
+    string_to_upper(str);
+    cr_assert_str_eq(str, "ABCD EFGH IJKL MNOP QRST UVWX YZ");
+}
+
+Test(string, string_to_upper_w_specials)
+{
+    char str[] = "AbCd!EfGh?IjKl;MnOp~QrST~uVWxYz";
+
+    string_to_upper(str);
+    cr_assert_str_eq(str, "ABCD!EFGH?IJKL;MNOP~QRST~UVWXYZ");
+}
 
 Test(string, string_to_lower_w_empty)
 {
@@ -136,18 +171,34 @@ Test(string, string_to_lower_w_empty)
 
 Test(string, string_to_lower_w_upper)
 {
-    char str[] = "LQVRENT";
+    char str[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     string_to_lower(str);
-    cr_assert_str_eq(str, "lqvrent");
+    cr_assert_str_eq(str, "abcdefghijklmnopqrstuvwxyz");
 }
 
 Test(string, string_to_lower_w_mixed)
 {
-    char str[] = "lQvReNt";
+    char str[] = "AbCdEfGhIjKlMnOpQrSTuVWxYz";
 
     string_to_lower(str);
-    cr_assert_str_eq(str, "lqvrent");
+    cr_assert_str_eq(str, "abcdefghijklmnopqrstuvwxyz");
+}
+
+Test(string, string_to_lower_w_spaces)
+{
+    char str[] = "AbCd EfGh IjKl MnOp QrST uVWx Yz";
+
+    string_to_lower(str);
+    cr_assert_str_eq(str, "abcd efgh ijkl mnop qrst uvwx yz");
+}
+
+Test(string, string_to_lower_w_specials)
+{
+    char str[] = "AbCd!EfGh?IjKl;MnOp~QrST~uVWxYz";
+
+    string_to_lower(str);
+    cr_assert_str_eq(str, "abcd!efgh?ijkl;mnop~qrst~uvwxyz");
 }
 
 Test(string, string_capitalize_w_empty)

@@ -44,10 +44,10 @@ int string_is_alphanum(const char *str)
 
 int string_is_printable(const char *str)
 {
-        int i = 0;
+    int i = 0;
 
     while (str[i] != 0) {
-        if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9') && str[i] != ' ')
+        if (str[i] < ' ' || str[i] > '~')
             return (0);
         i++;
     }
