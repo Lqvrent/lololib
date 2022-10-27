@@ -1,0 +1,25 @@
+name: "Documentation"
+on:
+  - push
+  - pull_request
+
+jobs:
+  docs:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v2"
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential doxygen
+      - name: Build
+        run: |
+          mkdir build && cd build
+          cmake -DBUILD_WITH_DOCS=ON ..
+          make docs
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: main
+          FOLDER: docs/doxygen/html

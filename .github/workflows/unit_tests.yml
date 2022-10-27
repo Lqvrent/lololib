@@ -1,6 +1,7 @@
 name: "Unit tests"
 on:
-  push
+  - push
+  - pull_request
 
 jobs:
   unit_tests:
