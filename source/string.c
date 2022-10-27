@@ -220,7 +220,7 @@ int __string_split_count_words(const char *str, const char *sep) // util functio
     int i = 0;
     int j = 0;
     int count = 0;
-    int in_a_row = 0;
+    int in_a_row = string_starts_with(str, sep);
 
     while (str[i] != 0) {
         if (string_starts_with(str + i, sep)) {
