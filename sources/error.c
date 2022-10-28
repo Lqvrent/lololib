@@ -1,4 +1,5 @@
 #include "internal.h"
+#include "error.h"
 
 const char *error_str(void)
 {
