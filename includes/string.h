@@ -205,7 +205,7 @@ char *string_replace(const char *str, const char *old, const char *new);
 /**
  * @brief Removes all leading and trailing whitespace characters from the string.
  *
- * @param str The string to trim. (Will remove ' ' and '\t')
+ * @param str The string to trim.
  * @return char* The newly allocated string.
  */
 char *string_trim(const char *str);
@@ -213,7 +213,7 @@ char *string_trim(const char *str);
 /**
  * @brief Removes all leading whitespace characters from the string. (in the left)
  *
- * @param str The string to trim. (Will remove ' ' and '\t')
+ * @param str The string to trim.
  * @return char* The newly allocated string.
  */
 char *string_ltrim(const char *str);
@@ -221,7 +221,7 @@ char *string_ltrim(const char *str);
 /**
  * @brief Removes all trailing whitespace characters from the string. (in the right)
  *
- * @param str The string to trim. (Will remove ' ' and '\t')
+ * @param str The string to trim.
  * @return char* The newly allocated string.
  */
 char *string_rtrim(const char *str);
