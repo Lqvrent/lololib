@@ -132,7 +132,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a85edf2e121a9de90a686d28fe87c2e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of strings populated by splitting the calling string at occurrences of the substring sep.  <a href="string_8h.html#a85edf2e121a9de90a686d28fe87c2e7c">More...</a><br /></td></tr>
 <tr class="separator:a85edf2e121a9de90a686d28fe87c2e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1762b0c13938360bf661d9288df15c7"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ae1762b0c13938360bf661d9288df15c7">string_split_by_tok</a> (const char *str, const char *delims)</td></tr>
-<tr class="memdesc:ae1762b0c13938360bf661d9288df15c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string sep.  <a href="string_8h.html#ae1762b0c13938360bf661d9288df15c7">More...</a><br /></td></tr>
+<tr class="memdesc:ae1762b0c13938360bf661d9288df15c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string delims.  <a href="string_8h.html#ae1762b0c13938360bf661d9288df15c7">More...</a><br /></td></tr>
 <tr class="separator:ae1762b0c13938360bf661d9288df15c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a7c3a07540b47bebc8e81302b2321b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a2a7c3a07540b47bebc8e81302b2321b5">string_array_free</a> (char **array)</td></tr>
 <tr class="memdesc:a2a7c3a07540b47bebc8e81302b2321b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees an array of strings.  <a href="string_8h.html#a2a7c3a07540b47bebc8e81302b2321b5">More...</a><br /></td></tr>
@@ -140,6 +140,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a5c1e0f353b2553db1416949124afa213"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a5c1e0f353b2553db1416949124afa213">string_replace</a> (const char *str, const char *old, const char *new)</td></tr>
 <tr class="memdesc:a5c1e0f353b2553db1416949124afa213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string with all occurrences of the substring old replaced by the substring new.  <a href="string_8h.html#a5c1e0f353b2553db1416949124afa213">More...</a><br /></td></tr>
 <tr class="separator:a5c1e0f353b2553db1416949124afa213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe97a32e4142a8ebbc97ca4799beef4b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#abe97a32e4142a8ebbc97ca4799beef4b">string_trim</a> (const char *str)</td></tr>
+<tr class="memdesc:abe97a32e4142a8ebbc97ca4799beef4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all leading and trailing whitespace characters from the string.  <a href="string_8h.html#abe97a32e4142a8ebbc97ca4799beef4b">More...</a><br /></td></tr>
+<tr class="separator:abe97a32e4142a8ebbc97ca4799beef4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba94fd6ac601aa9eac6fa718349b60b7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#aba94fd6ac601aa9eac6fa718349b60b7">string_ltrim</a> (const char *str)</td></tr>
+<tr class="memdesc:aba94fd6ac601aa9eac6fa718349b60b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all leading whitespace characters from the string. (in the left)  <a href="string_8h.html#aba94fd6ac601aa9eac6fa718349b60b7">More...</a><br /></td></tr>
+<tr class="separator:aba94fd6ac601aa9eac6fa718349b60b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8457ce40baae57cba0bb9f41f93b1aa5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a8457ce40baae57cba0bb9f41f93b1aa5">string_rtrim</a> (const char *str)</td></tr>
+<tr class="memdesc:a8457ce40baae57cba0bb9f41f93b1aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all trailing whitespace characters from the string. (in the right)  <a href="string_8h.html#a8457ce40baae57cba0bb9f41f93b1aa5">More...</a><br /></td></tr>
+<tr class="separator:a8457ce40baae57cba0bb9f41f93b1aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>String manipulation functions. </p>
@@ -479,6 +488,33 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aba94fd6ac601aa9eac6fa718349b60b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba94fd6ac601aa9eac6fa718349b60b7">&#9670;&nbsp;</a></span>string_ltrim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* string_ltrim </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes all leading whitespace characters from the string. (in the left) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to trim. (Will remove ' ' and '\t') </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* The newly allocated string. </dd></dl>
+
+</div>
+</div>
 <a id="a997f29046a91fdb058ff4e310ce09c03"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a997f29046a91fdb058ff4e310ce09c03">&#9670;&nbsp;</a></span>string_repeat()</h2>
 
@@ -514,11 +550,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char* The newly allocated string. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>If malloc() fails (which is unlikely), you'll get a segfault. </dd>
-<dd>
-If the number of times is 0 or less, the function will return NULL. </dd>
-<dd>
-You should free() the string after use. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If the number of times is 0 or less, the function will return NULL. </dd></dl>
 
 </div>
 </div>
@@ -590,6 +622,33 @@ You should free() the string after use. </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8457ce40baae57cba0bb9f41f93b1aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8457ce40baae57cba0bb9f41f93b1aa5">&#9670;&nbsp;</a></span>string_rtrim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* string_rtrim </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes all trailing whitespace characters from the string. (in the right) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to trim. (Will remove ' ' and '\t') </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* The newly allocated string. </dd></dl>
 
 </div>
 </div>
@@ -703,7 +762,7 @@ You should free() the string after use. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string sep. </p>
+<p>Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string delims. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>The string to split. </td></tr>
@@ -803,6 +862,33 @@ You should free() the string after use. </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="abe97a32e4142a8ebbc97ca4799beef4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe97a32e4142a8ebbc97ca4799beef4b">&#9670;&nbsp;</a></span>string_trim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* string_trim </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes all leading and trailing whitespace characters from the string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to trim. (Will remove ' ' and '\t') </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* The newly allocated string. </dd></dl>
 
 </div>
 </div>
