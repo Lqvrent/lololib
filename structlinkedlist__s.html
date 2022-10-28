@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lololib: linkedlist_t Struct Reference</title>
+<title>lololib: linkedlist_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">lololib
    </div>
-   <div id="projectbrief">Simple utilities library for C in UNIX systems</div>
+   <div id="projectbrief">Cross-platform utilities library for C</div>
   </td>
  </tr>
  </tbody>
@@ -65,33 +65,38 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">linkedlist_t Struct Reference</div>  </div>
+<div class="title">linkedlist_s Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Linked list structure.  
+ <a href="structlinkedlist__s.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for linkedlist_t:</div>
+Collaboration diagram for linkedlist_s:</div>
 <div class="dyncontent">
-<div class="center"><img src="structlinkedlist__t__coll__graph.png" border="0" usemap="#linkedlist__t_coll__map" alt="Collaboration graph"/></div>
-<map name="linkedlist__t_coll__map" id="linkedlist__t_coll__map">
-<area shape="rect" title=" " alt="" coords="5,109,99,136"/>
-<area shape="rect" href="structll__node__s.html" title=" " alt="" coords="11,5,93,32"/>
+<div class="center"><img src="structlinkedlist__s__coll__graph.png" border="0" usemap="#linkedlist__s_coll__map" alt="Collaboration graph"/></div>
+<map name="linkedlist__s_coll__map" id="linkedlist__s_coll__map">
+<area shape="rect" title="Linked list structure." alt="" coords="5,5,100,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:aaf9e9809556182757b0bf00c19b3dec8"><td class="memItemLeft" align="right" valign="top"><a id="aaf9e9809556182757b0bf00c19b3dec8"></a>
-<a class="el" href="structll__node__s.html">ll_node_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>head</b></td></tr>
-<tr class="separator:aaf9e9809556182757b0bf00c19b3dec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0a2344e579d2d92c74cfa266c8b8b1e"><td class="memItemLeft" align="right" valign="top"><a id="ac0a2344e579d2d92c74cfa266c8b8b1e"></a>
-<a class="el" href="structll__node__s.html">ll_node_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>tail</b></td></tr>
-<tr class="separator:ac0a2344e579d2d92c74cfa266c8b8b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35819a6b878a71cd55de9a06d93d5ba9"><td class="memItemLeft" align="right" valign="top"><a id="a35819a6b878a71cd55de9a06d93d5ba9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
-<tr class="separator:a35819a6b878a71cd55de9a06d93d5ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1485c22cdf81e402e9de1f769c0278"><td class="memItemLeft" align="right" valign="top"><a id="a9b1485c22cdf81e402e9de1f769c0278"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlinkedlist__s.html#a9b1485c22cdf81e402e9de1f769c0278">data</a></td></tr>
+<tr class="memdesc:a9b1485c22cdf81e402e9de1f769c0278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the actual data. <br /></td></tr>
+<tr class="separator:a9b1485c22cdf81e402e9de1f769c0278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b063f3cc23c12ac52b848193e0f4e1"><td class="memItemLeft" align="right" valign="top"><a id="a24b063f3cc23c12ac52b848193e0f4e1"></a>
+struct <a class="el" href="structlinkedlist__s.html">linkedlist_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlinkedlist__s.html#a24b063f3cc23c12ac52b848193e0f4e1">next</a></td></tr>
+<tr class="memdesc:a24b063f3cc23c12ac52b848193e0f4e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the next element (NULL if last) <br /></td></tr>
+<tr class="separator:a24b063f3cc23c12ac52b848193e0f4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/runner/work/lololib/lololib/source/<a class="el" href="linkedlist_8h_source.html">linkedlist.h</a></li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Linked list structure. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/home/runner/work/lololib/lololib/includes/<a class="el" href="linkedlist_8h_source.html">linkedlist.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

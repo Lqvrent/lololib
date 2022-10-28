@@ -1,10 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "ceilns",
+  0: "cdeilns",
   1: "l",
   2: "eils",
   3: "cels",
-  4: "en"
+  4: "dn",
+  5: "l",
+  6: "en"
 };
 
 var indexSectionNames =
@@ -13,7 +15,9 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "defines"
+  4: "variables",
+  5: "typedefs",
+  6: "defines"
 };
 
 var indexSectionLabels =
@@ -22,6 +26,8 @@ var indexSectionLabels =
   1: "Data Structures",
   2: "Files",
   3: "Functions",
-  4: "Macros"
+  4: "Variables",
+  5: "Typedefs",
+  6: "Macros"
 };
 

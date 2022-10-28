@@ -23,7 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">lololib
    </div>
-   <div id="projectbrief">Simple utilities library for C in UNIX systems</div>
+   <div id="projectbrief">Cross-platform utilities library for C</div>
   </td>
  </tr>
  </tbody>
@@ -74,22 +74,27 @@ Download</h2>
 <p>You can download the latest version in the releases section of the <a href="https://github.com/Lqvrent/lololib/releases">Github repository</a>.<br  />
  If you're mad enough to use the source code, you can do so by cloning the repository.</p>
 <h2><a class="anchor" id="autotoc_md2"></a>
-Building and installing</h2>
-<p>The library needs to be compile with CMake.<br  />
- If you're new to CMake, heres the commands to get you started: </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
+UNIX Systems : Compile and install</h2>
+<p>We assume that you got dome devs dependencies installed (like CMake, make, gcc..)<br  />
+ You can compile the library and installing it by running the following commands in the root directory of the project: </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
 <div class="line">cmake ..</div>
 <div class="line">make</div>
-</div><!-- fragment --><p>You can also install the library on your computer with the following command : </p><div class="fragment"><div class="line">make install</div>
-</div><!-- fragment --><p>Here you go !</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<div class="line">make install # You may need to run this command as root</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Windows : Compile and install</h2>
+<p>We assume that you got dome devs dependencies installed (like CMake, mingw32-make, mingw..)<br  />
+ You can compile the library and installing it by running the following commands in the root directory of the project: </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
+<div class="line">cmake -G &quot;MinGW Makefiles&quot; ..</div>
+<div class="line">mingw32-make</div>
+<div class="line">mingw32-make install</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
 Documentation</h2>
 <p>You can find the documentation <a href="https://lqvrent.github.io/lololib/">here</a>. <br  />
- You can also build it locally by running the following commands : </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
+<br  />
+ You can also build it locally (with Doxygen) by running the following commands : </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
 <div class="line">cmake -DBUILD_WITH_DOCS=ON ..</div>
-<div class="line">make docs</div>
-</div><!-- fragment --><p>The documentation is generated with Doxygen (You need to have it installed).<br  />
-</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<div class="line">make docs # or mingw32-make docs, depending on your OS</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
 Todo list</h2>
 <ul>
 <li>[x] Add the documentation on Github pages programmatically.</li>
