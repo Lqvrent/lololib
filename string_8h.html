@@ -131,6 +131,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a85edf2e121a9de90a686d28fe87c2e7c"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a85edf2e121a9de90a686d28fe87c2e7c">string_split</a> (const char *str, const char *sep)</td></tr>
 <tr class="memdesc:a85edf2e121a9de90a686d28fe87c2e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of strings populated by splitting the calling string at occurrences of the substring sep.  <a href="string_8h.html#a85edf2e121a9de90a686d28fe87c2e7c">More...</a><br /></td></tr>
 <tr class="separator:a85edf2e121a9de90a686d28fe87c2e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1762b0c13938360bf661d9288df15c7"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ae1762b0c13938360bf661d9288df15c7">string_split_by_tok</a> (const char *str, const char *delims)</td></tr>
+<tr class="memdesc:ae1762b0c13938360bf661d9288df15c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string sep.  <a href="string_8h.html#ae1762b0c13938360bf661d9288df15c7">More...</a><br /></td></tr>
+<tr class="separator:ae1762b0c13938360bf661d9288df15c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a7c3a07540b47bebc8e81302b2321b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a2a7c3a07540b47bebc8e81302b2321b5">string_array_free</a> (char **array)</td></tr>
 <tr class="memdesc:a2a7c3a07540b47bebc8e81302b2321b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees an array of strings.  <a href="string_8h.html#a2a7c3a07540b47bebc8e81302b2321b5">More...</a><br /></td></tr>
 <tr class="separator:a2a7c3a07540b47bebc8e81302b2321b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -619,6 +622,44 @@ You should free() the string after use. </dd></dl>
   <table class="params">
     <tr><td class="paramname">str</td><td>The string to split. </td></tr>
     <tr><td class="paramname">sep</td><td>The substring to split the string at. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char** The newly allocated array of strings. </dd></dl>
+
+</div>
+</div>
+<a id="ae1762b0c13938360bf661d9288df15c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1762b0c13938360bf661d9288df15c7">&#9670;&nbsp;</a></span>string_split_by_tok()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char** string_split_by_tok </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>delims</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string sep. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to split. </td></tr>
+    <tr><td class="paramname">delims</td><td>The characters to split the string at. </td></tr>
   </table>
   </dd>
 </dl>
