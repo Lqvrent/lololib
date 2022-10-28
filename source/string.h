@@ -159,6 +159,15 @@ char *string_slice(const char *str, int start, int end);
 char **string_split(const char *str, const char *sep);
 
 /**
+ * @brief Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string sep
+ *
+ * @param str The string to split.
+ * @param delims The characters to split the string at.
+ * @return char** The newly allocated array of strings.
+ */
+char **string_split_by_tok(const char *str, const char *delims);
+
+/**
  * @brief Frees an array of strings.
  *
  * @param array The array of strings to free.

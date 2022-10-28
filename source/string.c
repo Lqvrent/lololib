@@ -246,6 +246,10 @@ char **string_split(const char *str, const char *sep)
     int in_a_row = string_starts_with(str, sep);
     char **array = malloc(sizeof(char *) * (__string_split_count_words(str, sep) + 1));
 
+    if (*str == 0 || *sep == 0) {
+        array[0] = NULL;
+        return (array);
+    }
     while (str[i] != 0) {
         if (string_starts_with(str + i, sep)) {
             if (!in_a_row) {
@@ -270,6 +274,60 @@ char **string_split(const char *str, const char *sep)
     return (array);
 }
 
+int __string_split_by_tok_count_words(const char *str, const char *delims)
+{
+    int i = 0;
+    int count = 0;
+    int in_a_row = 0;
+
+    while (str[i] != 0) {
+        if (string_includes(delims, (char[2]){str[i], 0})) {
+            if (!in_a_row)
+                count++;
+            in_a_row = 1;
+        } else
+            in_a_row = 0;
+        i++;
+    }
+    if (!in_a_row)
+        count++;
+    return (count);
+}
+
+char **string_split_by_tok(const char *str, const char *delims)
+{
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int in_a_row = 0;
+    char **array = malloc(sizeof(char *) * (__string_split_by_tok_count_words(str, delims) + 1));
+
+    if (*str == 0 || *delims == 0) {
+        array[0] = NULL;
+        return (array);
+    }
+    while (str[i] != 0) {
+        if (string_includes(delims, (char[2]){str[i], 0})) {
+            if (!in_a_row) {
+                array[j] = malloc(sizeof(char) * (i - k + 1));
+                array[j] = string_slice(str, k, i);
+                j++;
+            }
+            in_a_row = 1;
+        } else
+            in_a_row = 0;
+        i++;
+        k = i;
+    }
+    if (!in_a_row) {
+        array[j] = malloc(sizeof(char) * (i - k + 1));
+        array[j] = string_slice(str, k, i);
+        j++;
+    }
+    array[j] = NULL;
+    return (array);
+}
+
 void string_array_free(char **array)
 {
     int i = 0;
@@ -279,5 +337,4 @@ void string_array_free(char **array)
         i++;
     }
     free(array);
-
 }

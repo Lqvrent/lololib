@@ -370,6 +370,17 @@ Test(string, string_slice_valid)
         free(str);
 }
 
+Test(string, string_split_empty)
+{
+    char **arr = string_split("", "");
+
+    cr_assert_null(arr[0]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr);
+    }
+}
+
 Test(string, string_split_simple)
 {
     char **arr = string_split("Hello world", " ");
@@ -426,6 +437,95 @@ Test(string, string_split_valid_multiple_seps_by_word)
     }
 }
 
+Test(string, string_split_by_tok_empty)
+{
+    char **arr = string_split_by_tok("Hello world !", "");
+
+    cr_assert_null(arr[0]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr);
+    }
+}
+
+Test(string, string_split_by_tok_valid)
+{
+    char **arr = string_split_by_tok("Hello world !", " ");
+
+    cr_assert_str_eq(arr[0], "Hello");
+    cr_assert_str_eq(arr[1], "world");
+    cr_assert_str_eq(arr[2], "!");
+    cr_assert_null(arr[3]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr[1]);
+        free(arr[2]);
+        free(arr);
+    }
+}
+
+Test(string, string_split_by_tok_valid_too)
+{
+    char **arr = string_split_by_tok("Hello world !", "o");
+
+    cr_assert_str_eq(arr[0], "Hell");
+    cr_assert_str_eq(arr[1], " w");
+    cr_assert_str_eq(arr[2], "rld !");
+    cr_assert_null(arr[3]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr[1]);
+        free(arr[2]);
+        free(arr);
+    }
+}
+
+Test(string, string_split_by_tok_stupid)
+{
+    char **arr = string_split_by_tok("Hello world !", "Hello world !");
+
+    cr_assert_null(arr[0]);
+    if (arr != NULL)
+        free(arr);
+}
+
+Test(string, string_split_by_tok_multiple_seps)
+{
+    char **arr = string_split_by_tok("I want ; to be w you", " ;");
+
+    cr_assert_str_eq(arr[0], "I");
+    cr_assert_str_eq(arr[1], "want");
+    cr_assert_str_eq(arr[2], "to");
+    cr_assert_str_eq(arr[3], "be");
+    cr_assert_str_eq(arr[4], "w");
+    cr_assert_str_eq(arr[5], "you");
+    cr_assert_null(arr[6]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr[1]);
+        free(arr[2]);
+        free(arr[3]);
+        free(arr[4]);
+        free(arr[5]);
+        free(arr);
+    }
+}
+
+Test(string, string_split_by_tok_delim_in_a_row)
+{
+    char **arr = string_split_by_tok("    Hello         world        !     ", " ");
+
+    cr_assert_str_eq(arr[0], "Hello");
+    cr_assert_str_eq(arr[1], "world");
+    cr_assert_str_eq(arr[2], "!");
+    cr_assert_null(arr[3]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr[1]);
+        free(arr[2]);
+        free(arr);
+    }
+}
 
 Test(string, string_array_free)
 {
