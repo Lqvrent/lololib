@@ -45,4 +45,4 @@ jobs:
     - name: "Configure"
       run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_C_COMPILER=${{ matrix.config.compiler }}
     - name: "Build"
-      run: cmake --build . --config ${{ env.BUILD_TYPE }}
+      run: cmake --build build --config ${{ env.BUILD_TYPE }}
