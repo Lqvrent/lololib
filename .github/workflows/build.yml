@@ -8,7 +8,7 @@ env:
 
 jobs:
   build:
-    name: "Build"
+    name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
     strategy:
       fail-fast: false
@@ -46,9 +46,9 @@ jobs:
       run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_C_COMPILER=${{ matrix.config.compiler }}
     - name: "Build"
       run: cmake --build build --config ${{ env.BUILD_TYPE }}
-    - if: matrix.os == 'ubuntu-latest'
-      name: "Install (with privileges)"
+    - if: matrix.config.os == 'ubuntu-latest'
+      name: "Install (Ubuntu)"
       run: sudo cmake --install build --config ${{ env.BUILD_TYPE }}
-    - if: matrix.os == 'windows-latest' || matrix.os == 'macos-latest'
-      name: "Install (without privileges)"
+    - if: matrix.config.os != 'ubuntu-latest'
+      name: "Install"
       run: cmake --install build --config ${{ env.BUILD_TYPE }}

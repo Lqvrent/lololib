@@ -23,6 +23,10 @@ target_sources(${PROJECT_NAME}
         "../tests/string.c"
 )
 
+if(CMAKE_COMPILER_IS_GNUCC)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage --coverage")
+endif() # CMAKE_COMPILER_IS_GNUCC
+
 target_link_libraries(${PROJECT_NAME}
     criterion
 )
