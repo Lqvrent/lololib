@@ -222,6 +222,8 @@ int __string_split_count_words(const char *str, const char *sep) // util functio
     int count = 0;
     int in_a_row = string_starts_with(str, sep);
 
+    if (*sep == 0)
+        return (1);
     while (str[i] != 0) {
         if (string_starts_with(str + i, sep)) {
             if (!in_a_row)
@@ -281,6 +283,8 @@ int __string_split_by_tok_count_words(const char *str, const char *delims)
     int count = 0;
     int in_a_row = string_includes(delims, (char[2]){str[0], 0});
 
+    if (*delims == 0)
+        return (1);
     while (str[i] != 0) {
         if (string_includes(delims, (char[2]){str[i], 0})) {
             if (!in_a_row)
@@ -340,4 +344,41 @@ void string_array_free(char **array)
         i++;
     }
     free(array);
+}
+
+char *string_replace(const char *str, const char *old, const char *new)
+{
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int count = string_count(str, old);
+    char *new_str = NULL;
+
+    if (count == 0) {
+        new_str = malloc(sizeof(char) * (string_length(str) + 1));
+        while (str[i] != 0) {
+            new_str[i] = str[i];
+            i++;
+        }
+        new_str[i] = 0;
+        return (new_str);
+    }
+    new_str = malloc(sizeof(char) * (string_length(str) - (string_length(old) * count) + (string_length(new) * count) + 1));
+    while (str[i] != 0) {
+        if (string_starts_with(str + i, old)) {
+            while (new[j] != 0) {
+                new_str[k] = new[j];
+                j++;
+                k++;
+            }
+            i += string_length(old);
+            j = 0;
+        } else {
+            new_str[k] = str[i];
+            i++;
+            k++;
+        }
+    }
+    new_str[k] = 0;
+    return (new_str);
 }

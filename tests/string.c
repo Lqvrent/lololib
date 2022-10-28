@@ -381,6 +381,17 @@ Test(string, string_split_empty)
     }
 }
 
+Test(string, string_split_empty_seps)
+{
+    char **arr = string_split("Hello world !", "");
+
+    cr_assert_null(arr[0]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr);
+    }
+}
+
 Test(string, string_split_simple)
 {
     char **arr = string_split("Hello world", " ");
@@ -438,6 +449,17 @@ Test(string, string_split_valid_multiple_seps_by_word)
 }
 
 Test(string, string_split_by_tok_empty)
+{
+    char **arr = string_split_by_tok("", " ");
+
+    cr_assert_null(arr[0]);
+    if (arr != NULL) {
+        free(arr[0]);
+        free(arr);
+    }
+}
+
+Test(string, string_split_by_tok_empty_delims)
 {
     char **arr = string_split_by_tok("Hello world !", "");
 
@@ -542,4 +564,40 @@ Test(string, string_array_free)
     arr[0][5] = '\0';
     arr[1] = NULL;
     string_array_free(arr);
+}
+
+Test(string, string_replace_none)
+{
+    char *str = string_replace("Hello world !", "abc", "def");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_replace_one)
+{
+    char *str = string_replace("Hello world !", "world", "you");
+
+    cr_assert_str_eq(str, "Hello you !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_replace_multiple)
+{
+    char *str = string_replace("Hello world ! Hello world !", "world", "you");
+
+    cr_assert_str_eq(str, "Hello you ! Hello you !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_replace_all)
+{
+    char *str = string_replace("Hello world !", "Hello world !", "Changing the string");
+
+    cr_assert_str_eq(str, "Changing the string");
+    if (str != NULL)
+        free(str);
 }

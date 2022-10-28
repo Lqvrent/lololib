@@ -174,4 +174,14 @@ char **string_split_by_tok(const char *str, const char *delims);
  */
 void string_array_free(char **array);
 
+/**
+ * @brief Returns a string with all occurrences of the substring old replaced by the substring new.
+ *
+ * @param str The string to replace in.
+ * @param old The substring to replace.
+ * @param new The substring to replace with.
+ * @return char* The newly allocated string.
+ */
+char *string_replace(const char *str, const char *old, const char *new);
+
 #endif /* !__STRING_H__ */
