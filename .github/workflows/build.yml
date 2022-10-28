@@ -42,5 +42,7 @@ jobs:
     - if: matrix.os == 'ubuntu-latest' && matrix.compiler == 'clang'
       name: "Install Clang"
       run: sudo apt update && sudo apt install -y build-essential clang make
+    - name: "Configure"
+      run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_C_COMPILER=${{ matrix.config.compiler }}
     - name: "Build"
       run: cmake --build . --config ${{ env.BUILD_TYPE }}
