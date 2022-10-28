@@ -61,11 +61,53 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">lololib Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a href="https://github.com/Lqvrent/lololib/actions/workflows/build.yml"><object type="image/svg+xml" data="https://github.com/Lqvrent/lololib/actions/workflows/build.yml/badge.svg?branch=main" style="pointer-events: none;">Build</object></a> <a href="https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml"><object type="image/svg+xml" data="https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml/badge.svg?branch=main" style="pointer-events: none;">Unit tests</object></a> <a href="https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml"><img src="https://img.shields.io/badge/Code%20Coverage-100%25-success?style=flat" alt="Unit tests" class="inline"/></a> </p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+lololib - Simple utilities library for C in UNIX systems</h1>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Download</h2>
+<p>You can download the latest version in the releases section of the <a href="https://github.com/Lqvrent/lololib/releases">Github repository</a>.<br  />
+ If you're mad enough to use the source code, you can do so by cloning the repository.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Building and installing</h2>
+<p>The library needs to be compile with CMake.<br  />
+ If you're new to CMake, heres the commands to get you started: </p><div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">cmake ..</div>
+<div class="line">make</div>
+</div><!-- fragment --><p>You can also install the library with the following command : </p><div class="fragment"><div class="line">make install</div>
+</div><!-- fragment --><p>Here you go !</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Documentation</h2>
+<p>You can find the documentation <a href="https://lqvrent.github.io/lololib/">here</a>. <br  />
+ If you need informations about something really new (which is not online), you can build the documentation with the following command (once you have runned cmake) in your build folder : </p><div class="fragment"><div class="line">make doc</div>
+</div><!-- fragment --><p>The documentation is generated with Doxygen (You need to have it installed).<br  />
+</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Todo list</h2>
+<ul>
+<li>[ ] Add the documentation on Github pages programmatically.</li>
+<li>[x] Internal</li>
+<li>[x] Errors</li>
+<li>[ ] Strings (working on it) ; missing :<ul>
+<li>[ ] string_replace()</li>
+<li>[ ] string_trim()</li>
+<li>[ ] string_trim_start()</li>
+<li>[ ] string_trim_end()</li>
+<li>[ ] string_pad_start()</li>
+<li>[ ] string_pad_end()</li>
+</ul>
+</li>
+<li>[ ] Linked lists</li>
+<li>[ ] Stack</li>
+<li>[ ] Queue </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
