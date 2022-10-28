@@ -110,6 +110,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a3d11570d297ed9bdde8381e84d101b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a3d11570d297ed9bdde8381e84d101b7e">string_reverse</a> (char *str)</td></tr>
 <tr class="memdesc:a3d11570d297ed9bdde8381e84d101b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the string passed as parameter.  <a href="string_8h.html#a3d11570d297ed9bdde8381e84d101b7e">More...</a><br /></td></tr>
 <tr class="separator:a3d11570d297ed9bdde8381e84d101b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ba3f34ab56d053e2baeeca17c1b6c80"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a5ba3f34ab56d053e2baeeca17c1b6c80">string_index_of</a> (const char *str, const char *substr)</td></tr>
+<tr class="memdesc:a5ba3f34ab56d053e2baeeca17c1b6c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first occurrence (as index) of the substring in the string.  <a href="string_8h.html#a5ba3f34ab56d053e2baeeca17c1b6c80">More...</a><br /></td></tr>
+<tr class="separator:a5ba3f34ab56d053e2baeeca17c1b6c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a459f62d9034973f07b11b1ccb33facbd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a459f62d9034973f07b11b1ccb33facbd">string_last_index_of</a> (const char *str, const char *substr)</td></tr>
+<tr class="memdesc:a459f62d9034973f07b11b1ccb33facbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last occurrence (as index) of the substring in the string.  <a href="string_8h.html#a459f62d9034973f07b11b1ccb33facbd">More...</a><br /></td></tr>
+<tr class="separator:a459f62d9034973f07b11b1ccb33facbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a72774eb74ce44c3e74a1de1b3e194d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a6a72774eb74ce44c3e74a1de1b3e194d">string_includes</a> (const char *str, const char *substr)</td></tr>
 <tr class="memdesc:a6a72774eb74ce44c3e74a1de1b3e194d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a string contains a substring.  <a href="string_8h.html#a6a72774eb74ce44c3e74a1de1b3e194d">More...</a><br /></td></tr>
 <tr class="separator:a6a72774eb74ce44c3e74a1de1b3e194d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -322,6 +328,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5ba3f34ab56d053e2baeeca17c1b6c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ba3f34ab56d053e2baeeca17c1b6c80">&#9670;&nbsp;</a></span>string_index_of()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int string_index_of </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>substr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the first occurrence (as index) of the substring in the string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to search in. </td></tr>
+    <tr><td class="paramname">substr</td><td>The substring to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int The index of the first occurrence of the substring in the string. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the substring isn't found, the function will return -1. </dd></dl>
+
+</div>
+</div>
 <a id="a0a659383d60c2b418cd6f063f40d0962"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a659383d60c2b418cd6f063f40d0962">&#9670;&nbsp;</a></span>string_is_alpha()</h2>
 
@@ -458,6 +503,45 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 if the string is filled with only alphanumeric characters, 0 otherwise. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>If the string is empty, the function will return 1. </dd></dl>
+
+</div>
+</div>
+<a id="a459f62d9034973f07b11b1ccb33facbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a459f62d9034973f07b11b1ccb33facbd">&#9670;&nbsp;</a></span>string_last_index_of()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int string_last_index_of </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>substr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the last occurrence (as index) of the substring in the string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to search in. </td></tr>
+    <tr><td class="paramname">substr</td><td>The substring to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int The index of the last occurrence of the substring in the string. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the substring isn't found, the function will return -1. </dd></dl>
 
 </div>
 </div>
