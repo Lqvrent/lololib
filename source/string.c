@@ -463,3 +463,61 @@ char *string_rtrim(const char *str)
     new_str = string_slice(str, 0, i + 1);
     return (new_str);
 }
+
+char *string_lpad(const char *str, const int len, const char c)
+{
+    int i = 0;
+    int j = 0;
+    char *new_str = NULL;
+
+    if (len <= string_length(str)) {
+        new_str = malloc(sizeof(char) * (string_length(str) + 1));
+        while (str[i] != 0) {
+            new_str[i] = str[i];
+            i++;
+        }
+        new_str[i] = 0;
+        return (new_str);
+    }
+    new_str = malloc(sizeof(char) * (len + 1));
+    while (j < len - string_length(str)) {
+        new_str[j] = c;
+        j++;
+    }
+    while (str[i] != 0) {
+        new_str[j] = str[i];
+        i++;
+        j++;
+    }
+    new_str[j] = 0;
+    return (new_str);
+}
+
+char *string_rpad(const char *str, const int len, const char c)
+{
+    int i = 0;
+    int j = 0;
+    char *new_str = NULL;
+
+    if (len <= string_length(str)) {
+        new_str = malloc(sizeof(char) * (string_length(str) + 1));
+        while (str[i] != 0) {
+            new_str[i] = str[i];
+            i++;
+        }
+        new_str[i] = 0;
+        return (new_str);
+    }
+    new_str = malloc(sizeof(char) * (len + 1));
+    while (str[i] != 0) {
+        new_str[i] = str[i];
+        i++;
+    }
+    while (j < len - string_length(str)) {
+        new_str[i] = c;
+        i++;
+        j++;
+    }
+    new_str[i] = 0;
+    return (new_str);
+}

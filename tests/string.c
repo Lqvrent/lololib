@@ -843,3 +843,57 @@ Test(string, string_rtrim_all)
     if (str != NULL)
         free(str);
 }
+
+Test(string, string_lpad_empty)
+{
+    char *str = string_lpad("", 10, ' ');
+
+    cr_assert_str_eq(str, "          ");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_lpad_nothing_to_pad)
+{
+    char *str = string_lpad("Hello world !", 13, ' ');
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_lpad_left)
+{
+    char *str = string_lpad("Hello world !", 20, ' ');
+
+    cr_assert_str_eq(str, "       Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rpad_empty)
+{
+    char *str = string_rpad("", 10, ' ');
+
+    cr_assert_str_eq(str, "          ");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rpad_nothing_to_pad)
+{
+    char *str = string_rpad("Hello world !", 13, ' ');
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rpad_right)
+{
+    char *str = string_rpad("Hello world !", 20, ' ');
+
+    cr_assert_str_eq(str, "Hello world !       ");
+    if (str != NULL)
+        free(str);
+}

@@ -8,12 +8,11 @@ If you're mad enough to use the source code, you can do so by cloning the reposi
 The library needs to be compile with CMake.<br />
 If you're new to CMake, heres the commands to get you started:
 ```bash
-mkdir build
-cd build
+mkdir build && cd build
 cmake ..
 make
 ```
-You can also install the library with the following command :
+You can also install the library on your computer with the following command :
 ```bash
 make install
 ```
@@ -21,9 +20,11 @@ Here you go !
 
 ## Documentation
 You can find the documentation [here](https://lqvrent.github.io/lololib/). <br />
-If you need informations about something really new (which is not online), you can build the documentation with the following command (once you have runned cmake) in your build folder :
+You can also build it locally by running the following commands :
 ```bash
-make doc
+mkdir build && cd build
+cmake -DBUILD_WITH_DOCS=ON ..
+make docs
 ```
 The documentation is generated with Doxygen (You need to have it installed).<br />
 
@@ -32,9 +33,6 @@ The documentation is generated with Doxygen (You need to have it installed).<br 
 - [x] Internal
 - [x] Errors
 - [ ] Strings (working on it) ; missing :
-    - string_pad()
-    - string_pad_start()
-    - string_pad_end()
     - string_from_number()
 - [ ] Linked lists
 - [ ] Stack

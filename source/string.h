@@ -226,4 +226,24 @@ char *string_ltrim(const char *str);
  */
 char *string_rtrim(const char *str);
 
+/**
+ * @brief Add a padding to the left of the string.
+ *
+ * @param str The string to pad.
+ * @param len The number of characters to pad.
+ * @param c The character to pad with.
+ * @return char* The newly allocated string.
+ */
+char *string_lpad(const char *str, const int len, const char c);
+
+/**
+ * @brief Add a padding to the right of the string.
+ *
+ * @param str The string to pad.
+ * @param len The number of characters to pad.
+ * @param c The character to pad with.
+ * @return char* The newly allocated string.
+ */
+char *string_rpad(const char *str, const int len, const char c);
+
 #endif /* !__STRING_H__ */
