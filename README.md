@@ -32,8 +32,7 @@ The documentation is generated with Doxygen (You need to have it installed).<br 
 - [x] Add the documentation on Github pages programmatically.
 - [x] Internal
 - [x] Errors
-- [ ] Strings (working on it) ; missing :
-    - string_from_number()
-- [ ] Linked lists
-- [ ] Stack
-- [ ] Queue
+- [x] Strings
+- [ ] Regular linked lists (working on it !)
+- [ ] Doubly linked lists
+- [ ] Circular linked lists

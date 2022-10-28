@@ -12,10 +12,12 @@ include_directories(
 )
 
 add_executable(unit_tests
-    "${SOURCE_ROOT}/internal.c"
-    "internal.c"
     "${SOURCE_ROOT}/error.c"
     "error.c"
+    "${SOURCE_ROOT}/internal.c"
+    "internal.c"
+    "${SOURCE_ROOT}/linkedlist.c"
+    "linkedlist.c"
     "${SOURCE_ROOT}/string.c"
     "string.c"
 )

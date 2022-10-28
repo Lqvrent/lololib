@@ -6,10 +6,12 @@ project(lolo VERSION 1.0.0 DESCRIPTION "Simple utilities library for C in UNIX s
 
 # Declare the library target.
 add_library(${PROJECT_NAME} SHARED
-    "source/internal.h"
-    "source/internal.c"
     "source/error.h"
     "source/error.c"
+    "source/internal.h"
+    "source/internal.c"
+    "source/linkedlist.c"
+    "source/linkedlist.h"
     "source/string.h"
     "source/string.c"
 )
@@ -25,7 +27,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE source)
 
 # Set the public header property to the one with the actual API.
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER
-    "source/error.h;source/string.h"
+    "source/error.h;source/linkedlist.h;source/string.h"
 )
 
 # For access to standard installation directory variables (CMAKE_INSTALL_xDIR).
