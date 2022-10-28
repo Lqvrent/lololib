@@ -115,6 +115,50 @@ void string_reverse(char *str)
     }
 }
 
+int string_index_of(const char *str, const char *substr)
+{
+    int i = 0;
+    int j = 0;
+    int k = 0;
+
+    while (str[i] != 0) {
+        if (str[i] == substr[j]) {
+            k = i;
+            while (str[i] == substr[j] && str[i] != 0) {
+                i++;
+                j++;
+            }
+            if (substr[j] == 0)
+                return (k);
+            j = 0;
+        }
+        i++;
+    }
+    return (-1);
+}
+
+int string_last_index_of(const char *str, const char *substr)
+{
+    int i = string_length(str) - 1;
+    int j = string_length(substr) - 1;
+    int k = 0;
+
+    while (i >= 0) {
+        if (str[i] == substr[j]) {
+            k = i;
+            while (str[i] == substr[j] && i >= 0) {
+                i--;
+                j--;
+            }
+            if (j == -1)
+                return (k - string_length(substr) + 1);
+            j = string_length(substr) - 1;
+        }
+        i--;
+    }
+    return (-1);
+}
+
 int string_includes(const char *str, const char *substr)
 {
     int i = 0;

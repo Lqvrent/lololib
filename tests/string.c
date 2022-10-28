@@ -275,6 +275,86 @@ Test(string, string_reverse_w_valid6)
     cr_assert_str_eq(str, "fedcba");
 }
 
+Test(string, string_index_of_empty)
+{
+    cr_assert_eq(string_index_of("", "a"), -1);
+}
+
+Test(string, string_index_of_empty_substr)
+{
+    cr_assert_eq(string_index_of("a", ""), -1);
+}
+
+Test(string, string_index_of_not_found)
+{
+    cr_assert_eq(string_index_of("abc", "d"), -1);
+}
+
+Test(string, string_index_of_found)
+{
+    cr_assert_eq(string_index_of("abc", "b"), 1);
+}
+
+Test(string, string_index_of_found_word)
+{
+    cr_assert_eq(string_index_of("Hello world !", "world"), 6);
+}
+
+Test(string, string_index_of_found_word_at_start)
+{
+    cr_assert_eq(string_index_of("Hello world !", "Hello"), 0);
+}
+
+Test(string, string_index_of_found_word_at_end)
+{
+    cr_assert_eq(string_index_of("Hello world !", "!"), 12);
+}
+
+Test(string, string_index_of_almost_found_word)
+{
+    cr_assert_eq(string_index_of("Hello world !", "world!"), -1);
+}
+
+Test(string, string_last_index_of_empty)
+{
+    cr_assert_eq(string_last_index_of("", "a"), -1);
+}
+
+Test(string, string_last_index_of_empty_substr)
+{
+    cr_assert_eq(string_last_index_of("a", ""), -1);
+}
+
+Test(string, string_last_index_of_not_found)
+{
+    cr_assert_eq(string_last_index_of("abc", "d"), -1);
+}
+
+Test(string, string_last_index_of_found)
+{
+    cr_assert_eq(string_last_index_of("abc", "b"), 1);
+}
+
+Test(string, string_last_index_of_found_word)
+{
+    cr_assert_eq(string_last_index_of("Hello world !", "world"), 6);
+}
+
+Test(string, string_last_index_of_found_word_at_start)
+{
+    cr_assert_eq(string_last_index_of("Hello world !", "Hello"), 0);
+}
+
+Test(string, string_last_index_of_found_word_at_end)
+{
+    cr_assert_eq(string_last_index_of("Hello world !", "!"), 12);
+}
+
+Test(string, string_last_index_of_almost_found_word)
+{
+    cr_assert_eq(string_last_index_of("Hello world !", "world!"), -1);
+}
+
 Test(string, string_includes_w_invalid)
 {
     cr_assert_eq(string_includes("Hello world !", "It's me ! Mario!!"), 0);
@@ -310,7 +390,7 @@ Test(string, string_ends_with_w_valid)
     cr_assert_eq(string_ends_with("Hello world", "world"), 1);
 }
 
-Test(string, string_count_with_nooccurence)
+Test(string, string_count_with_nooccurrence)
 {
     cr_assert_eq(string_count("Hello world is just a simple sentence I think.", "Lqvrent"), 0);
 }

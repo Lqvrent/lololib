@@ -32,9 +32,10 @@ The documentation is generated with Doxygen (You need to have it installed).<br 
 - [x] Internal
 - [x] Errors
 - [ ] Strings (working on it) ; missing :
-    - [ ] string_pad()
-    - [ ] string_pad_start()
-    - [ ] string_pad_end()
+    - string_pad()
+    - string_pad_start()
+    - string_pad_end()
+    - string_from_number()
 - [ ] Linked lists
 - [ ] Stack
 - [ ] Queue

@@ -87,6 +87,26 @@ int string_length(const char *str);
 void string_reverse(char *str);
 
 /**
+ * @brief Returns the first occurrence (as index) of the substring in the string.
+ *
+ * @param str The string to search in.
+ * @param substr The substring to search for.
+ * @return int The index of the first occurrence of the substring in the string.
+ * @note If the substring isn't found, the function will return -1.
+ */
+int string_index_of(const char *str, const char *substr);
+
+/**
+ * @brief Returns the last occurrence (as index) of the substring in the string.
+ *
+ * @param str The string to search in.
+ * @param substr The substring to search for.
+ * @return int The index of the last occurrence of the substring in the string.
+ * @note If the substring isn't found, the function will return -1.
+ */
+int string_last_index_of(const char *str, const char *substr);
+
+/**
  * @brief Check if a string contains a substring.
  *
  * @param str The string to check.
