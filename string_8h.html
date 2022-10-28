@@ -137,6 +137,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a2a7c3a07540b47bebc8e81302b2321b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a2a7c3a07540b47bebc8e81302b2321b5">string_array_free</a> (char **array)</td></tr>
 <tr class="memdesc:a2a7c3a07540b47bebc8e81302b2321b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees an array of strings.  <a href="string_8h.html#a2a7c3a07540b47bebc8e81302b2321b5">More...</a><br /></td></tr>
 <tr class="separator:a2a7c3a07540b47bebc8e81302b2321b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1e0f353b2553db1416949124afa213"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a5c1e0f353b2553db1416949124afa213">string_replace</a> (const char *str, const char *old, const char *new)</td></tr>
+<tr class="memdesc:a5c1e0f353b2553db1416949124afa213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string with all occurrences of the substring old replaced by the substring new.  <a href="string_8h.html#a5c1e0f353b2553db1416949124afa213">More...</a><br /></td></tr>
+<tr class="separator:a5c1e0f353b2553db1416949124afa213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>String manipulation functions. </p>
@@ -516,6 +519,51 @@ Functions</h2></td></tr>
 If the number of times is 0 or less, the function will return NULL. </dd>
 <dd>
 You should free() the string after use. </dd></dl>
+
+</div>
+</div>
+<a id="a5c1e0f353b2553db1416949124afa213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c1e0f353b2553db1416949124afa213">&#9670;&nbsp;</a></span>string_replace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* string_replace </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>new</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a string with all occurrences of the substring old replaced by the substring new. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to replace in. </td></tr>
+    <tr><td class="paramname">old</td><td>The substring to replace. </td></tr>
+    <tr><td class="paramname">new</td><td>The substring to replace with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* The newly allocated string. </dd></dl>
 
 </div>
 </div>
