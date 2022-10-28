@@ -277,16 +277,18 @@ char **string_split(const char *str, const char *sep)
 int __string_split_by_tok_count_words(const char *str, const char *delims)
 {
     int i = 0;
+    int j = 0;
     int count = 0;
-    int in_a_row = 0;
+    int in_a_row = string_includes(delims, (char[2]){str[0], 0});
 
     while (str[i] != 0) {
         if (string_includes(delims, (char[2]){str[i], 0})) {
             if (!in_a_row)
                 count++;
             in_a_row = 1;
-        } else
+        } else {
             in_a_row = 0;
+        }
         i++;
     }
     if (!in_a_row)
@@ -299,7 +301,7 @@ char **string_split_by_tok(const char *str, const char *delims)
     int i = 0;
     int j = 0;
     int k = 0;
-    int in_a_row = 0;
+    int in_a_row = string_includes(delims, (char[2]){str[0], 0});
     char **array = malloc(sizeof(char *) * (__string_split_by_tok_count_words(str, delims) + 1));
 
     if (*str == 0 || *delims == 0) {
@@ -314,10 +316,11 @@ char **string_split_by_tok(const char *str, const char *delims)
                 j++;
             }
             in_a_row = 1;
-        } else
+            k = i + 1;
+        } else {
             in_a_row = 0;
+        }
         i++;
-        k = i;
     }
     if (!in_a_row) {
         array[j] = malloc(sizeof(char) * (i - k + 1));
