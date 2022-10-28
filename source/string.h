@@ -127,7 +127,7 @@ int string_ends_with(const char *str, const char *substr);
 int string_count(const char *str, const char *substr);
 
 /**
- * @brief Create a stringwhich is a repetition (n timesà of a given string.
+ * @brief Create a string which is a repetition (n times of a given string.
  *
  * @param str The string to repeat.
  * @param n The number of times to repeat the string.

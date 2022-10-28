@@ -31,7 +31,13 @@ The documentation is generated with Doxygen (You need to have it installed).<br 
 - [ ] Add the documentation on Github pages programmatically.
 - [x] Internal
 - [x] Errors
-- [ ] Strings (working on it)
+- [ ] Strings (working on it) ; missing :
+    - [ ] string_replace()
+    - [ ] string_trim()
+    - [ ] string_trim_start()
+    - [ ] string_trim_end()
+    - [ ] string_pad_start()
+    - [ ] string_pad_end()
 - [ ] Linked lists
 - [ ] Stack
 - [ ] Queue
