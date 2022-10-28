@@ -382,3 +382,40 @@ char *string_replace(const char *str, const char *old, const char *new)
     new_str[k] = 0;
     return (new_str);
 }
+
+char *string_trim(const char *str)
+{
+    int i = 0;
+    char *new_str = NULL;
+
+    while (str[i] != 0 && (str[i] == ' ' || str[i] == '\t'))
+        i++;
+    new_str = string_slice(str, i, string_length(str));
+    i = string_length(new_str) - 1;
+    while (i >= 0 && (new_str[i] == ' ' || new_str[i] == '\t'))
+        i--;
+    new_str[i + 1] = 0;
+    return (new_str);
+}
+
+char *string_ltrim(const char *str)
+{
+    int i = 0;
+    char *new_str = NULL;
+
+    while (str[i] != 0 && (str[i] == ' ' || str[i] == '\t'))
+        i++;
+    new_str = string_slice(str, i, string_length(str));
+    return (new_str);
+}
+
+char *string_rtrim(const char *str)
+{
+    int i = string_length(str) - 1;
+    char *new_str = NULL;
+
+    while (i >= 0 && (str[i] == ' ' || str[i] == '\t'))
+        i--;
+    new_str = string_slice(str, 0, i + 1);
+    return (new_str);
+}

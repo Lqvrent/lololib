@@ -601,3 +601,165 @@ Test(string, string_replace_all)
     if (str != NULL)
         free(str);
 }
+
+Test(string, string_trim_empty)
+{
+    char *str = string_trim("");
+
+    cr_assert_str_eq(str, "");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_trim_nothing_to_trim)
+{
+    char *str = string_trim("Hello world !");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_trim_left)
+{
+    char *str = string_trim("  \t  Hello world !");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_trim_right)
+{
+    char *str = string_trim("Hello world !  \t  ");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_trim_both)
+{
+    char *str = string_trim("  \t  Hello world !  \t  ");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_trim_all)
+{
+    char *str = string_trim("  \t  ");
+
+    cr_assert_str_eq(str, "");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_ltrim_empty)
+{
+    char *str = string_ltrim("");
+
+    cr_assert_str_eq(str, "");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_ltrim_nothing_to_trim)
+{
+    char *str = string_ltrim("Hello world !");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_ltrim_left)
+{
+    char *str = string_ltrim("  \t  Hello world !");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_ltrim_right)
+{
+    char *str = string_ltrim("Hello world !  \t  ");
+
+    cr_assert_str_eq(str, "Hello world !  \t  ");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_ltrim_both)
+{
+    char *str = string_ltrim("  \t  Hello world !  \t  ");
+
+    cr_assert_str_eq(str, "Hello world !  \t  ");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_ltrim_all)
+{
+    char *str = string_ltrim("  \t  ");
+
+    cr_assert_str_eq(str, "");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rtrim_empty)
+{
+    char *str = string_rtrim("");
+
+    cr_assert_str_eq(str, "");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rtrim_nothing_to_trim)
+{
+    char *str = string_rtrim("Hello world !");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rtrim_left)
+{
+    char *str = string_rtrim("  \t  Hello world !");
+
+    cr_assert_str_eq(str, "  \t  Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rtrim_right)
+{
+    char *str = string_rtrim("Hello world !  \t  ");
+
+    cr_assert_str_eq(str, "Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rtrim_both)
+{
+    char *str = string_rtrim("  \t  Hello world !  \t  ");
+
+    cr_assert_str_eq(str, "  \t  Hello world !");
+    if (str != NULL)
+        free(str);
+}
+
+Test(string, string_rtrim_all)
+{
+    char *str = string_rtrim("  \t  ");
+
+    cr_assert_str_eq(str, "");
+    if (str != NULL)
+        free(str);
+}

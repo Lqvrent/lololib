@@ -132,9 +132,7 @@ int string_count(const char *str, const char *substr);
  * @param str The string to repeat.
  * @param n The number of times to repeat the string.
  * @return char* The newly allocated string.
- * @warning If malloc() fails (which is unlikely), you'll get a segfault.
  * @warning If the number of times is 0 or less, the function will return NULL.
- * @warning You should free() the string after use.
  */
 char *string_repeat(const char *str, int n);
 
@@ -159,7 +157,7 @@ char *string_slice(const char *str, int start, int end);
 char **string_split(const char *str, const char *sep);
 
 /**
- * @brief Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string sep
+ * @brief Returns an array of string populated by splitting the calling string at occurrences of all the characters in the string delims
  *
  * @param str The string to split.
  * @param delims The characters to split the string at.
@@ -183,5 +181,29 @@ void string_array_free(char **array);
  * @return char* The newly allocated string.
  */
 char *string_replace(const char *str, const char *old, const char *new);
+
+/**
+ * @brief Removes all leading and trailing whitespace characters from the string.
+ *
+ * @param str The string to trim. (Will remove ' ' and '\t')
+ * @return char* The newly allocated string.
+ */
+char *string_trim(const char *str);
+
+/**
+ * @brief Removes all leading whitespace characters from the string. (in the left)
+ *
+ * @param str The string to trim. (Will remove ' ' and '\t')
+ * @return char* The newly allocated string.
+ */
+char *string_ltrim(const char *str);
+
+/**
+ * @brief Removes all trailing whitespace characters from the string. (in the right)
+ *
+ * @param str The string to trim. (Will remove ' ' and '\t')
+ * @return char* The newly allocated string.
+ */
+char *string_rtrim(const char *str);
 
 #endif /* !__STRING_H__ */
