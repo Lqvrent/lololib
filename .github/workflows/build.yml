@@ -46,5 +46,9 @@ jobs:
       run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_C_COMPILER=${{ matrix.config.compiler }}
     - name: "Build"
       run: cmake --build build --config ${{ env.BUILD_TYPE }}
-    - name: "Install"
+    - if: matrix.os != 'ubuntu-latest'
+      name: "Install"
       run: cmake --install build --config ${{ env.BUILD_TYPE }}
+    - if: matrix.os == 'ubuntu-latest'
+      name: "Install (Ubuntu)"
+      run: sudo cmake --install build --config ${{ env.BUILD_TYPE }}
