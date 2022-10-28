@@ -6,15 +6,18 @@
 #ifndef __LINKEDLIST_H__
     #define __LINKEDLIST_H__
 
-typedef struct ll_node_s {
+/**
+ * @brief Linked list structure
+ */
+typedef struct linkedlist_s {
+    /**
+     * @brief Pointer to the actual data
+     */
     void *data;
-    struct ll_node_s *next;
-} ll_node_t;
-
-typedef struct {
-    ll_node_t *head;
-    ll_node_t *tail;
-    int size;
+    /**
+     * @brief Pointer to the next element (NULL if last)
+     */
+    struct linkedlist_s *next;
 } linkedlist_t;
 
 /**
@@ -68,7 +71,7 @@ void *ll_peek_back(linkedlist_t *list);
 /**
  * @brief Get the data of the n node of the list
  * @param list The list to get the size from
- * @param n The index of the node to get the data from
+ * @param index The index of the node to get the data from
  * @return The data of the n node of the list
  */
 void *ll_peek(linkedlist_t *list, int index);

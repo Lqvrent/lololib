@@ -1,2 +1,2 @@
 #include <criterion/criterion.h>
-#include "../source/linkedlist.h"
+#include "../includes/linkedlist.h"

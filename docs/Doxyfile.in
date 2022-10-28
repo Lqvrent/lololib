@@ -1,6 +1,6 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "lololib"
-PROJECT_BRIEF          = "Simple utilities library for C in UNIX systems"
+PROJECT_BRIEF          = "Cross-platform utilities library for C"
 INPUT                  = @PROJECT_SOURCE_DIR@/README.md @DOXYGEN_INPUT_DIR@
 USE_MDFILE_AS_MAINPAGE = @PROJECT_SOURCE_DIR@/README.md
 OUTPUT_DIRECTORY       = @DOXYGEN_OUTPUT_DIR@

@@ -3,26 +3,52 @@ on:
   - push
   - pull_request
 
+env:
+  BUILD_TYPE: Release
+
 jobs:
   build:
-      strategy:
-        matrix:
-          os: [ubuntu-latest, macos-latest]
-      runs-on: ${{ matrix.os }}
-      steps:
-      - uses: "actions/checkout@v2"
-      - if: matrix.os == 'ubuntu-latest'
-        name: "install build-essential & cmake on ubuntu"
-        run: |
-          sudo apt update
-          sudo apt install -y build-essential
-      - if: matrix.os == 'macos-latest'
-        name: "install gcc, make & cmake on macos"
-        run: |
-          brew install gcc make cmake
-      - name: "build"
-        run: |
-          mkdir build
-          cd build
-          cmake ..
-          make
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+        - { name: "Ubuntu - Latest GCC",    os: ubuntu-latest,  compiler: gcc }
+        - { name: "Ubuntu - Latest Clang",  os: ubuntu-latest,  compiler: clang }
+        - { name: "MacOS - Latest Clang",   os: macos-latest,   compiler: clang }
+        - { name: "Windows - Latest MSVC",  os: windows-latest, compiler: msvc }
+        - { name: "Windows - Latest MinGW", os: windows-latest, compiler: mingw }
+    steps:
+    - uses: actions/checkout@v3
+    - name: "Install CMake"
+      uses: lukka/get-cmake@latest
+    - if: matrix.config.compiler == 'msvc'
+      name: "Install MSVC"
+      uses: ilammy/msvc-dev-cmd@v1
+    - if: matrix.config.compiler == 'mingw'
+      name: "Install MinGW"
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: MINGW64
+        update: true
+        install: >-
+          mingw-w64-x86_64-toolchain
+          mingw-w64-x86_64-cmake
+          mingw-w64-x86_64-make
+    - if: matrix.os == 'ubuntu-latest' && matrix.compiler == 'gcc'
+      name: "Install GCC"
+      run: sudo apt update && sudo apt install -y build-essential gcc make
+    - if: matrix.os == 'ubuntu-latest' && matrix.compiler == 'clang'
+      name: "Install Clang"
+      run: sudo apt update && sudo apt install -y build-essential clang make
+    - name: "Configure"
+      run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_C_COMPILER=${{ matrix.config.compiler }}
+    - name: "Build"
+      run: cmake --build build --config ${{ env.BUILD_TYPE }}
+    - if: matrix.config.os == 'ubuntu-latest'
+      name: "Install (Ubuntu)"
+      run: sudo cmake --install build --config ${{ env.BUILD_TYPE }}
+    - if: matrix.config.os != 'ubuntu-latest'
+      name: "Install"
+      run: cmake --install build --config ${{ env.BUILD_TYPE }}

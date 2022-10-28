@@ -1,42 +1,66 @@
-# Specify the minimum version.
 cmake_minimum_required(VERSION 3.20)
+# Define project properties
+set(PROJECT_VERSION "1.0.0")
+set(PROJECT_NAME "lolo")
+project(${PROJECT_NAME}
+    VERSION ${PROJECT_VERSION}
+    LANGUAGES C
+    DESCRIPTION "Cross-platform utilities library for C"
+)
 
-# Specify the project info.
-project(lolo VERSION 1.0.0 DESCRIPTION "Simple utilities library for C in UNIX systems")
+# To build shared libraries in Windows, we set CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS to TRUE.
+# See https://cmake.org/cmake/help/v3.4/variable/CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS.html
+# See https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/
+if(WIN32)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+endif()
 
 # Declare the library target.
-add_library(${PROJECT_NAME} SHARED
-    "source/error.h"
-    "source/error.c"
-    "source/internal.h"
-    "source/internal.c"
-    "source/linkedlist.c"
-    "source/linkedlist.h"
-    "source/string.h"
-    "source/string.c"
+add_library(${PROJECT_NAME} SHARED)
+
+target_include_directories(${PROJECT_NAME}
+    PUBLIC
+        $<INSTALL_INTERFACE:includes>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/includes>
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/sources
 )
 
-# Set the version property.
-set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
-
-# Set the shared object version property to the project's major version.
-set_target_properties(${PROJECT_NAME} PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR})
-
-# Configure the directories to search for header files.
-target_include_directories(${PROJECT_NAME} PRIVATE source)
-
-# Set the public header property to the one with the actual API.
-set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER
-    "source/error.h;source/linkedlist.h;source/string.h"
+set_target_properties(${PROJECT_NAME}
+    PROPERTIES
+    VERSION ${PROJECT_VERSION}
+    SOVERSION ${PROJECT_VERSION}
 )
 
-# For access to standard installation directory variables (CMAKE_INSTALL_xDIR).
-include(GNUInstallDirs)
+target_sources(${PROJECT_NAME}
+    PRIVATE
+        "${CMAKE_CURRENT_SOURCE_DIR}/sources/error.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/sources/internal.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/sources/linkedlist.c"
+        "${CMAKE_CURRENT_SOURCE_DIR}/sources/string.c"
+)
 
-# Set library shared object and API header file to install.
+# Compiler options OS specific
+if (${CMAKE_C_COMPILER_ID} STREQUAL "GNU")
+    message(STATUS "Setting gcc flags")
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
+elseif (${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
+    message(STATUS "Setting clang flags")
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
+elseif (${CMAKE_C_COMPILER_ID} STREQUAL "MSVC")
+    message(STATUS "Setting MSVC flags")
+    target_compile_options(${PROJECT_NAME} PRIVATE /EHsc /W2 /c)
+    # Set the DLLEXPORT variable to export symbols
+    target_compile_definitions(${PROJECT_NAME} PRIVATE WIN_EXPORT)
+endif()
+
+# Install the library
 install(TARGETS ${PROJECT_NAME}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/lolo
+    EXPORT ${PROJECT_NAME}-config
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    RUNTIME DESTINATION bin
+    INCLUDES DESTINATION include
 )
 
 # Doxygen documentation.
