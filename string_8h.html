@@ -155,6 +155,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a8457ce40baae57cba0bb9f41f93b1aa5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a8457ce40baae57cba0bb9f41f93b1aa5">string_rtrim</a> (const char *str)</td></tr>
 <tr class="memdesc:a8457ce40baae57cba0bb9f41f93b1aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all trailing whitespace characters from the string. (in the right)  <a href="string_8h.html#a8457ce40baae57cba0bb9f41f93b1aa5">More...</a><br /></td></tr>
 <tr class="separator:a8457ce40baae57cba0bb9f41f93b1aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae91d2a5d703c246d31f8494671547bb5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ae91d2a5d703c246d31f8494671547bb5">string_lpad</a> (const char *str, const int len, const char c)</td></tr>
+<tr class="memdesc:ae91d2a5d703c246d31f8494671547bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a padding to the left of the string.  <a href="string_8h.html#ae91d2a5d703c246d31f8494671547bb5">More...</a><br /></td></tr>
+<tr class="separator:ae91d2a5d703c246d31f8494671547bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eaa72559f5456f73cf1bc25b3cb6aad"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a6eaa72559f5456f73cf1bc25b3cb6aad">string_rpad</a> (const char *str, const int len, const char c)</td></tr>
+<tr class="memdesc:a6eaa72559f5456f73cf1bc25b3cb6aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a padding to the right of the string.  <a href="string_8h.html#a6eaa72559f5456f73cf1bc25b3cb6aad">More...</a><br /></td></tr>
+<tr class="separator:a6eaa72559f5456f73cf1bc25b3cb6aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>String manipulation functions. </p>
@@ -572,6 +578,51 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae91d2a5d703c246d31f8494671547bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae91d2a5d703c246d31f8494671547bb5">&#9670;&nbsp;</a></span>string_lpad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* string_lpad </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a padding to the left of the string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to pad. </td></tr>
+    <tr><td class="paramname">len</td><td>The number of characters to pad. </td></tr>
+    <tr><td class="paramname">c</td><td>The character to pad with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* The newly allocated string. </dd></dl>
+
+</div>
+</div>
 <a id="aba94fd6ac601aa9eac6fa718349b60b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba94fd6ac601aa9eac6fa718349b60b7">&#9670;&nbsp;</a></span>string_ltrim()</h2>
 
@@ -706,6 +757,51 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a6eaa72559f5456f73cf1bc25b3cb6aad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eaa72559f5456f73cf1bc25b3cb6aad">&#9670;&nbsp;</a></span>string_rpad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* string_rpad </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a padding to the right of the string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to pad. </td></tr>
+    <tr><td class="paramname">len</td><td>The number of characters to pad. </td></tr>
+    <tr><td class="paramname">c</td><td>The character to pad with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* The newly allocated string. </dd></dl>
 
 </div>
 </div>

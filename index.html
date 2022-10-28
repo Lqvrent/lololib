@@ -76,16 +76,17 @@ Download</h2>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Building and installing</h2>
 <p>The library needs to be compile with CMake.<br  />
- If you're new to CMake, heres the commands to get you started: </p><div class="fragment"><div class="line">mkdir build</div>
-<div class="line">cd build</div>
+ If you're new to CMake, heres the commands to get you started: </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
 <div class="line">cmake ..</div>
 <div class="line">make</div>
-</div><!-- fragment --><p>You can also install the library with the following command : </p><div class="fragment"><div class="line">make install</div>
+</div><!-- fragment --><p>You can also install the library on your computer with the following command : </p><div class="fragment"><div class="line">make install</div>
 </div><!-- fragment --><p>Here you go !</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Documentation</h2>
 <p>You can find the documentation <a href="https://lqvrent.github.io/lololib/">here</a>. <br  />
- If you need informations about something really new (which is not online), you can build the documentation with the following command (once you have runned cmake) in your build folder : </p><div class="fragment"><div class="line">make doc</div>
+ You can also build it locally by running the following commands : </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
+<div class="line">cmake -DBUILD_WITH_DOCS=ON ..</div>
+<div class="line">make docs</div>
 </div><!-- fragment --><p>The documentation is generated with Doxygen (You need to have it installed).<br  />
 </p>
 <h2><a class="anchor" id="autotoc_md4"></a>
@@ -95,9 +96,6 @@ Todo list</h2>
 <li>[x] Internal</li>
 <li>[x] Errors</li>
 <li>[ ] Strings (working on it) ; missing :<ul>
-<li>string_pad()</li>
-<li>string_pad_start()</li>
-<li>string_pad_end()</li>
 <li>string_from_number()</li>
 </ul>
 </li>
