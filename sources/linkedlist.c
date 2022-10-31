@@ -1,2 +1,2 @@
-#include "linkedlist.h"
+#include "lolo/linkedlist.h"
 #include <stdlib.h>

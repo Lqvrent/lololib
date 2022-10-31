@@ -1,5 +1,5 @@
-#include "internal.h"
-#include "error.h"
+#include "lolo/internal.h"
+#include "lolo/error.h"
 
 const char *error_str(void)
 {

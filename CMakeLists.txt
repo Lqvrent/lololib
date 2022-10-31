@@ -21,10 +21,10 @@ set(SOURCES_FILES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/sources)
 
 # Define headers & sources, both to compile and install
 set(PUBLIC_HEADERS
-    "${INCLUDES_DIR}/error.h"
-    "${INCLUDES_DIR}/internal.h"
-    "${INCLUDES_DIR}/linkedlist.h"
-    "${INCLUDES_DIR}/string.h"
+    "${INCLUDES_DIR}/lolo/error.h"
+    "${INCLUDES_DIR}/lolo/internal.h"
+    "${INCLUDES_DIR}/lolo/linkedlist.h"
+    "${INCLUDES_DIR}/lolo/string.h"
 )
 
 set(SOURCES
@@ -65,12 +65,12 @@ elseif (${CMAKE_C_COMPILER_ID} STREQUAL "MSVC")
 endif()
 
 install(TARGETS ${PROJECT_NAME}
-    EXPORT ${PROJECT_NAME}-config
+    EXPORT ${PROJECT_NAME}-target
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include
-    PUBLIC_HEADER DESTINATION include/${PROJECT_NAME}
+    INCLUDES DESTINATION include/lolo
+    PUBLIC_HEADER DESTINATION include/lolo
 )
 
 # Doxygen documentation.

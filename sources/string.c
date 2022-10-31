@@ -1,4 +1,4 @@
-#include "string.h"
+#include "lolo/string.h"
 #include <stdlib.h>
 
 int string_is_empty(const char *str)

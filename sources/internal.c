@@ -1,4 +1,4 @@
-#include "internal.h"
+#include "lolo/internal.h"
 
 int current_errorno(int new_errorno)
 {
