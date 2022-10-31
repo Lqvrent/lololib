@@ -12,7 +12,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y cmake valgrind gcovr libghc-criterion-dev
-      - name: "install criterion (unit testing library)"
+      - name: "Install criterion (unit testing library)"
         run: ${GITHUB_WORKSPACE}/.github/install_criterion.sh
         shell: bash
       - name: "build"
