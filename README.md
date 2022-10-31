@@ -44,7 +44,7 @@ make docs # or mingw32-make docs, depending if you're on Windows
 - [ ] `v2.0.0` Release 🚀
 - [ ] And more ! (If you have any ideas, feel free to open an issue, I don't bite and more importantly, I don't know what to do next !)
 ## Contributing 🤝
-If you want to modify the library, you can do so by following these steps:
+If you want to modify the library, you can do so by following these steps:<br />
 **1.** Fork the repository.<br />
 **2.** Create a new branch.<br />
 **3.** Make your changes.<br />
