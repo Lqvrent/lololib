@@ -68,40 +68,54 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p><a href="https://github.com/Lqvrent/lololib/actions/workflows/build.yml"><object type="image/svg+xml" data="https://github.com/Lqvrent/lololib/actions/workflows/build.yml/badge.svg?branch=main" style="pointer-events: none;">Build</object></a> <a href="https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml"><object type="image/svg+xml" data="https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml/badge.svg?branch=main" style="pointer-events: none;">Unit tests</object></a> <a href="https://github.com/Lqvrent/lololib/actions/workflows/unit_tests.yml"><img src="https://img.shields.io/badge/Code%20Coverage-100%25-success?style=flat" alt="Unit tests" class="inline"/></a> </p>
 <h1><a class="anchor" id="autotoc_md0"></a>
-lololib - Simple utilities library for C in UNIX systems</h1>
+lololib - Cross-platform utilities library for C 🛠</h1>
 <h2><a class="anchor" id="autotoc_md1"></a>
-Using the library</h2>
+Usage ⚙️</h2>
 <p>In the <code>template/</code> folder, you can see how to use the library to build a binary.<br  />
- You can also use the library in your project by adding the following lines to your CMakeLists.txt: </p><div class="fragment"><div class="line">include(FetchContent)</div>
+ You can also use the library in your project by adding the following lines to your <code>CMakeLists.txt</code>: </p><div class="fragment"><div class="line">include(FetchContent)</div>
 <div class="line">FetchContent_Declare(</div>
 <div class="line">    lololib</div>
 <div class="line">    GIT_REPOSITORY &quot;https://github.com/Lqvrent/lololib.git&quot;</div>
-<div class="line">    GIT_TAG &quot;main&quot; # can be a branch, a tag (like &quot;1.0.0&quot;) or a commit</div>
+<div class="line">    GIT_TAG &quot;1.0.0&quot; # can be a branch, a tag or a commit</div>
 <div class="line">)</div>
 <div class="line">FetchContent_MakeAvailable(lololib)</div>
 <div class="line">target_link_libraries(${PROJECT_NAME} lolo)</div>
 <div class="line">target_include_directories(${PROJECT_NAME} PRIVATE ${lololib_SOURCE_DIR}/includes)</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
-Documentation</h2>
+Documentation 📚</h2>
 <p>You can find the documentation <a href="https://lqvrent.github.io/lololib/">here</a>. <br  />
  You can also build it locally (with Doxygen) by running the following commands : </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd build</div>
 <div class="line">cmake -DBUILD_WITH_DOCS=ON ..</div>
-<div class="line">make docs # or mingw32-make docs, depending on your OS</div>
+<div class="line">make docs # or mingw32-make docs, depending if you&#39;re on Windows</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
-Todo list</h2>
+Roadmap 🎯</h2>
 <ul>
 <li>[x] Add the documentation on Github pages programmatically.</li>
+<li>[x] Make the library cross-platform.</li>
 <li>[x] Make the library fetchable with CMake.</li>
 <li>[x] Internal</li>
 <li>[x] Errors</li>
 <li>[x] Strings</li>
 <li>[x] Linked lists</li>
+<li>[x] 1.0.0 Release 🚀</li>
 <li>[ ] Queues</li>
 <li>[ ] Stacks</li>
-<li>[ ] Trees</li>
-<li>[ ] Hash tables</li>
-<li>[ ] Graphs </li>
+<li>[ ] Graphs</li>
+<li>[ ] Maps</li>
+<li>[ ] 1.1.0 Release 🚀</li>
+<li>[ ] 2.0.0 Release 🚀 </li>
 </ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Contributing 🤝</h2>
+<p>If you want to modify the library, you can do so by following these steps: <b>1.</b> Fork the repository.<br  />
+ <b>2.</b> Create a new branch.<br  />
+ <b>3.</b> Make your changes.<br  />
+ <b>4.</b> Create a pull request.<br  />
+<br  />
+ If you want to add a new feature, please open an issue first to discuss it.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+License 📜</h2>
+<p>This project is licensed under the <code>MIT</code> License. See the <a href="/LICENSE">LICENSE</a> file for details. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

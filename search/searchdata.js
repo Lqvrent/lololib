@@ -1,12 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "cdeilns",
+  0: "_deilns",
   1: "l",
   2: "eils",
-  3: "cels",
+  3: "_els",
   4: "dn",
   5: "l",
-  6: "en"
+  6: "_n"
 };
 
 var indexSectionNames =

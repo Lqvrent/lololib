@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['errors_5fcount_102',['ERRORS_COUNT',['../internal_8h.html#abec614ad933b09b8275a1434567e0f03',1,'internal.h']]]
+  ['_5f_5ferrors_5fcount_102',['__ERRORS_COUNT',['../internal_8h.html#ad47ff9b9f24604519a2ca17682eef17a',1,'internal.h']]]
 ];

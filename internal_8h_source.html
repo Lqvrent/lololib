@@ -74,22 +74,22 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __INTERNAL_H__</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">    #define __INTERNAL_H__</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="internal_8h.html#abec614ad933b09b8275a1434567e0f03">   11</a></span>&#160;<span class="preprocessor">    #define ERRORS_COUNT 1</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="internal_8h.html#ad47ff9b9f24604519a2ca17682eef17a">   11</a></span>&#160;<span class="preprocessor">    #define __ERRORS_COUNT 1</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #ifndef NULL</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="internal_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">   16</a></span>&#160;<span class="preprocessor">        #define NULL (void *)0</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #endif </span><span class="comment">/* !NULL */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *errors[<a class="code" href="internal_8h.html#abec614ad933b09b8275a1434567e0f03">ERRORS_COUNT</a>] = {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *__errors[<a class="code" href="internal_8h.html#ad47ff9b9f24604519a2ca17682eef17a">__ERRORS_COUNT</a>] = {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="stringliteral">&quot;Success&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> <a class="code" href="internal_8h.html#a1fa238bb223db8f095e30bdb340008f7">current_errorno</a>(<span class="keywordtype">int</span> new_errorno);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">int</span> <a class="code" href="internal_8h.html#adf72f8f65c343a68daffe4880516116c">__current_errorno</a>(<span class="keywordtype">int</span> new_errorno);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !__INTERNAL_H__ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="ainternal_8h_html_abec614ad933b09b8275a1434567e0f03"><div class="ttname"><a href="internal_8h.html#abec614ad933b09b8275a1434567e0f03">ERRORS_COUNT</a></div><div class="ttdeci">#define ERRORS_COUNT</div><div class="ttdoc">Number of error messages. (Used to check if the errorno is valid &amp; allocate the error messages array)</div><div class="ttdef"><b>Definition:</b> internal.h:11</div></div>
-<div class="ttc" id="ainternal_8h_html_a1fa238bb223db8f095e30bdb340008f7"><div class="ttname"><a href="internal_8h.html#a1fa238bb223db8f095e30bdb340008f7">current_errorno</a></div><div class="ttdeci">int current_errorno(int new_errorno)</div><div class="ttdoc">Get/set the error number in order to get the error message.</div></div>
+<div class="ttc" id="ainternal_8h_html_adf72f8f65c343a68daffe4880516116c"><div class="ttname"><a href="internal_8h.html#adf72f8f65c343a68daffe4880516116c">__current_errorno</a></div><div class="ttdeci">int __current_errorno(int new_errorno)</div><div class="ttdoc">Get/set the error number in order to get the error message.</div></div>
+<div class="ttc" id="ainternal_8h_html_ad47ff9b9f24604519a2ca17682eef17a"><div class="ttname"><a href="internal_8h.html#ad47ff9b9f24604519a2ca17682eef17a">__ERRORS_COUNT</a></div><div class="ttdeci">#define __ERRORS_COUNT</div><div class="ttdoc">Number of error messages. (Used to check if the errorno is valid &amp; allocate the error messages array)</div><div class="ttdef"><b>Definition:</b> internal.h:11</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
