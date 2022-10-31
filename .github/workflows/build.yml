@@ -15,18 +15,18 @@ jobs:
       matrix:
         config:
         - { name: "Ubuntu - Latest GCC",    os: ubuntu-latest,  cmake_c_compiler: gcc }
-        - { name: "Ubuntu - Latest Clang",  os: ubuntu-latest,  cmake_c_compiler: cl }
-        - { name: "MacOS - Latest Clang",   os: macos-latest,   cmake_c_compiler: cl }
-        - { name: "Windows - Latest MSVC",  os: windows-latest, cmake_c_compiler: cl }
-        - { name: "Windows - Latest MinGW", os: windows-latest, cmake_c_compiler: gcc }
+        - { name: "Ubuntu - Latest Clang",  os: ubuntu-latest,  cmake_c_compiler: clang }
+        - { name: "MacOS - Latest Clang",   os: macos-latest,   cmake_c_compiler: clang }
+        - { name: "Windows - Latest MSVC",  os: windows-latest, cmake_c_compiler: msvc }
+        - { name: "Windows - Latest MinGW", os: windows-latest, cmake_c_compiler: mingw-w64-x86_64-gcc }
     steps:
     - uses: actions/checkout@v3
     - name: "Install CMake"
       uses: lukka/get-cmake@latest
-    - if: matrix.config.cmake_c_compiler == 'msvc'
+    - if: matrix.os == 'windows-latest' && matrix.config.cmake_c_compiler == 'msvc'
       name: "Install MSVC"
       uses: ilammy/msvc-dev-cmd@v1
-    - if: matrix.config.cmake_c_compiler == 'mingw'
+    - if: matrix.os == 'windows-latest' && matrix.config.cmake_c_compiler == 'mingw-w64-x86_64-gcc'
       name: "Install MinGW"
       uses: msys2/setup-msys2@v2
       with:
@@ -36,6 +36,7 @@ jobs:
           mingw-w64-x86_64-toolchain
           mingw-w64-x86_64-cmake
           mingw-w64-x86_64-make
+          mingw-w64-x86_64-gcc
     - if: matrix.os == 'ubuntu-latest' && matrix.cmake_c_compiler == 'gcc'
       name: "Install GCC"
       run: sudo apt update && sudo apt install -y build-essential gcc make
