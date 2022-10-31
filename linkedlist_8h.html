@@ -127,9 +127,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aaebee8321822f996384601ddf9892484"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html#aaebee8321822f996384601ddf9892484">ll_get_back</a> (<a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *list)</td></tr>
 <tr class="memdesc:aaebee8321822f996384601ddf9892484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data of the last node of the list.  <a href="linkedlist_8h.html#aaebee8321822f996384601ddf9892484">More...</a><br /></td></tr>
 <tr class="separator:aaebee8321822f996384601ddf9892484"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56da5ff92a1fc555fb876b05907e6126"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html#a56da5ff92a1fc555fb876b05907e6126">ll_get</a> (<a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *list, int index)</td></tr>
-<tr class="memdesc:a56da5ff92a1fc555fb876b05907e6126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data of the n node of the list.  <a href="linkedlist_8h.html#a56da5ff92a1fc555fb876b05907e6126">More...</a><br /></td></tr>
-<tr class="separator:a56da5ff92a1fc555fb876b05907e6126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html#ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2">ll_get</a> (<a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *list, unsigned int index)</td></tr>
+<tr class="memdesc:ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data of the n node of the list.  <a href="linkedlist_8h.html#ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2">More...</a><br /></td></tr>
+<tr class="separator:ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe0eb1fbfca4edceb98fa06568983cac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html#afe0eb1fbfca4edceb98fa06568983cac">ll_size</a> (<a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *list)</td></tr>
 <tr class="memdesc:afe0eb1fbfca4edceb98fa06568983cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the list.  <a href="linkedlist_8h.html#afe0eb1fbfca4edceb98fa06568983cac">More...</a><br /></td></tr>
 <tr class="separator:afe0eb1fbfca4edceb98fa06568983cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,8 +197,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a56da5ff92a1fc555fb876b05907e6126"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56da5ff92a1fc555fb876b05907e6126">&#9670;&nbsp;</a></span>ll_get()</h2>
+<a id="ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2">&#9670;&nbsp;</a></span>ll_get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +212,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>index</em>&#160;</td>
         </tr>
         <tr>
@@ -231,7 +231,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The data of the n node of the list </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The data of the n node of the list (NULL if the list is empty or if the index is out of range) </dd></dl>
 
 </div>
 </div>
@@ -258,7 +258,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The data of the last node of the list </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The data of the last node of the list (NULL if the list is empty) </dd></dl>
 
 </div>
 </div>
@@ -285,7 +285,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The data of the first node of the list </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The data of the first node of the list (NULL if the list is empty) </dd></dl>
 
 </div>
 </div>
