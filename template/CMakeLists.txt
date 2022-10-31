@@ -25,7 +25,7 @@ include(FetchContent)
 FetchContent_Declare(
     lololib
     GIT_REPOSITORY "https://github.com/Lqvrent/lololib.git"
-    GIT_TAG "1.0.0" # can be a branch, a tag or a commit
+    GIT_TAG "v1.0.0" # can be a branch, a tag or a commit
 )
 FetchContent_MakeAvailable(lololib)
 target_link_libraries(${PROJECT_NAME} lolo)
