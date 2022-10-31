@@ -38,6 +38,6 @@ jobs:
     - if: matrix.config.os == 'ubuntu-latest'
       name: "Install (Ubuntu)"
       run: sudo cmake --install build --config ${{ env.CMAKE_BUILD_TYPE }}
-    - if: matrix.config.os != 'windows-latest'
+    - if: matrix.config.os != 'ubuntu-latest'
       name: "Install (Windows)"
       run: cmake --install build --config ${{ env.CMAKE_BUILD_TYPE }}
