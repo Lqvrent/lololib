@@ -51,10 +51,10 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 # Compiler options OS specific
-if (${CMAKE_C_COMPILER_ID} STREQUAL "GNU")
+if(${CMAKE_C_COMPILER_ID} STREQUAL "GNU")
     message(STATUS "Setting gcc flags")
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
-elseif (${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
+elseif (${CMAKE_C_COMPILER_ID} STREQUAL "Clang" OR CMAKE_C_COMPILER_ID STREQUAL "AppleClang")
     message(STATUS "Setting clang flags")
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
 elseif (${CMAKE_C_COMPILER_ID} STREQUAL "MSVC")
