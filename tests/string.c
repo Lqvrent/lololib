@@ -1,5 +1,5 @@
 #include <criterion/criterion.h>
-#include "../includes/string.h"
+#include "../includes/lolo/string.h"
 
 Test(string, string_is_empty_w_null)
 {

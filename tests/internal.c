@@ -1,5 +1,5 @@
 #include <criterion/criterion.h>
-#include "../includes/internal.h"
+#include "../includes/lolo/internal.h"
 
 Test(internal, current_errorno_get)
 {
