@@ -3,10 +3,10 @@
 
 const char *error_str(void)
 {
-    return (errors[current_errorno(-1)]);
+    return (__errors[__current_errorno(-1)]);
 }
 
 int error_num(void)
 {
-    return (current_errorno(-1));
+    return (__current_errorno(-1));
 }

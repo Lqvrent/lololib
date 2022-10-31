@@ -18,7 +18,7 @@ jobs:
           mkdir build && cd build
           cmake -DBUILD_WITH_DOCS=ON ..
           make docs
-      - name: Deploy
+      - name: Deploy on GitHub Pages
         uses: "JamesIves/github-pages-deploy-action@releases/v4"
         with:
           ssh-key: ${{ secrets.DEPLOY_KEY }}
