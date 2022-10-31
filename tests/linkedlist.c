@@ -1,6 +1,7 @@
 #include <criterion/criterion.h>
 #include <stdlib.h>
 #include "../includes/lolo/linkedlist.h"
+#define DATASET_SIZE 50
 
 Test(linkedlist, ll_push_front)
 {
@@ -22,7 +23,7 @@ Test(linkedlist, ll_push_front_a_lot)
     int data = 42;
     void *data_ptr = &data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         ll_push_front(&list, data_ptr);
     cr_assert_eq(list->data, data_ptr);
     while ((*tmp)->next != NULL)
@@ -53,7 +54,7 @@ Test(linkedlist, ll_push_back_a_lot)
     int data = 42;
     void *data_ptr = &data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         ll_push_back(&list, data_ptr);
     cr_assert_eq(list->data, data_ptr);
     while ((*tmp)->next != NULL)
@@ -88,9 +89,9 @@ Test(linkedlist, ll_pop_front_a_lot)
     int data = 42;
     void *data_ptr = &data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         ll_push_front(&list, data_ptr);
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         cr_assert_eq(ll_pop_front(&list), data_ptr);
     cr_assert_eq(list, NULL);
 }
@@ -119,9 +120,9 @@ Test(linkedlist, ll_pop_back_a_lot)
     int data = 42;
     void *data_ptr = &data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         ll_push_front(&list, data_ptr);
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         cr_assert_eq(ll_pop_back(&list), data_ptr);
     cr_assert_eq(list, NULL);
 }
@@ -184,12 +185,12 @@ Test(linkedlist, ll_pop_a_lot)
     void *data_ptr = &data;
     void *another_data_ptr = &another_data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         if (i % 2 == 0)
             ll_push_front(&list, data_ptr);
         else
             ll_push_front(&list, another_data_ptr);
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         if (i % 2 == 0)
             cr_assert_eq(ll_pop(&list, data_ptr), data_ptr);
         else
@@ -251,7 +252,7 @@ Test(linkedlist, ll_pop_at_a_lot)
     void *data_ptr = &data;
     void *another_data_ptr = &another_data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         if (i % 2 == 0)
             ll_push_back(&list, data_ptr);
         else
@@ -322,7 +323,7 @@ Test(linked_list, ll_get_back_a_lot)
     void *data_ptr = &data;
     void *another_data_ptr = &another_data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         if (i % 2 == 0)
             ll_push_back(&list, data_ptr);
         else
@@ -359,7 +360,7 @@ Test(linked_list, ll_get_a_lot)
     void *data_ptr = &data;
     void *another_data_ptr = &another_data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         if (i % 2 == 0)
             ll_push_back(&list, data_ptr);
         else
@@ -409,12 +410,12 @@ Test(linked_list, ll_size_a_lot)
     void *data_ptr = &data;
     void *another_data_ptr = &another_data;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < DATASET_SIZE; i++)
         if (i % 2 == 0)
             ll_push_back(&list, data_ptr);
         else
             ll_push_back(&list, another_data_ptr);
-    cr_assert_eq(ll_size(list), 100);
+    cr_assert_eq(ll_size(list), DATASET_SIZE);
     if (list != NULL)
         ll_free(list);
 }

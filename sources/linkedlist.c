@@ -90,12 +90,14 @@ void *ll_pop_at(linkedlist_t **list, unsigned int index)
     linkedlist_t *tmp = *list;
     linkedlist_t *prev = NULL;
     void *data = NULL;
+    unsigned int i = 0;
 
     if (*list == NULL)
         return (NULL);
-    for (unsigned int i = 0; i < index && tmp->next != NULL; i++) {
+    while (i < index && tmp->next != NULL) {
         prev = tmp;
         tmp = tmp->next;
+        i++;
     }
     if (tmp->next == NULL && index != 0)
         return (NULL);
@@ -126,7 +128,7 @@ void *ll_get_back(linkedlist_t *list)
 
 void *ll_get(linkedlist_t *list, unsigned int index)
 {
-    int i = 0;
+    unsigned int i = 0;
 
     if (list == NULL)
         return (NULL);

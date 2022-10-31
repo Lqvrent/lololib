@@ -262,7 +262,6 @@ char *string_slice(const char *str, int start, int end)
 int __string_split_count_words(const char *str, const char *sep) // util function to allocate our array while splitting
 {
     int i = 0;
-    int j = 0;
     int count = 0;
     int in_a_row = string_starts_with(str, sep);
 
@@ -323,7 +322,6 @@ char **string_split(const char *str, const char *sep)
 int __string_split_by_tok_count_words(const char *str, const char *delims)
 {
     int i = 0;
-    int j = 0;
     int count = 0;
     int in_a_row = string_includes(delims, (char[2]){str[0], 0});
 
