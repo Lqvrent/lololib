@@ -1,6 +1,6 @@
 #include <lolo/string.h>
 #include <stdio.h>
-#include <myenv.h>
+#include "myenv.h"
 
 int main(int argc, char *argv[], char *env[])
 {
