@@ -7,6 +7,7 @@ project(${PROJECT_NAME}
     LANGUAGES C
     DESCRIPTION "Cross-platform utilities library for C"
 )
+set(CMAKE_C_STANDARD 11)
 
 # To build shared libraries in Windows, we set CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS to TRUE.
 # See https://cmake.org/cmake/help/v3.4/variable/CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS.html
@@ -15,29 +16,37 @@ if(WIN32)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 endif()
 
-# Declare the library target.
-add_library(${PROJECT_NAME} SHARED)
+set(PUBLIC_INCLUDES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+set(SOURCES_FILES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/sources)
+
+# Define headers & sources, both to compile and install
+set(PUBLIC_HEADERS
+    "${PUBLIC_INCLUDES_DIR}/error.h"
+    "${PUBLIC_INCLUDES_DIR}/linkedlist.h"
+    "${PUBLIC_INCLUDES_DIR}/string.h"
+)
+
+set(SOURCES
+    "${SOURCES_FILES_DIR}/error.c"
+    "${SOURCES_FILES_DIR}/internal.c"
+    "${SOURCES_FILES_DIR}/linkedlist.c"
+    "${SOURCES_FILES_DIR}/string.c"
+)
+
+add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
-        $<INSTALL_INTERFACE:includes>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/includes>
+        $<BUILD_INTERFACE:${PUBLIC_INCLUDES_DIR}>
+        $<INSTALL_INTERFACE:include>
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/sources
+        ${INCLUDES_PRIVATE}
 )
 
-set_target_properties(${PROJECT_NAME}
-    PROPERTIES
+set_target_properties(${PROJECT_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
-    SOVERSION ${PROJECT_VERSION}
-)
-
-target_sources(${PROJECT_NAME}
-    PRIVATE
-        "${CMAKE_CURRENT_SOURCE_DIR}/sources/error.c"
-        "${CMAKE_CURRENT_SOURCE_DIR}/sources/internal.c"
-        "${CMAKE_CURRENT_SOURCE_DIR}/sources/linkedlist.c"
-        "${CMAKE_CURRENT_SOURCE_DIR}/sources/string.c"
+    SOVERSION 1
+    PUBLIC_HEADER "${PUBLIC_HEADERS}"
 )
 
 # Compiler options OS specific
@@ -54,17 +63,17 @@ elseif (${CMAKE_C_COMPILER_ID} STREQUAL "MSVC")
     target_compile_definitions(${PROJECT_NAME} PRIVATE WIN_EXPORT)
 endif()
 
-# Install the library
 install(TARGETS ${PROJECT_NAME}
     EXPORT ${PROJECT_NAME}-config
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include
+    INCLUDES DESTINATION include/lolo
+    PUBLIC_HEADER DESTINATION include/lolo
 )
 
 # Doxygen documentation.
-OPTION(BUILD_WITH_DOCS "Generate Documentation" ON)
+OPTION(BUILD_WITH_DOCS "Generate Documentation" OFF)
 IF(BUILD_WITH_DOCS)
     ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/docs)
 ENDIF()
