@@ -16,9 +16,12 @@
         #define NULL (void *)0
     #endif /* !NULL */
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-variable"
 static const char *__errors[__ERRORS_COUNT] = {
     "Success"
 };
+#pragma GCC diagnostic pop
 
 /**
  * @brief Get/set the error number in order to get the error message.
