@@ -28,7 +28,7 @@ make docs # or mingw32-make docs, depending on your OS
 - [x] Internal
 - [x] Errors
 - [x] Strings
-- [ ] Regular linked lists (working on it !)
+- [x] Linked lists
 - [ ] Queues
 - [ ] Stacks
 - [ ] Trees

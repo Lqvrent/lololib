@@ -1,4 +1,5 @@
 #include <criterion/criterion.h>
+#include <stdlib.h>
 #include "../includes/lolo/linkedlist.h"
 
 Test(linkedlist, ll_push_front)
@@ -273,4 +274,175 @@ Test(linkedlist, ll_pop_at_out_of_range)
     cr_assert_eq(list->next, NULL);
     if (list != NULL)
         ll_free(list);
+}
+
+Test(linked_list, ll_get_front_empty)
+{
+    linkedlist_t *list = NULL;
+
+    cr_assert_eq(ll_get_front(list), NULL);
+}
+
+Test(linked_list, ll_get_front)
+{
+    linkedlist_t *list = NULL;
+    int data = 42;
+    void *data_ptr = &data;
+
+    ll_push_front(&list, data_ptr);
+    cr_assert_eq(ll_get_front(list), data_ptr);
+    if (list != NULL)
+        ll_free(list);
+}
+
+Test(linked_list, ll_get_back_empty)
+{
+    linkedlist_t *list = NULL;
+
+    cr_assert_eq(ll_get_back(list), NULL);
+}
+
+Test(linked_list, ll_get_back)
+{
+    linkedlist_t *list = NULL;
+    int data = 42;
+    void *data_ptr = &data;
+
+    ll_push_front(&list, data_ptr);
+    cr_assert_eq(ll_get_back(list), data_ptr);
+    if (list != NULL)
+        ll_free(list);
+}
+
+Test(linked_list, ll_get_back_a_lot)
+{
+    linkedlist_t *list = NULL;
+    int data = 42;
+    int another_data = 24;
+    void *data_ptr = &data;
+    void *another_data_ptr = &another_data;
+
+    for (int i = 0; i < 100; i++)
+        if (i % 2 == 0)
+            ll_push_back(&list, data_ptr);
+        else
+            ll_push_back(&list, another_data_ptr);
+    cr_assert_eq(ll_get_back(list), another_data_ptr);
+    if (list != NULL)
+        ll_free(list);
+}
+
+Test(linked_list, ll_get_empty)
+{
+    linkedlist_t *list = NULL;
+
+    cr_assert_eq(ll_get(list, 0), NULL);
+}
+
+Test(linked_list, ll_get)
+{
+    linkedlist_t *list = NULL;
+    int data = 42;
+    void *data_ptr = &data;
+
+    ll_push_front(&list, data_ptr);
+    cr_assert_eq(ll_get(list, 0), data_ptr);
+    if (list != NULL)
+        ll_free(list);
+}
+
+Test(linked_list, ll_get_a_lot)
+{
+    linkedlist_t *list = NULL;
+    int data = 42;
+    int another_data = 24;
+    void *data_ptr = &data;
+    void *another_data_ptr = &another_data;
+
+    for (int i = 0; i < 100; i++)
+        if (i % 2 == 0)
+            ll_push_back(&list, data_ptr);
+        else
+            ll_push_back(&list, another_data_ptr);
+    cr_assert_eq(ll_get(list, 42), data_ptr);
+    cr_assert_eq(ll_get(list, 43), another_data_ptr);
+    if (list != NULL)
+        ll_free(list);
+}
+
+Test(linked_list, ll_get_out_of_range)
+{
+    linkedlist_t *list = NULL;
+    int data = 42;
+    void *data_ptr = &data;
+
+    ll_push_front(&list, data_ptr);
+    cr_assert_eq(ll_get(list, 42), NULL);
+    if (list != NULL)
+        ll_free(list);
+}
+
+Test(linked_list, ll_size_empty)
+{
+    linkedlist_t *list = NULL;
+
+    cr_assert_eq(ll_size(list), 0);
+}
+
+Test(linked_list, ll_size)
+{
+    linkedlist_t *list = NULL;
+    int data = 42;
+    void *data_ptr = &data;
+
+    ll_push_front(&list, data_ptr);
+    cr_assert_eq(ll_size(list), 1);
+    if (list != NULL)
+        ll_free(list);
+}
+
+Test(linked_list, ll_size_a_lot)
+{
+    linkedlist_t *list = NULL;
+    int data = 42;
+    int another_data = 24;
+    void *data_ptr = &data;
+    void *another_data_ptr = &another_data;
+
+    for (int i = 0; i < 100; i++)
+        if (i % 2 == 0)
+            ll_push_back(&list, data_ptr);
+        else
+            ll_push_back(&list, another_data_ptr);
+    cr_assert_eq(ll_size(list), 100);
+    if (list != NULL)
+        ll_free(list);
+}
+
+Test(linked_list, ll_free)
+{
+    linkedlist_t *list = NULL;
+    int *data = malloc(sizeof(int));
+    int *another_data = malloc(sizeof(int));
+
+    *data = 42;
+    *another_data = 24;
+    ll_push_front(&list, data);
+    ll_push_front(&list, another_data);
+    ll_free(list);
+    free(data);
+    free(another_data);
+}
+
+Test(linked_list, ll_free_all)
+{
+    linkedlist_t *list = NULL;
+    int *data = malloc(sizeof(int));
+    int *another_data = malloc(sizeof(int));
+
+    *data = 42;
+    *another_data = 24;
+    ll_push_front(&list, data);
+    ll_push_front(&list, another_data);
+    ll_free_all(list);
 }

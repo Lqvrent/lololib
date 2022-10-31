@@ -8,10 +8,10 @@ jobs:
       runs-on: "ubuntu-latest"
       steps:
       - uses: "actions/checkout@v2"
-      - name: "install build-essential, cmake and coverage tools"
+      - name: "install build-essential, cmake, memory leak tool and coverage tools"
         run: |
           sudo apt update
-          sudo apt install -y cmake gcovr libghc-criterion-dev
+          sudo apt install -y cmake valgrind gcovr libghc-criterion-dev
       - name: "install criterion (unit testing library)"
         run: ${GITHUB_WORKSPACE}/.github/install_criterion.sh
         shell: bash
@@ -22,13 +22,13 @@ jobs:
           cd build
           cmake ..
           make
-      - name: "run tests"
+      - name: "run tests (with memory leak detection)"
         run: |
-          ./tests/build/unit_tests
+          ./tests/build/unit_tests &&
+          valgrind --leak-check=full --leak-resolution=high --show-leak-kinds=all --track-origins=yes --error-exitcode=1 ./tests/build/unit_tests
       - name: "generate coverage report"
         run: |
           gcovr -f '' -r . --exclude=tests/ &&
-          gcovr -f '' -r . --exclude=tests/ --branches &&
           gcovr -f '' -r . --exclude=tests/ --xml -o coverage.xml
       - name: Code Coverage Summary Report
         uses: irongut/CodeCoverageSummary@v1.2.0

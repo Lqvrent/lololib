@@ -73,14 +73,14 @@ void *ll_pop_at(linkedlist_t **list, unsigned int index);
 /**
  * @brief Get the data of the first node of the list
  * @param list The list to get the data from
- * @return The data of the first node of the list
+ * @return The data of the first node of the list (NULL if the list is empty)
  */
 void *ll_get_front(linkedlist_t *list);
 
 /**
  * @brief Get the data of the last node of the list
  * @param list The list to get the data from
- * @return The data of the last node of the list
+ * @return The data of the last node of the list (NULL if the list is empty)
  */
 void *ll_get_back(linkedlist_t *list);
 
@@ -88,9 +88,9 @@ void *ll_get_back(linkedlist_t *list);
  * @brief Get the data of the n node of the list
  * @param list The list to get the size from
  * @param index The index of the node to get the data from
- * @return The data of the n node of the list
+ * @return The data of the n node of the list (NULL if the list is empty or if the index is out of range)
  */
-void *ll_get(linkedlist_t *list, int index);
+void *ll_get(linkedlist_t *list, unsigned int index);
 
 /**
  * @brief Get the size of the list

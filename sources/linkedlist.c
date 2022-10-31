@@ -108,6 +108,48 @@ void *ll_pop_at(linkedlist_t **list, unsigned int index)
     return (data);
 }
 
+void *ll_get_front(linkedlist_t *list)
+{
+    if (list == NULL)
+        return (NULL);
+    return (list->data);
+}
+
+void *ll_get_back(linkedlist_t *list)
+{
+    if (list == NULL)
+        return (NULL);
+    while (list->next != NULL)
+        list = list->next;
+    return (list->data);
+}
+
+void *ll_get(linkedlist_t *list, unsigned int index)
+{
+    int i = 0;
+
+    if (list == NULL)
+        return (NULL);
+    while (list->next != NULL && i < index) {
+        list = list->next;
+        i++;
+    }
+    if (i != index)
+        return (NULL);
+    return (list->data);
+}
+
+int ll_size(linkedlist_t *list)
+{
+    int size = 0;
+
+    while (list != NULL) {
+        list = list->next;
+        size++;
+    }
+    return (size);
+}
+
 void ll_free(linkedlist_t *list)
 {
     linkedlist_t *tmp = list;
@@ -115,6 +157,18 @@ void ll_free(linkedlist_t *list)
     while (list != NULL) {
         tmp = list;
         list = list->next;
+        free(tmp);
+    }
+}
+
+void ll_free_all(linkedlist_t *list)
+{
+    linkedlist_t *tmp = list;
+
+    while (list != NULL) {
+        tmp = list;
+        list = list->next;
+        free(tmp->data);
         free(tmp);
     }
 }
