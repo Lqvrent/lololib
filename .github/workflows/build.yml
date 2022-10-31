@@ -4,7 +4,7 @@ on:
   - pull_request
 
 env:
-  BUILD_TYPE: Release
+  CMAKE_BUILD_TYPE: Release
 
 jobs:
   build:
@@ -43,12 +43,12 @@ jobs:
       name: "Install Clang"
       run: sudo apt update && sudo apt install -y build-essential clang make
     - name: "Configure"
-      run: cmake -S . -B build --config Release -DCMAKE_C_cmake_c_COMPILER=${{ matrix.config.cmake_c_compiler }}
+      run: cmake -S . -B build -DCMAKE_C_COMPILER=${{ matrix.config.cmake_c_compiler }}
     - name: "Build"
-      run: cmake --build build --config ${{ env.BUILD_TYPE }}
+      run: cmake --build build
     - if: matrix.config.os == 'ubuntu-latest'
       name: "Install (Ubuntu)"
-      run: sudo cmake --install build --config ${{ env.BUILD_TYPE }}
+      run: sudo cmake --install build
     - if: matrix.config.os != 'ubuntu-latest'
       name: "Install"
-      run: cmake --install build --config ${{ env.BUILD_TYPE }}
+      run: cmake --install build
