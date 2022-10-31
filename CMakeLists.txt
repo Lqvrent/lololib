@@ -16,14 +16,15 @@ if(WIN32)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 endif()
 
-set(PUBLIC_INCLUDES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+set(INCLUDES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 set(SOURCES_FILES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/sources)
 
 # Define headers & sources, both to compile and install
 set(PUBLIC_HEADERS
-    "${PUBLIC_INCLUDES_DIR}/error.h"
-    "${PUBLIC_INCLUDES_DIR}/linkedlist.h"
-    "${PUBLIC_INCLUDES_DIR}/string.h"
+    "${INCLUDES_DIR}/error.h"
+    "${INCLUDES_DIR}/internal.h"
+    "${INCLUDES_DIR}/linkedlist.h"
+    "${INCLUDES_DIR}/string.h"
 )
 
 set(SOURCES
@@ -37,7 +38,7 @@ add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
-        $<BUILD_INTERFACE:${PUBLIC_INCLUDES_DIR}>
+        $<BUILD_INTERFACE:${INCLUDES_DIR}>
         $<INSTALL_INTERFACE:include>
     PRIVATE
         ${INCLUDES_PRIVATE}
@@ -68,8 +69,8 @@ install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include/lolo
-    PUBLIC_HEADER DESTINATION include/lolo
+    INCLUDES DESTINATION include
+    PUBLIC_HEADER DESTINATION include/${PROJECT_NAME}
 )
 
 # Doxygen documentation.

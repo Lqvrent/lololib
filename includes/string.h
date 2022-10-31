@@ -5,6 +5,12 @@
 
 #ifndef __STRING_H__
     #define __STRING_H__
+    #ifndef NULL
+        /**
+         * @brief Represents a null pointer.
+         */
+        #define NULL (void *)0
+    #endif /* !NULL */
 
 /**
  * @brief Check if a string is empty or NULL.
