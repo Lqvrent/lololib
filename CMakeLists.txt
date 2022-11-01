@@ -24,6 +24,7 @@ set(PUBLIC_HEADERS
     "${INCLUDES_DIR}/lolo/error.h"
     "${INCLUDES_DIR}/lolo/internal.h"
     "${INCLUDES_DIR}/lolo/linkedlist.h"
+    "${INCLUDES_DIR}/lolo/queue.h"
     "${INCLUDES_DIR}/lolo/string.h"
 )
 
@@ -31,6 +32,7 @@ set(SOURCES
     "${SOURCES_FILES_DIR}/error.c"
     "${SOURCES_FILES_DIR}/internal.c"
     "${SOURCES_FILES_DIR}/linkedlist.c"
+    "${SOURCES_FILES_DIR}/queue.c"
     "${SOURCES_FILES_DIR}/string.c"
 )
 
