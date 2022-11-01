@@ -7,11 +7,15 @@ void queue_enqueue(queue_t **queue, void *data)
 
     if (*queue == NULL) {
         *queue = malloc(sizeof(queue_t));
+        if (*queue == NULL)
+            return;
         (*queue)->data = NULL;
         (*queue)->head = NULL;
         (*queue)->tail = NULL;
     }
     node = malloc(sizeof(queue_node_t));
+    if (node == NULL)
+        return;
     node->data = data;
     node->next = NULL;
     if ((*queue)->data == NULL) {
@@ -90,5 +94,4 @@ void queue_free_all(queue_t *queue)
         free(tmp->data);
         free(tmp);
     }
-    free(queue);
 }
