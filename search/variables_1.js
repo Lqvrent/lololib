@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next_100',['next',['../structlinkedlist__s.html#a24b063f3cc23c12ac52b848193e0f4e1',1,'linkedlist_s']]]
+  ['head_106',['head',['../structqueue__s.html#a26244ab56e4db42519876240c176a1ba',1,'queue_s']]]
 ];

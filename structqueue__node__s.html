@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lololib: Data Fields</title>
+<title>lololib: queue_node_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,23 +60,43 @@ $(function() {
 </iframe>
 </div>
 
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">queue_node_s Struct Reference</div>  </div>
+</div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all documented struct and union fields with links to the struct/union documentation for each field:</div><ul>
-<li>data
-: <a class="el" href="structlinkedlist__s.html#a9b1485c22cdf81e402e9de1f769c0278">linkedlist_s</a>
-, <a class="el" href="structqueue__node__s.html#af6a957b1a8110ec477784476fd146750">queue_node_s</a>
-, <a class="el" href="structqueue__s.html#aac708380462e436ff94a99ce8b7499e7">queue_s</a>
-</li>
-<li>head
-: <a class="el" href="structqueue__s.html#a26244ab56e4db42519876240c176a1ba">queue_s</a>
-</li>
-<li>next
-: <a class="el" href="structlinkedlist__s.html#a24b063f3cc23c12ac52b848193e0f4e1">linkedlist_s</a>
-, <a class="el" href="structqueue__node__s.html#a4f46097751f81780af527bd34c37172f">queue_node_s</a>
-</li>
-<li>tail
-: <a class="el" href="structqueue__s.html#af875ca8d1350d4dd85a100af01756419">queue_s</a>
-</li>
+
+<p>Queue node structure.  
+ <a href="structqueue__node__s.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="queue_8h_source.html">queue.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for queue_node_s:</div>
+<div class="dyncontent">
+<div class="center"><img src="structqueue__node__s__coll__graph.png" border="0" usemap="#queue__node__s_coll__map" alt="Collaboration graph"/></div>
+<map name="queue__node__s_coll__map" id="queue__node__s_coll__map">
+<area shape="rect" title="Queue node structure." alt="" coords="5,5,120,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:af6a957b1a8110ec477784476fd146750"><td class="memItemLeft" align="right" valign="top"><a id="af6a957b1a8110ec477784476fd146750"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqueue__node__s.html#af6a957b1a8110ec477784476fd146750">data</a></td></tr>
+<tr class="memdesc:af6a957b1a8110ec477784476fd146750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the actual data. <br /></td></tr>
+<tr class="separator:af6a957b1a8110ec477784476fd146750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f46097751f81780af527bd34c37172f"><td class="memItemLeft" align="right" valign="top"><a id="a4f46097751f81780af527bd34c37172f"></a>
+struct <a class="el" href="structqueue__node__s.html">queue_node_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqueue__node__s.html#a4f46097751f81780af527bd34c37172f">next</a></td></tr>
+<tr class="memdesc:a4f46097751f81780af527bd34c37172f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the next element (NULL if last) <br /></td></tr>
+<tr class="separator:a4f46097751f81780af527bd34c37172f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Queue node structure. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/home/runner/work/lololib/lololib/includes/lolo/<a class="el" href="queue_8h_source.html">queue.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

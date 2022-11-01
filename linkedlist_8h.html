@@ -130,9 +130,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html#ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2">ll_get</a> (<a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *list, unsigned int index)</td></tr>
 <tr class="memdesc:ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data of the n node of the list.  <a href="linkedlist_8h.html#ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2">More...</a><br /></td></tr>
 <tr class="separator:ac9a6e0c7dd4d3fbd90ab8dbdeda04fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe0eb1fbfca4edceb98fa06568983cac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html#afe0eb1fbfca4edceb98fa06568983cac">ll_size</a> (<a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *list)</td></tr>
-<tr class="memdesc:afe0eb1fbfca4edceb98fa06568983cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the list.  <a href="linkedlist_8h.html#afe0eb1fbfca4edceb98fa06568983cac">More...</a><br /></td></tr>
-<tr class="separator:afe0eb1fbfca4edceb98fa06568983cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a415adb2084f95a9cfa888cbe80a08309"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html#a415adb2084f95a9cfa888cbe80a08309">ll_size</a> (<a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *list)</td></tr>
+<tr class="memdesc:a415adb2084f95a9cfa888cbe80a08309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the list.  <a href="linkedlist_8h.html#a415adb2084f95a9cfa888cbe80a08309">More...</a><br /></td></tr>
+<tr class="separator:a415adb2084f95a9cfa888cbe80a08309"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb727b09301611d42042608b5b7d6026"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html#adb727b09301611d42042608b5b7d6026">ll_free</a> (<a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *list)</td></tr>
 <tr class="memdesc:adb727b09301611d42042608b5b7d6026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the list.  <a href="linkedlist_8h.html#adb727b09301611d42042608b5b7d6026">More...</a><br /></td></tr>
 <tr class="separator:adb727b09301611d42042608b5b7d6026"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,7 +166,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section warning"><dt>Warning</dt><dd>The data of each node is NOT freed, you have to do it yourself before calling this function </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The data of each node is NOT freed, you have to do it yourself before calling this function, or call <a class="el" href="linkedlist_8h.html#abe36c1b8c415cf9f7cf9cbfffe5dd1c6" title="Same as ll_free, but also free the data of each node.">ll_free_all()</a> </dd></dl>
 
 </div>
 </div>
@@ -493,14 +493,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afe0eb1fbfca4edceb98fa06568983cac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe0eb1fbfca4edceb98fa06568983cac">&#9670;&nbsp;</a></span>ll_size()</h2>
+<a id="a415adb2084f95a9cfa888cbe80a08309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a415adb2084f95a9cfa888cbe80a08309">&#9670;&nbsp;</a></span>ll_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ll_size </td>
+          <td class="memname">unsigned int ll_size </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="linkedlist_8h.html#a7ccd9f6720d92e65e4613b2eaaccaa11">linkedlist_t</a> *&#160;</td>
           <td class="paramname"><em>list</em></td><td>)</td>
