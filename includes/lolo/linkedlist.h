@@ -97,12 +97,12 @@ void *ll_get(linkedlist_t *list, unsigned int index);
  * @param list The list to get the size from
  * @return The size of the list
  */
-int ll_size(linkedlist_t *list);
+unsigned int ll_size(linkedlist_t *list);
 
 /**
  * @brief Free the list
  * @param list The list to free
- * @warning The data of each node is NOT freed, you have to do it yourself before calling this function
+ * @warning The data of each node is NOT freed, you have to do it yourself before calling this function, or call ll_free_all()
  */
 void ll_free(linkedlist_t *list);
 

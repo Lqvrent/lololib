@@ -19,6 +19,8 @@ target_sources(${PROJECT_NAME}
         "../tests/internal.c"
         "../sources/linkedlist.c"
         "../tests/linkedlist.c"
+        "../sources/queue.c"
+        "../tests/queue.c"
         "../sources/string.c"
         "../tests/string.c"
 )

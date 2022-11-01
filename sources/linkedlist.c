@@ -141,9 +141,9 @@ void *ll_get(linkedlist_t *list, unsigned int index)
     return (list->data);
 }
 
-int ll_size(linkedlist_t *list)
+unsigned int ll_size(linkedlist_t *list)
 {
-    int size = 0;
+    unsigned int size = 0;
 
     while (list != NULL) {
         list = list->next;

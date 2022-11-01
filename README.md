@@ -32,8 +32,8 @@ make docs # or mingw32-make docs, depending if you're on Windows
 - [x] Strings
 - [x] Linked lists
 - [x] `v1.0.0` Release 🚀
-- [ ] Now that a release is out, features MUST be written in issues and PRs.
-- [ ] Queues
+- [x] Now that a release is out, features MUST be written in issues and PRs.
+- [x] Queues
 - [ ] Stacks
 - [ ] Graphs
 - [ ] Maps
