@@ -15,11 +15,12 @@ void stack_push(sstack_t **stack, void *data)
 
 void *stack_pop(sstack_t **stack)
 {
-    sstack_t *tmp = *stack;
+    sstack_t *tmp = NULL;
     void *data = NULL;
 
-    if (*stack == NULL)
+    if (stack == NULL || *stack == NULL || (*stack)->data == NULL)
         return (NULL);
+    tmp = *stack;
     data = (*stack)->data;
     *stack = (*stack)->next;
     free(tmp);

@@ -25,6 +25,19 @@ Test(stack, pop)
     stack_free(stack);
 }
 
+Test(stack, pop_empty)
+{
+    sstack_t *stack = NULL;
+
+    cr_assert_eq(stack_pop(NULL), NULL); // Error handling
+    cr_assert_eq(stack_pop(&stack), NULL);
+    stack = malloc(sizeof(sstack_t));
+    stack->data = NULL;
+    stack->next = NULL;
+    cr_assert_eq(stack_pop(&stack), NULL);
+    free(stack);
+}
+
 Test(stack, peek)
 {
     sstack_t *stack = NULL;
