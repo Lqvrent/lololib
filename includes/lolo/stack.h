@@ -64,14 +64,6 @@ void *stack_peek(stackc_t *stack);
 unsigned int stack_size(stackc_t *stack);
 
 /**
- * @brief Get a element from the stack
- * @param stack The stack to get the element from
- * @param index The index of the element to get
- * @return void* The data of the element (NULL if index is out of range)
- */
-void *stack_get(stackc_t *stack, unsigned int index);
-
-/**
  * @brief Free the stack (use it if you will NOT use the inserted data anymore)
  *
  * @param stack The stack to free

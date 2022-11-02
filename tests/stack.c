@@ -10,9 +10,9 @@ Test(stack, push)
 
     stack_push(&stack, &data);
     cr_assert(stack != NULL);
-    cr_assert(stack->data == &data);
-    cr_assert(stack->next == NULL);
-    stack_free(&stack);
+    cr_assert(stack->data->data == &data);
+    cr_assert(stack->data->next == NULL);
+    stack_free(stack);
 }
 
 Test(stack, pop)
@@ -22,11 +22,11 @@ Test(stack, pop)
 
     stack_push(&stack, &data);
     cr_assert(stack != NULL);
-    cr_assert(stack->data == &data);
-    cr_assert(stack->next == NULL);
-    cr_assert(stack_pop(&stack) == &data);
+    cr_assert(stack->data->data == &data);
+    cr_assert(stack->data->next == NULL);
+    stack_pop(&stack);
     cr_assert(stack == NULL);
-    stack_free(&stack);
+    stack_free(stack);
 }
 
 Test(stack, push_pop)
@@ -39,12 +39,11 @@ Test(stack, push_pop)
         stack_push(&stack, &dataset[i]);
     }
     for (int i = DATASET_SIZE - 1; i >= 0; i--) {
-        cr_assert(stack != NULL);
-        cr_assert(stack->data == &dataset[i]);
-        cr_assert(stack_pop(&stack) == &dataset[i]);
+        cr_assert(stack->data->data == &dataset[i]);
+        stack_pop(&stack);
     }
     cr_assert(stack == NULL);
-    stack_free(&stack);
+    stack_free(stack);
     free(dataset);
 }
 
@@ -55,11 +54,10 @@ Test(stack, peek)
 
     stack_push(&stack, &data);
     cr_assert(stack != NULL);
-    cr_assert(stack->data == &data);
-    cr_assert(stack->next == NULL);
+    cr_assert(stack->data->data == &data);
+    cr_assert(stack->data->next == NULL);
     cr_assert(stack_peek(stack) == &data);
-    cr_assert(stack != NULL);
-    stack_free(&stack);
+    stack_free(stack);
 }
 
 Test(stack, peek_empty)
@@ -69,41 +67,6 @@ Test(stack, peek_empty)
     cr_assert(stack_peek(stack) == NULL);
 }
 
-Test(stack, get)
-{
-    stackc_t *stack = NULL;
-    int data = 42;
-
-    stack_push(&stack, &data);
-    cr_assert(stack != NULL);
-    cr_assert(stack->data == &data);
-    cr_assert(stack->next == NULL);
-    cr_assert(stack_get(stack, 0) == &data);
-    cr_assert(stack != NULL);
-    stack_free(&stack);
-}
-
-Test(stack, get_empty)
-{
-    stackc_t *stack = NULL;
-
-    cr_assert(stack_get(stack, 0) == NULL);
-}
-
-Test(stack, get_out_of_range)
-{
-    stackc_t *stack = NULL;
-    int data = 42;
-
-    stack_push(&stack, &data);
-    cr_assert(stack != NULL);
-    cr_assert(stack->data == &data);
-    cr_assert(stack->next == NULL);
-    cr_assert(stack_get(stack, 1) == NULL);
-    cr_assert(stack != NULL);
-    stack_free(&stack);
-}
-
 Test(stack, free)
 {
     stackc_t *stack = NULL;
@@ -111,18 +74,16 @@ Test(stack, free)
 
     stack_push(&stack, &data);
     cr_assert(stack != NULL);
-    cr_assert(stack->data == &data);
-    cr_assert(stack->next == NULL);
-    stack_free(&stack);
-    cr_assert(stack == NULL);
+    cr_assert(stack->data->data == &data);
+    cr_assert(stack->data->next == NULL);
+    stack_free(stack);
 }
 
 Test(stack, free_empty)
 {
     stackc_t *stack = NULL;
 
-    stack_free(&stack);
-    cr_assert(stack == NULL);
+    stack_free(stack);
 }
 
 Test(stack, free_all)
@@ -135,6 +96,5 @@ Test(stack, free_all)
         *tmp = i;
         stack_push(&stack, tmp);
     }
-    stack_free_all(&stack);
-    cr_assert(stack == NULL);
+    stack_free_all(stack);
 }
