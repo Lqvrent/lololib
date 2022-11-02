@@ -37,6 +37,8 @@ make docs # or mingw32-make docs, depending if you're on Windows
 - [ ] Stacks
 - [ ] Graphs
 - [ ] Maps
+- [ ] Path
+- [ ] Filesystem
 - [ ] `v1.1.0` Release 🚀
 - [ ] Threads (cross-platform !)
 - [ ] Networking - Client (cross-platform !)

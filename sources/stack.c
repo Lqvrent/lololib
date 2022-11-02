@@ -1,71 +1,68 @@
 #include "lolo/stack.h"
 #include <stdlib.h>
 
-void stack_push(stackc_t **stack, void *data)
+void stack_push(sstack_t **stack, void *data)
 {
-    stack_node_t *node = NULL;
+    sstack_t *node = malloc(sizeof(sstack_t));
 
-    if (*stack == NULL) {
-        *stack = malloc(sizeof(stackc_t));
-        if (*stack == NULL)
-            return;
-        (*stack)->data = NULL;
-        (*stack)->head = NULL;
-    }
-    node = malloc(sizeof(stack_node_t));
+    node = malloc(sizeof(sstack_t));
     if (node == NULL)
         return;
     node->data = data;
-    node->next = (*stack)->head;
-    (*stack)->head = node;
+    node->next = *stack;
+    *stack = node;
 }
 
-void *stack_pop(stackc_t **stack)
+void *stack_pop(sstack_t **stack)
 {
-    stack_node_t *node = NULL;
+    sstack_t *tmp = *stack;
     void *data = NULL;
 
-    if (*stack == NULL || *stack == NULL || (*stack)->data == NULL)
+    if (*stack == NULL)
         return (NULL);
-    node = (*stack)->head;
-    data = node->data;
-    (*stack)->head = node->next;
-    free(node);
+    data = (*stack)->data;
+    *stack = (*stack)->next;
+    free(tmp);
     return (data);
 }
 
-void *stack_peek(stackc_t *stack)
+void *stack_peek(sstack_t *stack)
 {
-    if (stack == NULL || stack->data == NULL)
+    if (stack == NULL)
         return (NULL);
-    return (stack->head->data);
+    return (stack->data);
 }
 
-void stack_free(stackc_t *stack)
+unsigned int stack_size(sstack_t *stack)
 {
-    stack_node_t *tmp = NULL;
+    unsigned int size = 0;
 
-    if (stack == NULL)
-        return;
-    while (stack->head != NULL) {
-        tmp = stack->head;
-        stack->head = stack->head->next;
+    while (stack != NULL) {
+        size++;
+        stack = stack->next;
+    }
+    return (size);
+}
+
+void stack_free(sstack_t *stack)
+{
+    sstack_t *tmp = NULL;
+
+    while (stack != NULL) {
+        tmp = stack;
+        stack = stack->next;
         free(tmp);
     }
-    free(stack);
 }
 
-void stack_free_all(stackc_t *stack)
+void stack_free_all(sstack_t *stack)
 {
-    stack_node_t *tmp = NULL;
+    sstack_t *tmp = NULL;
 
-    if (stack == NULL)
-        return;
-    while (stack->head != NULL) {
-        tmp = stack->head;
-        stack->head = stack->head->next;
+    while (stack != NULL) {
+        tmp = stack;
+        stack = stack->next;
         free(tmp->data);
         free(tmp);
     }
-    free(stack);
 }
