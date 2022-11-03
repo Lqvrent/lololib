@@ -1,3 +1,8 @@
+/**
+ * @file queue.h
+ * @brief Queue implementation
+ */
+
 #ifndef __QUEUE_H__
     #define __QUEUE_H__
     #ifndef NULL

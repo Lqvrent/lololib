@@ -1,3 +1,8 @@
+/**
+ * @file stack.h
+ * @brief Stack implementation
+ */
+
 #ifndef __STACK_H__
     #define __STACK_H__
     #ifndef NULL
@@ -8,7 +13,7 @@
     #endif /* !NULL */
 
 /**
- * @brief Stack container structure
+ * @brief Stack structure
  */
 typedef struct sstack_s {
     /**
