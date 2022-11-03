@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
   0: "_dehilnqst",
-  1: "lq",
+  1: "lqs",
   2: "eils",
   3: "_els",
   4: "dhnt",
