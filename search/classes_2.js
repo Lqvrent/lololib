@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sstack_5fs_60',['sstack_s',['../structsstack__s.html',1,'']]]
+  ['sstack_5fs_77',['sstack_s',['../structsstack__s.html',1,'']]]
 ];

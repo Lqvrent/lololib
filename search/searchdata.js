@@ -2,10 +2,10 @@ var indexSectionsWithContent =
 {
   0: "_dehilnqst",
   1: "lqs",
-  2: "eils",
-  3: "_els",
+  2: "eilqs",
+  3: "_elqs",
   4: "dhnt",
-  5: "l",
+  5: "lqs",
   6: "_n"
 };
 

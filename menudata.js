@@ -36,11 +36,13 @@ var menudata={children:[
 {text:"e",url:"globals.html#index_e"},
 {text:"l",url:"globals.html#index_l"},
 {text:"n",url:"globals.html#index_n"},
+{text:"q",url:"globals.html#index_q"},
 {text:"s",url:"globals.html#index_s"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"_",url:"globals_func.html#index__5F"},
 {text:"e",url:"globals_func.html#index_e"},
 {text:"l",url:"globals_func.html#index_l"},
+{text:"q",url:"globals_func.html#index_q"},
 {text:"s",url:"globals_func.html#index_s"}]},
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}
