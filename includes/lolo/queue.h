@@ -1,5 +1,11 @@
 #ifndef __QUEUE_H__
     #define __QUEUE_H__
+    #ifndef NULL
+        /**
+         * @brief Represents a null pointer.
+         */
+        #define NULL (void *)0
+    #endif /* !NULL */
 
 /**
  * @brief Queue node structure

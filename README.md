@@ -34,9 +34,11 @@ make docs # or mingw32-make docs, depending if you're on Windows
 - [x] `v1.0.0` Release 🚀
 - [x] Now that a release is out, features MUST be written in issues and PRs.
 - [x] Queues
-- [ ] Stacks
+- [x] Stacks
 - [ ] Graphs
 - [ ] Maps
+- [ ] Path
+- [ ] Filesystem
 - [ ] `v1.1.0` Release 🚀
 - [ ] Threads (cross-platform !)
 - [ ] Networking - Client (cross-platform !)
