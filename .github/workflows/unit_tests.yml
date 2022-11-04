@@ -11,21 +11,19 @@ jobs:
       - name: "Install dependencies"
         run: |
           sudo apt update
-          sudo apt install -y cmake valgrind gcovr libghc-criterion-dev
+          sudo apt install -y cmake gcovr libghc-criterion-dev
       - name: "Install criterion (unit testing library)"
         run: ${GITHUB_WORKSPACE}/.github/install_criterion.sh
         shell: bash
-      - name: "build"
+      - name: "Build"
         run: |
           cd tests
           mkdir build
           cd build
           cmake ..
           make
-      - name: "Run tests with valgrind"
-        run: |
-          ./tests/build/unit_tests &&
-          valgrind --leak-check=full --leak-resolution=high --show-leak-kinds=all --track-origins=yes --error-exitcode=1 ./tests/build/unit_tests
+      - name: "Run tests"
+        run: ./tests/build/unit_tests
       - name: "Generate coverage report"
         run: |
           gcovr -f '' -r . --exclude=tests/ &&
