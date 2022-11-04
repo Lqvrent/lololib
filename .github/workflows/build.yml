@@ -155,11 +155,24 @@ jobs:
           message(FATAL_ERROR "Build failed")
         endif()
 
-    - name: "Install"
+    - if: ${{ matrix.config.os != 'ubunty-latest' }}
+      name: "Install"
       shell: cmake -P {0}
       run: |
         execute_process(
           COMMAND cmake --install build
+          RESULT_VARIABLE result
+        )
+        if (NOT result EQUAL 0)
+          message(FATAL_ERROR "Bad exit status")
+        endif()
+
+    - if: ${{ matrix.config.os == 'ubunty-latest' }}
+      name: "Install (with root privileges)"
+      shell: cmake -P {0}
+      run: |
+        execute_process(
+          COMMAND sudo cmake --install build
           RESULT_VARIABLE result
         )
         if (NOT result EQUAL 0)
