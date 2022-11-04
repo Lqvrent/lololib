@@ -90,7 +90,7 @@ jobs:
     - name: "Configure"
       shell: cmake -P {0}
       run: |
-        set(ENV{CC} ${{ matrix.config.cc }})
+        set(ENV{CC} "${{ matrix.config.cc }}")
         if ("${{ runner.os }}" STREQUAL "Windows" AND NOT "x${{ matrix.config.win_script }}" STREQUAL "x")
           execute_process(
             COMMAND "${{ matrix.config.win_script }}" && set
