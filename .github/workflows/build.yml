@@ -21,7 +21,7 @@ jobs:
         - { name: "Ubuntu - Latest Clang",  os: ubuntu-latest,  cc: "clang" }
         - { name: "MacOS - Latest Clang",   os: macos-latest,   cc: "clang" }
         - { name: "Windows - Latest Clang", os: windows-latest, cc: "clang" }
-        - { name: "Windows - Latest MSVC",  os: windows-latest, cc: "msvc" }
+        - { name: "Windows - Latest MSVC",  os: windows-latest, cc: "Visual Studio 16 2019" }
         - { name: "Windows - Latest MinGW", os: windows-latest, cc: "gcc", win_script: "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat" }
     steps:
     - name: "Checkout"
