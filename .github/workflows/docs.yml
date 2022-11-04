@@ -8,16 +8,48 @@ jobs:
   docs:
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v2"
-      - name: Install dependencies
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Install dependencies"
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential doxygen graphviz
-      - name: Build
+
+      - name: "Configure"
+        shell: cmake -P {0}
         run: |
-          mkdir build && cd build
-          cmake -DBUILD_WITH_DOCS=ON ..
-          make docs
+          execute_process(
+            COMMAND cmake
+            -S .
+            -B build
+            -D CMAKE_BUILD_TYPE=Release
+            -D BUILD_WITH_DOCS=ON
+            RESULT_VARIABLE result
+          )
+          if (NOT result EQUAL 0)
+            message(FATAL_ERROR "Bad exit status")
+          endif()
+
+      - name: "Build"
+        shell: cmake -P {0}
+        run: |
+          execute_process(
+            COMMAND cmake
+            --build build
+            --target docs
+            RESULT_VARIABLE result
+            OUTPUT_VARIABLE output
+            ERROR_VARIABLE output
+            ECHO_OUTPUT_VARIABLE ECHO_ERROR_VARIABLE
+          )
+          if (NOT result EQUAL 0)
+            string(REGEX MATCH "FAILED:.*$" error_message "${output}")
+            string(REPLACE "\n" "%0A" error_message "${error_message}")
+            message("::error::${error_message}")
+            message(FATAL_ERROR "Build failed")
+          endif()
+
       - name: Deploy on GitHub Pages
         uses: "JamesIves/github-pages-deploy-action@releases/v4"
         with:
