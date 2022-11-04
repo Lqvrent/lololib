@@ -64,7 +64,7 @@ void stack_free(sstack_t *stack);
 
 /**
  * @brief Free the stack and all the data it contains (use it if you will use the inserted data anymore)
- * @param queue The stack to free
+ * @param stack The stack to free
  * @warning The void pointer passed when queueing MUST be a pointer to a malloc'd memory
  */
 void stack_free_all(sstack_t *stack);
