@@ -156,12 +156,4 @@ jobs:
         endif()
 
     - name: "Install"
-      shell: cmake -P {0}
-      run: |
-        execute_process(
-          COMMAND cmake --install build
-          RESULT_VARIABLE result
-        )
-        if (NOT result EQUAL 0)
-          message(FATAL_ERROR "Bad exit status")
-        endif()
+      run: cmake --install build --config $ENV{BUILD_TYPE}
