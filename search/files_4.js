@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['stack_2eh_82',['stack.h',['../stack_8h.html',1,'']]],
-  ['string_2eh_83',['string.h',['../string_8h.html',1,'']]]
+  ['queue_2eh_95',['queue.h',['../queue_8h.html',1,'']]]
 ];

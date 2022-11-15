@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['queue_5fnode_5fs_75',['queue_node_s',['../structqueue__node__s.html',1,'']]],
-  ['queue_5fs_76',['queue_s',['../structqueue__s.html',1,'']]]
+  ['linkedlist_5fs_87',['linkedlist_s',['../structlinkedlist__s.html',1,'']]]
 ];

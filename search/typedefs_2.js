@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sstack_5ft_145',['sstack_t',['../stack_8h.html#a0e979b29a251b15dfa9316b92a361b4f',1,'stack.h']]]
+  ['queue_5fnode_5ft_167',['queue_node_t',['../queue_8h.html#a9902a786bed52ace5a3711fea45cf7a8',1,'queue.h']]],
+  ['queue_5ft_168',['queue_t',['../queue_8h.html#a1f77538d8a03d04921fd0ef2aefc7250',1,'queue.h']]]
 ];
