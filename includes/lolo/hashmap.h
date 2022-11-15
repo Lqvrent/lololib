@@ -46,23 +46,7 @@ void *hm_put(hashmap_t **map, char *key, void *data);
  * @param key The key of the element
  * @return The data of the element (NULL if not found)
  */
-void *hm_getKey(hashmap_t **map, char *key);
-
-/**
- * @brief Get an entry from the hashmap by its index
- * @param list The list to get the entry from
- * @param index The index of the element
- * @return The data of the element (NULL if not found)
- */
-void *hm_getIndex(hashmap_t **map, int index);
-
-/**
- * @brief Get an entry from the hashmap by its value
- * @param list The list to get the entry from
- * @param data The data of the element
- * @return The data of the element (NULL if not found)
- */
-void *hm_getValue(hashmap_t **map, void *data);
+void *hm_get(hashmap_t **map, char *key);
 
 /**
  * @brief Remove an entry from the hashmap

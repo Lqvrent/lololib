@@ -20,3 +20,50 @@ void *hm_put(hashmap_t **map, char *key, void *data)
     tmp->next = new;
     return (new);
 }
+
+void *hm_get(hashmap_t **map, char *key)
+{
+    hashmap_t *tmp = *map;
+
+    while (tmp != NULL) {
+        if (strcmp(tmp->key, key) == 0)
+            return (tmp->data);
+        tmp = tmp->next;
+    }
+    return (NULL);
+}
+
+void *hm_remove(hashmap_t **map, char *key)
+{
+    hashmap_t *tmp = *map;
+    hashmap_t *prev = NULL;
+    void *data = NULL;
+
+    while (tmp != NULL) {
+        if (strcmp(tmp->key, key) == 0) {
+            data = tmp->data;
+            if (prev == NULL)
+                *map = tmp->next;
+            else
+                prev->next = tmp->next;
+            free(tmp->key);
+            free(tmp);
+            return (data);
+        }
+        prev = tmp;
+        tmp = tmp->next;
+    }
+    return (NULL);
+}
+
+int hm_size(hashmap_t **map)
+{
+    hashmap_t *tmp = *map;
+    int size = 0;
+
+    while (tmp != NULL) {
+        size++;
+        tmp = tmp->next;
+    }
+    return (size);
+}
