@@ -12,8 +12,6 @@ Test(linkedlist, ll_push_front)
     ll_push_front(&list, data_ptr);
     cr_assert_eq(list->data, data_ptr);
     cr_assert_eq(list->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_push_front_a_lot)
@@ -30,8 +28,6 @@ Test(linkedlist, ll_push_front_a_lot)
         *tmp = (*tmp)->next;
     cr_assert_eq((*tmp)->data, data_ptr);
     cr_assert_eq((*tmp)->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_push_back_empty)
@@ -43,8 +39,6 @@ Test(linkedlist, ll_push_back_empty)
     ll_push_back(&list, data_ptr);
     cr_assert_eq(list->data, data_ptr);
     cr_assert_eq(list->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_push_back_a_lot)
@@ -61,8 +55,6 @@ Test(linkedlist, ll_push_back_a_lot)
         *tmp = (*tmp)->next;
     cr_assert_eq((*tmp)->data, data_ptr);
     cr_assert_eq((*tmp)->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_pop_front_empty)
@@ -155,8 +147,6 @@ Test(linkedlist, ll_pop_not_found_solo)
     cr_assert_eq(ll_pop(&list, NULL), NULL);
     cr_assert_eq(list->data, data_ptr);
     cr_assert_eq(list->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_pop_not_found)
@@ -173,8 +163,6 @@ Test(linkedlist, ll_pop_not_found)
     cr_assert_eq(list->next->data, data_ptr);
     cr_assert_eq(list->next->next->data, data_ptr);
     cr_assert_eq(list->next->next->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_pop_a_lot)
@@ -226,8 +214,6 @@ Test(linkedlist, ll_pop_at_not_found_solo)
     cr_assert_eq(ll_pop_at(&list, 1), NULL);
     cr_assert_eq(list->data, data_ptr);
     cr_assert_eq(list->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_pop_at_not_found)
@@ -240,8 +226,6 @@ Test(linkedlist, ll_pop_at_not_found)
     cr_assert_eq(ll_pop_at(&list, 1), NULL);
     cr_assert_eq(list->data, data_ptr);
     cr_assert_eq(list->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_pop_at_a_lot)
@@ -259,8 +243,6 @@ Test(linkedlist, ll_pop_at_a_lot)
             ll_push_back(&list, another_data_ptr);
     cr_assert_eq(ll_pop_at(&list, 42), data_ptr);
     cr_assert_eq(ll_pop_at(&list, 42), another_data_ptr);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linkedlist, ll_pop_at_out_of_range)
@@ -273,8 +255,6 @@ Test(linkedlist, ll_pop_at_out_of_range)
     cr_assert_eq(ll_pop_at(&list, 42), NULL);
     cr_assert_eq(list->data, data_ptr);
     cr_assert_eq(list->next, NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_get_front_empty)
@@ -292,8 +272,6 @@ Test(linked_list, ll_get_front)
 
     ll_push_front(&list, data_ptr);
     cr_assert_eq(ll_get_front(list), data_ptr);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_get_back_empty)
@@ -311,8 +289,6 @@ Test(linked_list, ll_get_back)
 
     ll_push_front(&list, data_ptr);
     cr_assert_eq(ll_get_back(list), data_ptr);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_get_back_a_lot)
@@ -329,8 +305,6 @@ Test(linked_list, ll_get_back_a_lot)
         else
             ll_push_back(&list, another_data_ptr);
     cr_assert_eq(ll_get_back(list), another_data_ptr);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_get_empty)
@@ -348,8 +322,6 @@ Test(linked_list, ll_get)
 
     ll_push_front(&list, data_ptr);
     cr_assert_eq(ll_get(list, 0), data_ptr);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_get_a_lot)
@@ -367,8 +339,6 @@ Test(linked_list, ll_get_a_lot)
             ll_push_back(&list, another_data_ptr);
     cr_assert_eq(ll_get(list, 42), data_ptr);
     cr_assert_eq(ll_get(list, 43), another_data_ptr);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_get_out_of_range)
@@ -379,8 +349,6 @@ Test(linked_list, ll_get_out_of_range)
 
     ll_push_front(&list, data_ptr);
     cr_assert_eq(ll_get(list, 42), NULL);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_size_empty)
@@ -398,8 +366,6 @@ Test(linked_list, ll_size)
 
     ll_push_front(&list, data_ptr);
     cr_assert_eq(ll_size(list), 1);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_size_a_lot)
@@ -416,8 +382,6 @@ Test(linked_list, ll_size_a_lot)
         else
             ll_push_back(&list, another_data_ptr);
     cr_assert_eq(ll_size(list), DATASET_SIZE);
-    if (list != NULL)
-        ll_free(list);
 }
 
 Test(linked_list, ll_free)

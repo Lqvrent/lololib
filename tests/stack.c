@@ -11,7 +11,6 @@ Test(stack, push)
     stack_push(&stack, &data);
     cr_assert_eq(stack->data, &data);
     cr_assert_eq(stack->next, NULL);
-    stack_free(stack);
 }
 
 Test(stack, pop)
@@ -22,7 +21,6 @@ Test(stack, pop)
     stack_push(&stack, &data);
     cr_assert_eq(stack_pop(&stack), &data);
     cr_assert_eq(stack, NULL);
-    stack_free(stack);
 }
 
 Test(stack, pop_empty)
@@ -47,7 +45,6 @@ Test(stack, peek)
     cr_assert_eq(stack_peek(stack), &data);
     cr_assert_eq(stack->data, &data);
     cr_assert_eq(stack->next, NULL);
-    stack_free(stack);
 }
 
 Test(stack, peek_empty)
@@ -56,7 +53,6 @@ Test(stack, peek_empty)
 
     cr_assert_eq(stack_peek(stack), NULL);
     cr_assert_eq(stack, NULL);
-    stack_free(stack);
 }
 
 Test(stack, size)
@@ -66,7 +62,6 @@ Test(stack, size)
 
     stack_push(&stack, &data);
     cr_assert_eq(stack_size(stack), 1);
-    stack_free(stack);
 }
 
 Test(stack, size_empty)
@@ -74,7 +69,6 @@ Test(stack, size_empty)
     sstack_t *stack = NULL;
 
     cr_assert_eq(stack_size(stack), 0);
-    stack_free(stack);
 }
 
 Test(stack, size_a_lot)
@@ -87,7 +81,6 @@ Test(stack, size_a_lot)
         stack_push(&stack, &dataset[i]);
     }
     cr_assert_eq(stack_size(stack), DATASET_SIZE);
-    stack_free(stack);
 }
 
 Test(stack, free)

@@ -35,15 +35,11 @@ make docs # or mingw32-make docs, depending if you're on Windows
 - [x] Now that a release is out, features MUST be written in issues and PRs.
 - [x] Queues
 - [x] Stacks
-- [ ] Graphs
-- [ ] Maps
+- [x] Hashmaps
 - [ ] Path
 - [ ] Filesystem
 - [ ] `v1.1.0` Release 🚀
-- [ ] Threads (cross-platform !)
-- [ ] Networking - Client (cross-platform !)
-- [ ] Networking - Server (cross-platform !)
-- [ ] `v2.0.0` Release 🚀
+- [ ] JSON parser & serializer
 - [ ] And more ! (If you have any ideas, feel free to open an issue, I don't bite and more importantly, I don't know what to do next !)
 ## 🤝 Contributing
 If you want to modify the library, you can do so by following these steps:<br />
