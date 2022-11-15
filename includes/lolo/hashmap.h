@@ -67,6 +67,7 @@ int hm_size(hashmap_t **map);
  * @brief Get the keys of the hashmap
  * @param list The list to get the keys from
  * @return The keys of the hashmap
+ * @note You should use the function string_array_free() to free the returned array
  */
 char **hm_keys(hashmap_t **map);
 

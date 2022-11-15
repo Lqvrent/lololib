@@ -67,3 +67,18 @@ int hm_size(hashmap_t **map)
     }
     return (size);
 }
+
+char **hm_keys(hashmap_t **map)
+{
+    hashmap_t *tmp = *map;
+    char **keys = malloc(sizeof(char *) * (hm_size(map) + 1));
+    int i = 0;
+
+    while (tmp != NULL) {
+        keys[i] = strdup(tmp->key);
+        tmp = tmp->next;
+        i++;
+    }
+    keys[i] = NULL;
+    return (keys);
+}

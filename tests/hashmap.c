@@ -153,3 +153,22 @@ Test(hashmap, size_a_lot)
     size = hm_size(&map);
     cr_assert_eq(size, DATASET_SIZE);
 }
+
+Test(hashmap, keys)
+{
+    hashmap_t *map = NULL;
+    char key[DATASET_SIZE];
+    char value[] = "value";
+    char **keys = NULL;
+    int i = 0;
+
+    for (; i < DATASET_SIZE; i++) {
+        sprintf(key, "key%d", i);
+        hm_put(&map, key, value);
+    }
+    keys = hm_keys(&map);
+    cr_assert_not_null(keys);
+    for (i = 0; i < DATASET_SIZE; i++)
+        cr_assert_not_null(keys[i]);
+    string_array_free(keys);
+}
