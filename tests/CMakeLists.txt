@@ -15,6 +15,8 @@ target_sources(${PROJECT_NAME}
     PRIVATE
         "../sources/error.c"
         "../tests/error.c"
+        "../sources/hashmap.c"
+        "../tests/hashmap.c"
         "../sources/internal.c"
         "../tests/internal.c"
         "../sources/linkedlist.c"

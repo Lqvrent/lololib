@@ -20,8 +20,9 @@ set(INCLUDES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 set(SOURCES_FILES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/sources)
 
 # Define headers & sources, both to compile and install
-set(PUBLIC_HEADERS
+set(PUBLIC_HEADER
     "${INCLUDES_DIR}/lolo/error.h"
+    "${INCLUDES_DIR}/lolo/hashmap.h"
     "${INCLUDES_DIR}/lolo/internal.h"
     "${INCLUDES_DIR}/lolo/linkedlist.h"
     "${INCLUDES_DIR}/lolo/queue.h"
@@ -31,6 +32,7 @@ set(PUBLIC_HEADERS
 
 set(SOURCES
     "${SOURCES_FILES_DIR}/error.c"
+    "${SOURCES_FILES_DIR}/hashmap.c"
     "${SOURCES_FILES_DIR}/internal.c"
     "${SOURCES_FILES_DIR}/linkedlist.c"
     "${SOURCES_FILES_DIR}/queue.c"
