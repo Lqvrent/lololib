@@ -35,7 +35,7 @@ make docs # or mingw32-make docs, depending if you're on Windows
 - [x] Now that a release is out, features MUST be written in issues and PRs.
 - [x] Queues
 - [x] Stacks
-- [ ] Hashmaps
+- [x] Hashmaps
 - [ ] Path
 - [ ] Filesystem
 - [ ] `v1.1.0` Release 🚀
