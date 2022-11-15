@@ -172,3 +172,18 @@ Test(hashmap, keys)
         cr_assert_not_null(keys[i]);
     string_array_free(keys);
 }
+
+Test(hashmap, clear)
+{
+    hashmap_t *map = NULL;
+    char key[DATASET_SIZE];
+    char value[] = "value";
+    int i = 0;
+
+    for (; i < DATASET_SIZE; i++) {
+        sprintf(key, "key%d", i);
+        hm_put(&map, key, value);
+    }
+    hm_clear(&map);
+    cr_assert_null(map);
+}

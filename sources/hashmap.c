@@ -7,6 +7,8 @@ void *hm_put(hashmap_t **map, char *key, void *data)
     hashmap_t *new = malloc(sizeof(hashmap_t));
     hashmap_t *tmp = *map;
 
+    if (new == NULL)
+        return (NULL);
     new->key = strdup(key);
     new->data = data;
     new->next = NULL;
@@ -74,6 +76,8 @@ char **hm_keys(hashmap_t **map)
     char **keys = malloc(sizeof(char *) * (hm_size(map) + 1));
     int i = 0;
 
+    if (keys == NULL)
+        return (NULL);
     while (tmp != NULL) {
         keys[i] = strdup(tmp->key);
         tmp = tmp->next;
@@ -81,4 +85,18 @@ char **hm_keys(hashmap_t **map)
     }
     keys[i] = NULL;
     return (keys);
+}
+
+void hm_clear(hashmap_t **map)
+{
+    hashmap_t *tmp = *map;
+    hashmap_t *next = NULL;
+
+    while (tmp != NULL) {
+        next = tmp->next;
+        free(tmp->key);
+        free(tmp);
+        tmp = next;
+    }
+    *map = NULL;
 }
