@@ -86,4 +86,20 @@ int hm_size(hashmap_t **map);
  */
 char **hm_keys(hashmap_t **map);
 
+/**
+ * @brief Destroy the hashmap
+ *
+ * @param map The hashmap to destroy
+ * @note This function will free all the entries and their keys, but not the values
+ */
+void hm_destroy(hashmap_t **map);
+
+/**
+ * @brief Destroy the hashmap and its values
+ *
+ * @param map The hashmap to destroy
+ * @note This function will free all the entries, their keys and their values
+ */
+void hm_destroyAll(hashmap_t **map);
+
 #endif /* !__HASHMAPS_H__ */

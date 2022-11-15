@@ -12,8 +12,6 @@ Test(queue, enqueue)
     cr_assert_eq(queue->data->data, &data);
     cr_assert_eq(queue->head->data, &data);
     cr_assert_eq(queue->tail->data, &data);
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, enqueue_a_lot)
@@ -29,8 +27,6 @@ Test(queue, enqueue_a_lot)
         cr_assert_eq(queue->data->data, &data[i]);
         queue_dequeue(&queue);
     }
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, dequeue)
@@ -40,8 +36,6 @@ Test(queue, dequeue)
 
     queue_enqueue(&queue, &data);
     cr_assert_eq(queue_dequeue(&queue), &data);
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, dequeue_a_lot)
@@ -56,8 +50,6 @@ Test(queue, dequeue_a_lot)
     for (int i = 0; i < DATASET_SIZE; i++) {
         cr_assert_eq(queue_dequeue(&queue), &data[i]);
     }
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, dequeue_empty)
@@ -71,8 +63,6 @@ Test(queue, dequeue_empty)
     queue->head = NULL;
     queue->tail = NULL;
     cr_assert_eq(queue_dequeue(&queue), NULL);
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, peek)
@@ -82,8 +72,6 @@ Test(queue, peek)
 
     queue_enqueue(&queue, &data);
     cr_assert_eq(queue_peek(queue), &data);
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, peek_empty)
@@ -97,8 +85,6 @@ Test(queue, peek_empty)
     queue->head = NULL;
     queue->tail = NULL;
     cr_assert_eq(queue_peek(queue), NULL);
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, size)
@@ -115,8 +101,6 @@ Test(queue, size)
     cr_assert_eq(queue_size(queue), 0);
     queue_enqueue(&queue, &data);
     cr_assert_eq(queue_size(queue), 1);
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, size_a_lot)
@@ -135,8 +119,6 @@ Test(queue, size_a_lot)
         queue_dequeue(&queue);
         cr_assert_eq(queue_size(queue), DATASET_SIZE - i - 1);
     }
-    if (queue != NULL)
-        queue_free(queue);
 }
 
 Test(queue, free)
