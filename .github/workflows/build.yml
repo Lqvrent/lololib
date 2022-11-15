@@ -18,9 +18,9 @@ jobs:
       matrix:
         config:
         - { name: "Ubuntu - Latest GCC",    os: ubuntu-latest,  cc: "gcc" }
-        - { name: "Ubuntu - Latest Clang",  os: ubuntu-latest,  cc: "clang" }
+        # - { name: "Ubuntu - Latest Clang",  os: ubuntu-latest,  cc: "clang" }
         - { name: "MacOS - Latest Clang",   os: macos-latest,   cc: "clang" }
-        - { name: "Windows - Latest Clang", os: windows-latest, cc: "clang" }
+        # - { name: "Windows - Latest Clang", os: windows-latest, cc: "clang" }
         - { name: "Windows - Latest MinGW", os: windows-latest, cc: "gcc" }
         - { name: "Windows - Latest MSVC",  os: windows-latest, cc: "cl", win_script: "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvars64.bat" }
     steps:
