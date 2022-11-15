@@ -187,3 +187,32 @@ Test(hashmap, clear)
     hm_clear(&map);
     cr_assert_null(map);
 }
+
+Test(hashmap, destroy)
+{
+    hashmap_t *map = NULL;
+    char key[DATASET_SIZE];
+    char value[] = "value";
+    int i = 0;
+
+    for (; i < DATASET_SIZE; i++) {
+        sprintf(key, "key%d", i);
+        hm_put(&map, key, value);
+    }
+    hm_destroy(&map);
+    cr_assert_null(map);
+}
+
+Test(hashmap, destroyAll)
+{
+    hashmap_t *map = NULL;
+    char key[DATASET_SIZE];
+    int i = 0;
+
+    for (; i < DATASET_SIZE; i++) {
+        sprintf(key, "key%d", i);
+        hm_put(&map, key, malloc(sizeof(int)));
+    }
+    hm_destroyAll(&map);
+    cr_assert_null(map);
+}

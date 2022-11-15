@@ -100,3 +100,32 @@ void hm_clear(hashmap_t **map)
     }
     *map = NULL;
 }
+
+void hm_destroy(hashmap_t **map)
+{
+    hashmap_t *tmp = *map;
+    hashmap_t *next = NULL;
+
+    while (tmp != NULL) {
+        next = tmp->next;
+        free(tmp->key);
+        free(tmp);
+        tmp = next;
+    }
+    *map = NULL;
+}
+
+void hm_destroyAll(hashmap_t **map)
+{
+    hashmap_t *tmp = *map;
+    hashmap_t *next = NULL;
+
+    while (tmp != NULL) {
+        next = tmp->next;
+        free(tmp->key);
+        free(tmp->data);
+        free(tmp);
+        tmp = next;
+    }
+    *map = NULL;
+}
